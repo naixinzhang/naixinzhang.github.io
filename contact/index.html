@@ -309,27 +309,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="card-content">
                 <div class="card-content article-card-content">
                     <div id="articleContent" data-aos="fade-up">
-                        <h1 id="欢迎留言"><a href="#欢迎留言" class="headerlink" title="欢迎留言"></a>欢迎留言</h1><p>大家有任何问题，都可以在评论区给我留言，或者加我联系方式：</p>
-<ul>
-<li>QQ：<strong>792321264</strong></li>
-<li>微信：<strong>weiyang792321264</strong></li>
-</ul>
-<p>我很忙啦，如果不是很麻烦的问题就直接在评论区留言啦。<br><strong>当然不介意小改改加我哦~~</strong></p>
-<h1 id="友链交换"><a href="#友链交换" class="headerlink" title="友链交换"></a>友链交换</h1><p>想要交换友链的小伙伴，欢迎在评论区留言，留言格式：</p>
-<ul>
-<li><strong>名称：</strong>你的博客名称</li>
-<li><strong>地址：</strong>你的博客地址</li>
-<li><strong>简介：</strong>一句话简介</li>
-<li><strong>头像：</strong>你的头像地址</li>
-</ul>
-<p>例如我的博客友链，大家可以加到自己博客里哦：</p>
-<ul>
-<li><strong>名称：</strong>godweiyang</li>
-<li><strong>地址：</strong><a href="https://godweiyang.com">https://godweiyang.com</a></li>
-<li><strong>简介：</strong>ECNU NLPer</li>
-<li><strong>头像：</strong><a href="https://godweiyang.com/medias/avatars/avatar.jpg">https://godweiyang.com/medias/avatars/avatar.jpg</a></li>
-</ul>
-
+                        <h1 id="Welcome-to-leave-your-message"><a href="#Welcome-to-leave-your-message" class="headerlink" title="Welcome to leave your message"></a>Welcome to leave your message</h1>
                     </div>
                 </div>
             </div>
@@ -347,11 +327,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: 'godweiyang.github.io',
-        owner: 'godweiyang',
-        admin: "godweiyang",
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
         id: 'contact/index.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
@@ -633,119 +613,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         </div>
     </div>
 </main>
-    <footer class="page-footer bg-color">
+    <footer class="page-footer bg-color center-align">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2019 WeiYang. All Rights Reserved.
-
-            
-            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">1.1k</span>
-            
-
-            <br>
-            <span id="sitetime"></span>
-
-            
-            
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
+            &copy; 2020 NaixinZhang. All Rights Reserved.
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/naixinzhang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:naixinzhang1104@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fa fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fa fa-rss"></i>
-    </a>
-</div>
     </div>
 </footer>
 
-<div class="progress-bar"></div>
-
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int);
-            }
-        }
-    });
-</script>
-
-<script language=javascript>
-    function siteTime() {
-        window.setTimeout("siteTime()", 1000);
-        var seconds = 1000;
-        var minutes = seconds * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
-        var today = new Date();
-        var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth() + 1;
-        var todayDate = today.getDate();
-        var todayHour = today.getHours();
-        var todayMinute = today.getMinutes();
-        var todaySecond = today.getSeconds();
-        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-        year - 作为date对象的年份，为4位年份值
-        month - 0-11之间的整数，做为date对象的月份
-        day - 1-31之间的整数，做为date对象的天数
-        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-        minutes - 0-59之间的整数，做为date对象的分钟数
-        seconds - 0-59之间的整数，做为date对象的秒数
-        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
-        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-        var diff = t2 - t1;
-        var diffYears = Math.floor(diff / years);
-        var diffDays = Math.floor((diff / days) - diffYears * 365);
-        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
-    siteTime();
-</script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
