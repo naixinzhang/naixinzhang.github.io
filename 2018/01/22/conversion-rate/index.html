@@ -4,19 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Naixin&#39;s blog">
+    <meta name="keywords" content="rate, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
     <meta name="description" content="
-title: “P1 Conversion rate”
-
 import warnings
 warnings.simplefilter(&#39;ignore&#39;)
 
 import numpy as np
 import pandas as pd
-im">
+import seaborn as sns
+import ma">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +23,7 @@ im">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Naixin&#39;s blog</title>
+    <title>rate | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -298,13 +297,13 @@ im">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        rate
                     </div>
                 </div>
             </div>
@@ -414,11 +413,24 @@ im">
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">No tag</span>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Data-Analysis/" class="post-category" target="_blank">
+                            Data Analysis
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -426,7 +438,7 @@ im">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-01-16
+                    2018-01-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -463,10 +475,8 @@ im">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>title: “P1 Conversion rate”</p>
-<hr>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> warnings
+                <pre class="line-numbers language-python"><code class="language-python">
+<span class="token keyword">import</span> warnings
 warnings<span class="token punctuation">.</span>simplefilter<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span>
 
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -479,7 +489,7 @@ warnings<span class="token punctuation">.</span>simplefilter<span class="token p
 <span class="token keyword">from</span> h2o<span class="token punctuation">.</span>frame <span class="token keyword">import</span> H2OFrame
 <span class="token keyword">from</span> h2o<span class="token punctuation">.</span>estimators<span class="token punctuation">.</span>random_forest <span class="token keyword">import</span> H2ORandomForestEstimator
 <span class="token keyword">from</span> h2o<span class="token punctuation">.</span>grid<span class="token punctuation">.</span>grid_search <span class="token keyword">import</span> H2OGridSearch
-<span class="token operator">%</span>matplotlib inline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">%</span>matplotlib inline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-python"><code class="language-python">data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'conversion_data.csv'</span><span class="token punctuation">)</span>
 data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <div>
@@ -1000,9 +1010,9 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《》
+                    《rate》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/16/conversion-rate/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/01/22/conversion-rate/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Naixin Zhang
             </a> is licensed under a
@@ -1043,7 +1053,7 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2020/01/16/conversion-rate/',
+        id: '2018/01/22/conversion-rate/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1331,39 +1341,53 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
                 <i class="fa fa-dot-circle-o"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2020/01/16/conversion-rate/">
+                <a href="/2018/01/22/conversion-rate/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="rate">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">rate</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-title: “P1 Conversion rate”
-
 import warnings
 warnings.simplefilter('ignore')
 
 import numpy as np
 import pandas as pd
-im
+import seaborn as sns
+import ma
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-22
                             </span>
                         <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Data-Analysis/" class="post-category" target="_blank">
+                                    Data Analysis
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1397,8 +1421,8 @@ im
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Machine-Learning/" class="post-category" target="_blank">
-                                    Machine Learning
+                            <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
                                 </a>
                             
                             
@@ -1408,8 +1432,8 @@ im
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning/" target="_blank">
-                        <span class="chip bg-color">Machine Learning</span>
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
