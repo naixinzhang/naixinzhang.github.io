@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-01-17T01:11:26.359Z</updated>
+  <updated>2020-01-17T01:09:54.516Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>rate</title>
-    <link href="http://naixinzhang.github.io/2018/01/22/conversion-rate/"/>
-    <id>http://naixinzhang.github.io/2018/01/22/conversion-rate/</id>
-    <published>2018-01-22T18:32:09.000Z</published>
-    <updated>2020-01-17T01:11:26.359Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; warnings
-warnings&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="Data Analysis" scheme="http://naixinzhang.github.io/categories/Data-Analysis/"/>
-    
-    
-      <category term="Python" scheme="http://naixinzhang.github.io/tags/Python/"/>
-    
-  </entry>
   
   <entry>
     <title>二零一七年终总结</title>
@@ -67,6 +39,34 @@ warnings&lt;span
     
     
       <category term="随笔" scheme="http://naixinzhang.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Converison rate</title>
+    <link href="http://naixinzhang.github.io/2018/01/22/p1-conversion-rate/"/>
+    <id>http://naixinzhang.github.io/2018/01/22/p1-conversion-rate/</id>
+    <published>2018-01-22T18:32:09.000Z</published>
+    <updated>2020-01-17T01:33:05.598Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; warnings
+warnings&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="Data Analysis" scheme="http://naixinzhang.github.io/categories/Data-Analysis/"/>
+    
+    
+      <category term="Python" scheme="http://naixinzhang.github.io/tags/Python/"/>
     
   </entry>
   

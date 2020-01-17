@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="rate, Naixin&#39;s blog">
+    <meta name="keywords" content="Converison rate, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
@@ -23,7 +23,7 @@ import ma">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>rate | Naixin&#39;s blog</title>
+    <title>Converison rate | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -297,13 +297,13 @@ import ma">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        rate
+                        Converison rate
                     </div>
                 </div>
             </div>
@@ -756,7 +756,7 @@ sns<span class="token punctuation">.</span>barplot<span class="token punctuation
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Mean Conversion Rate per Country'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_14_0.png" alt="png"></p>
+<p><img src="conversion_rate_14_0.png" alt="png"></p>
 <p>Here it clearly looks like Chinese covert at a much lower rate than other countries.</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization of different user types</span>
 grouped <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'new_user'</span><span class="token punctuation">,</span> <span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'new_user'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -769,7 +769,7 @@ sns<span class="token punctuation">.</span>barplot<span class="token punctuation
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Mean Conversion Rate per User Type'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_16_0.png" alt="png"></p>
+<p><img src="conversion_rate_16_0.jpg" alt="png"></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization of different sources</span>
 grouped <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'source'</span><span class="token punctuation">,</span> <span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'source'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -781,7 +781,7 @@ sns<span class="token punctuation">.</span>barplot<span class="token punctuation
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Mean Conversion Rate per Source'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_17_0.png" alt="png"></p>
+<p><img src="conversion_rate_17_0.png" alt="png"></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization of different age</span>
 grouped <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'age'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
 hist_kws<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'histtype'</span><span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'edgecolor'</span><span class="token punctuation">:</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token punctuation">}</span>
@@ -799,7 +799,7 @@ ax<span class="token punctuation">[</span><span class="token number">1</span><sp
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Mean convertion rate'</span><span class="token punctuation">)</span>
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_18_0.png" alt="png"></p>
+<p><img src="conversion_rate_18_0.png" alt="png"></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization of different sources</span>
 grouped <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'total_pages_visited'</span><span class="token punctuation">,</span> <span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'total_pages_visited'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -816,7 +816,7 @@ ax<span class="token punctuation">[</span><span class="token number">1</span><sp
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Mean convertion rate'</span><span class="token punctuation">)</span>
 ax<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_19_0.png" alt="png"></p>
+<p><img src="conversion_rate_19_0.png" alt="png"></p>
 <p>definitely spending more time on the site implies higher probability of conversion</p>
 <h1 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Initialize H2O cluster</span>
 h2o<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -926,7 +926,7 @@ importance <span class="token operator">=</span> model<span class="token punctua
 fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 sns<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'scaled_importance'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'variable'</span><span class="token punctuation">,</span> data<span class="token operator">=</span>importance<span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_27_0.png" alt="png"></p>
+<p><img src="conversion_rate_27_0.png" alt="png"></p>
 <p>total pages visited is the most important one, by far.
 Unfortunately, it is probably the least “actionable”. 
 People visit many pages cause they already want to buy. Also, in order to buy you have to click on multipages</p>
@@ -958,9 +958,9 @@ ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuati
 ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'True Positive Rate'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
 ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_31_0.png" alt="png"></p>
+<p><img src="conversion_rate_31_0.png" alt="png"></p>
 <pre class="line-numbers language-python"><code class="language-python">_ <span class="token operator">=</span> model<span class="token punctuation">.</span>partial_plot<span class="token punctuation">(</span>train<span class="token punctuation">,</span> cols<span class="token operator">=</span>feature<span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>PartialDependencePlot progress: |█████████████████████████████████████████| 100%</code></pre><p><img src="conversion_rate_files/conversion_rate_32_1.png" alt="png"></p>
+<pre><code>PartialDependencePlot progress: |█████████████████████████████████████████| 100%</code></pre><p><img src="conversion_rate_32_1.png" alt="png"></p>
 <p>In partial dependency plots, we just care about trends, not the actual y value
 so this shows:</p>
 <ul>
@@ -971,7 +971,7 @@ so this shows:</p>
 </ul>
 <h1 id="Conclusions-and-suggestions"><a href="#Conclusions-and-suggestions" class="headerlink" title="Conclusions and suggestions:"></a>Conclusions and suggestions:</h1><pre class="line-numbers language-python"><code class="language-python">i <span class="token operator">=</span> Image<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'conclusion.png'</span><span class="token punctuation">)</span>
 i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="conversion_rate_files/conversion_rate_35_0.png" alt="png"></p>
+<p><img src="conversion_rate_35_0.png" alt="png"></p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Shutdown h2o instance</span>
 h2o<span class="token punctuation">.</span>cluster<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shutdown<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre><code>H2O session _sid_a87c closed.</code></pre><p>with more time you spend ~ 1 day trying other models/different params and I would pick the best</p>
@@ -1010,9 +1010,9 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《rate》
+                    《Converison rate》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/01/22/conversion-rate/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/01/22/p1-conversion-rate/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Naixin Zhang
             </a> is licensed under a
@@ -1053,7 +1053,7 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2018/01/22/conversion-rate/',
+        id: '2018/01/22/p1-conversion-rate/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1336,18 +1336,66 @@ h2o<span class="token punctuation">.</span>cluster<span class="token punctuation
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2018/01/22/conversion-rate/">
+                <a href="/2018/01/22/2017-conclusion/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="rate">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="二零一七年终总结">
                         
-                        <span class="card-title">rate</span>
+                        <span class="card-title">二零一七年终总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            时间过得很快，终于等到放寒假了，虽然这几个月没有课，天天和放假也没啥区别呢。细数一下，还有5个月就要毕业了吧，大一刚入学的场景却依然清楚地记得，转眼间就成了老学长了呢。闲来无事，随便写写，有感而发，无病呻吟而已。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/01/22/p1-conversion-rate/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Converison rate">
+                        
+                        <span class="card-title">Converison rate</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1385,55 +1433,6 @@ import ma
                     
                     <a href="/tags/Python/" target="_blank">
                         <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/01/22/2017-conclusion/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="二零一七年终总结">
-                        
-                        <span class="card-title">二零一七年终总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            时间过得很快，终于等到放寒假了，虽然这几个月没有课，天天和放假也没啥区别呢。细数一下，还有5个月就要毕业了吧，大一刚入学的场景却依然清楚地记得，转眼间就成了老学长了呢。闲来无事，随便写写，有感而发，无病呻吟而已。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
