@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://naixinzhang.github.io/2018/01/22/p1-conversion-rate/</loc>
+    <loc>http://naixinzhang.github.io/2020/01/02/demo/</loc>
     <lastmod>2020-01-17</lastmod>
   </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/01/22/2017-conclusion/</loc>
+    <loc>http://naixinzhang.github.io/2018/01/22/islr-multiple-linear-regression/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2019/12/22/ab-test-summary/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2019/11/22/free-trial-screener/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/02/01/7-marketing-email-campaign/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/4-identifying-fraudulent-activities/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/3-employee-rentention/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/22/1-conversion-rate/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/23/2-spanish-translation-ab-test/</loc>
+    <lastmod>2020-01-17</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/31/6-price-test/</loc>
     <lastmod>2020-01-17</lastmod>
   </url>
 </urlset>

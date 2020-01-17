@@ -1,2 +1,10 @@
-http://naixinzhang.github.io/2018/01/22/2017-conclusion/
-http://naixinzhang.github.io/2018/01/22/p1-conversion-rate/
+http://naixinzhang.github.io/2020/01/02/demo/
+http://naixinzhang.github.io/2019/12/22/ab-test-summary/
+http://naixinzhang.github.io/2019/11/22/free-trial-screener/
+http://naixinzhang.github.io/2018/02/01/7-marketing-email-campaign/
+http://naixinzhang.github.io/2018/01/31/6-price-test/
+http://naixinzhang.github.io/2018/01/24/3-employee-rentention/
+http://naixinzhang.github.io/2018/01/24/4-identifying-fraudulent-activities/
+http://naixinzhang.github.io/2018/01/23/2-spanish-translation-ab-test/
+http://naixinzhang.github.io/2018/01/22/1-conversion-rate/
+http://naixinzhang.github.io/2018/01/22/islr-multiple-linear-regression/

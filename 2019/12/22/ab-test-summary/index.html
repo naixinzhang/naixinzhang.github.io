@@ -1,0 +1,1536 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="AB Test summary, Naixin&#39;s blog">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="Main script to perform an A/B experiment using simulated dataModules: N/A 
+Author: Cornelia Ilin 
+Email: cilin@wisc.edu ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>AB Test summary | Naixin&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Naixin's blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>Learning_notes</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>Courses</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Naixin's blog</div>
+        <div class="logo-desc">
+            
+            You never lose, you either win or learn.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Learning_notes
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Courses
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/naixinzhang" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/naixinzhang" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        AB Test summary
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/A-B-Test/" target="_blank">
+                            <span class="chip bg-color">A_B Test</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/A-B-Test/" class="post-category" target="_blank">
+                            A_B Test
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-12-22
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Naixin Zhang
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    15 Min
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Main-script-to-perform-an-A-B-experiment-using-simulated-data"><a href="#Main-script-to-perform-an-A-B-experiment-using-simulated-data" class="headerlink" title="Main script to perform an A/B experiment using simulated data"></a>Main script to perform an A/B experiment using simulated data</h1><p>Modules: N/A <br>
+Author: Cornelia Ilin <br>
+Email: <a href="mailto:cilin@wisc.edu" target="_blank" rel="noopener">cilin@wisc.edu</a> <br>
+Date created: Oct 13, 2019 <br></p>
+<p>Citations (online sources):</p>
+<ul>
+<li>[1] info on Bernoulli and Binomial Random Variables, as well as Sampling Distribution of Sample Proportions <br>
+<a href="https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-proportion/v/sampling-distribution-of-sample-proportion-part-1" target="_blank" rel="noopener">https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-proportion/v/sampling-distribution-of-sample-proportion-part-1</a></li>
+<li>[2] info on hypothesis test for sample proportions <br>
+<a href="https://www.khanacademy.org/math/ap-statistics/two-sample-inference/two-sample-z-test-proportions/v/hypothesis-test-for-difference-in-proportions-example" target="_blank" rel="noopener">https://www.khanacademy.org/math/ap-statistics/two-sample-inference/two-sample-z-test-proportions/v/hypothesis-test-for-difference-in-proportions-example</a></li>
+<li>[3] Intro to power in significance tests <br>
+<a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/error-probabilities-power/v/introduction-to-power-in-significance-tests" target="_blank" rel="noopener">https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/error-probabilities-power/v/introduction-to-power-in-significance-tests</a></li>
+<li>[4] The math behind A/B testing with example code <br>
+<a href="https://towardsdatascience.com/the-math-behind-a-b-testing-with-example-code-part-1-of-2-7be752e1d06f" target="_blank" rel="noopener">https://towardsdatascience.com/the-math-behind-a-b-testing-with-example-code-part-1-of-2-7be752e1d06f</a></li>
+<li>[5] Udacity/Google course on A/B testing <br>
+<a href="https://classroom.udacity.com/courses/ud257/lessons/4028708543/concepts/39546791500923" target="_blank" rel="noopener">https://classroom.udacity.com/courses/ud257/lessons/4028708543/concepts/39546791500923</a></li>
+</ul>
+<p>Citations (persons): n/a</p>
+<h3 id="Step-1-Define-functions"><a href="#Step-1-Define-functions" class="headerlink" title="Step 1: Define functions"></a>Step 1: Define functions</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">z_val</span><span class="token punctuation">(</span>sig_level<span class="token punctuation">,</span> power <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" A function that returns the z-value for given significance or power level
+    param sig_level: indicates the significance level, i.e. the probability to commit a type I error
+    return: z_onetail, z_twotail_minus, z_twotail_plus, z_power
+    """</span>
+    <span class="token comment" spellcheck="true"># draw normal distribution with mean = 0 and se = 1 (standardized random variable)</span>
+    z_dist <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># define alpha</span>
+    alpha <span class="token operator">=</span> sig_level
+
+    <span class="token comment" spellcheck="true"># find the value of z for which the cdf = 1 - alpha</span>
+    z_onetail <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>alpha<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># find the value of z for which the cdf = alpha/2, and the cdf = 1-alpha/2</span>
+    z_twotail_left <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span>alpha<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+    z_twotail_right <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> alpha<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># find the value of z for which the cdf = power</span>
+    <span class="token keyword">if</span> power<span class="token punctuation">:</span>
+        power_val <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"Introduce the desired level of power: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        z_power <span class="token operator">=</span> round<span class="token punctuation">(</span>z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span>power_val<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        z_power <span class="token operator">=</span> <span class="token string">"n/a"</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>z_onetail<span class="token punctuation">,</span> z_twotail_left<span class="token punctuation">,</span> z_twotail_right<span class="token punctuation">,</span> z_power<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">z_distribution</span><span class="token punctuation">(</span>sig_level<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" A function that plots the distribution of the standardized random variable z
+    param sig_level: indicates the significance level, i.e. the probability to commit a type I error
+    return: none
+    """</span>
+
+    <span class="token comment" spellcheck="true"># draw normal distribution with mean = 0 and se = 1 (standardized random variable)</span>
+    z_dist <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># define values for x and y axes</span>
+    x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">,</span> z_dist<span class="token punctuation">.</span>ppf<span class="token punctuation">(</span><span class="token number">0.99</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    y <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># define alpha</span>
+    alpha <span class="token operator">=</span> sig_level
+
+    <span class="token comment" spellcheck="true"># define arrow propoerties (used for annotations in figure)</span>
+    arrow_properties <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'facecolor'</span><span class="token punctuation">:</span> <span class="token string">'black'</span><span class="token punctuation">,</span>
+        <span class="token string">'shrink'</span><span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span>
+        <span class="token string">'headlength'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+        <span class="token string">'width'</span><span class="token punctuation">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">## plot 1, one-tailed test</span>
+    plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Distribution of z_statistic with one-tail test"</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#plt.title('The distribution of the z-statistic')</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># find confidence levels, find the value of z for which the cdf = 1 - alpha</span>
+    z_onetail <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true"># add fill</span>
+    plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"green"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> z_onetail<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># add annotation</span>
+    annotation <span class="token operator">=</span> plt<span class="token punctuation">.</span>annotate<span class="token punctuation">(</span><span class="token string">'\u03B1 = 0.05'</span><span class="token punctuation">,</span>
+                 xy <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.98</span><span class="token punctuation">,</span> <span class="token number">0.12</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 xytext <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1.98</span><span class="token punctuation">,</span> <span class="token number">0.20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 arrowprops <span class="token operator">=</span> arrow_properties<span class="token punctuation">)</span>
+
+
+    <span class="token comment" spellcheck="true">## plot 2, two-tailed test</span>
+    plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Distribution of z_statistic with two-tail test"</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"z value"</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># find confidence levels, find the value of z for which the cdf = alpha/2, and the cdf = 1-alpha/2</span>
+    z_twotail_left <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    z_twotail_right <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true"># add fill</span>
+    plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"green"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;=</span> z_twotail_left<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"green"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> z_twotail_right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># add annotation</span>
+    annotation <span class="token operator">=</span> plt<span class="token punctuation">.</span>annotate<span class="token punctuation">(</span><span class="token string">'\u03B1 = 0.025'</span><span class="token punctuation">,</span>
+                 xy <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">0.12</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 xytext <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">0.20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 arrowprops <span class="token operator">=</span> arrow_properties<span class="token punctuation">)</span>
+
+    annotation <span class="token operator">=</span> plt<span class="token punctuation">.</span>annotate<span class="token punctuation">(</span><span class="token string">'\u03B1 = 0.025'</span><span class="token punctuation">,</span>
+                 xy <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">0.12</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 xytext <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">0.20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 arrowprops <span class="token operator">=</span> arrow_properties<span class="token punctuation">)</span>
+
+    plt<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># adds more space between subplots</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"z value for one-tail test = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>z_onetail<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"z value for one-tail test = +-"</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>z_twotail_right<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">d_distribution</span><span class="token punctuation">(</span>alpha <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span> beta <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span> power <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span> onetail <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" A function that plots the d_distribution
+    param alfa: colors the alpha region(s) when True, i.e. P(reject H0 | H0 is true) 
+    param beta: computes and colors the beta region when True, i.e. P(accept H0 | H0 is false)
+    param power: computes and color the power region when True, i.e. P(reject H0 | H0 is false)
+    param onetail: sets test to one-tail when True
+    return: none
+
+    Note that under H0: d = 0, under Ha: d = d_hat 
+    """</span>
+
+    <span class="token comment" spellcheck="true"># define values for the x axis</span>
+    <span class="token comment" spellcheck="true">#x = np.linspace(-0.08, 0.08, 100)</span>
+    x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">12</span> <span class="token operator">*</span> se_pool_hat<span class="token punctuation">,</span> <span class="token number">12</span> <span class="token operator">*</span> se_pool_hat<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># generate distribution under H0; d ~ N(0, SE_pool)</span>
+    d_dist_0 <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> se_pool_hat<span class="token punctuation">)</span><span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>x<span class="token punctuation">)</span> 
+
+    <span class="token comment" spellcheck="true"># generate distribution under Ha: d ~ N(d_hat, SE_pool)</span>
+    d_dist_a <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span>d_hat<span class="token punctuation">,</span> se_pool_hat<span class="token punctuation">)</span><span class="token punctuation">.</span>pdf<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># plot d_dist_0, d_dist_a</span>
+    plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> d_dist_0<span class="token punctuation">,</span> label <span class="token operator">=</span> <span class="token string">"d_dist under H0"</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> d_dist_a<span class="token punctuation">,</span> label <span class="token operator">=</span> <span class="token string">"d_dist under Ha"</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># add title, axis labels, and legend</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"Distribution of d under H0 and Ha"</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'d value'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'pdf'</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># draw confidence intervals under H0</span>
+    <span class="token comment" spellcheck="true"># remeber ci = d +- z*se_pool, under H0: d = 0</span>
+    <span class="token comment" spellcheck="true"># for alpha = 0.05, z_onetail = 1.65, z_twotail_left = -1.96, z_twotail_right = 1.96 (see output z_dist() function)</span>
+    <span class="token keyword">if</span> onetail<span class="token punctuation">:</span>
+        ci_right <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">1.65</span> <span class="token operator">*</span> se_pool_hat
+        plt<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x <span class="token operator">=</span> ci_right<span class="token punctuation">,</span> linestyle <span class="token operator">=</span> <span class="token string">"--"</span><span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"grey"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        ci_right <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">+</span> <span class="token number">1.96</span> <span class="token operator">*</span> se_pool_hat
+        ci_left <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">-</span> <span class="token number">1.96</span> <span class="token operator">*</span> se_pool_hat
+        plt<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x <span class="token operator">=</span> ci_left<span class="token punctuation">,</span> linestyle <span class="token operator">=</span> <span class="token string">"--"</span><span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"grey"</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x <span class="token operator">=</span> ci_right<span class="token punctuation">,</span> linestyle <span class="token operator">=</span> <span class="token string">"--"</span><span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"grey"</span><span class="token punctuation">)</span>
+
+
+    <span class="token comment" spellcheck="true"># compute alpha</span>
+    <span class="token comment" spellcheck="true"># alpha = the area under H0, to the left of ci_left and to the right of ci_right</span>
+    <span class="token keyword">if</span> alpha<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Green shaded area: H0 is false"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> onetail<span class="token punctuation">:</span>
+            plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> d_dist_0<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"olivedrab"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">></span> ci_right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> d_dist_0<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"olivedrab"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> ci_left<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> d_dist_0<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"olivedrab"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">></span> ci_right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+    <span class="token comment" spellcheck="true"># compute beta</span>
+    <span class="token comment" spellcheck="true"># beta = the area under Ha, to the left of ci_right</span>
+    <span class="token keyword">if</span> beta<span class="token punctuation">:</span>
+        beta_val <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span>d_hat<span class="token punctuation">,</span> se_pool_hat<span class="token punctuation">)</span><span class="token punctuation">.</span>cdf<span class="token punctuation">(</span>ci_right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#finds the P(d &lt; ci_right) under Ha</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Beta ="</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>beta_val<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Yelolw shaded area: Type II error area: P(accept H0|H0 is false)"</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> d_dist_a<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"goldenrod"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> ci_right<span class="token punctuation">)</span><span class="token punctuation">)</span>   
+
+    <span class="token comment" spellcheck="true"># compute power</span>
+    <span class="token comment" spellcheck="true"># power = 1 - beta = the area under Ha, to the right of ci_right</span>
+    <span class="token keyword">if</span> power<span class="token punctuation">:</span>
+        power <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span>d_hat<span class="token punctuation">,</span> se_pool_hat<span class="token punctuation">)</span><span class="token punctuation">.</span>cdf<span class="token punctuation">(</span>ci_right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#finds the P(d >= ci_right) = 1 - P (d &lt; ci_right) under Ha</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Power ="</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>power<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Blue shaded area: Power = 1- Beta, P(reject H0|H0 is false)"</span><span class="token punctuation">)</span>
+
+        plt<span class="token punctuation">.</span>fill_between<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> d_dist_a<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">"steelblue"</span><span class="token punctuation">,</span> where <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">></span> ci_right<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Step-2-Import-required-packages"><a href="#Step-2-Import-required-packages" class="headerlink" title="Step 2: Import required packages"></a>Step 2: Import required packages</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">as</span> scs
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> random
+<span class="token operator">%</span>matplotlib inline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Step-3-Define-the-A-B-experiment"><a href="#Step-3-Define-the-A-B-experiment" class="headerlink" title="Step 3: Define the A/B experiment"></a>Step 3: Define the A/B experiment</h3><p>Assume that <strong>facebook.com/business</strong> runs an A/B test to see if changing the color of the “create an ad” button, increases the click-thorugh probability.</p>
+<p>Let’s assume that the structure of the facebook.com/business website is as follows: [1] a homepage that includes the “create an ad” button; if create an ad is chosen, then [2] a webpage to “create new account”, and if new account is created, then [3] a webpage to buy adds.</p>
+<p>To run the A/B experiement, the engineers at <strong>facebook.com/business</strong> create two versions of the homepage. One where the “create an ad” button is orange (existing version), and one where it is blue (experimental version). The former is served to the control users, and the later to the users in the treatment group.</p>
+<p>Unfortunately, we don’t have this data available, so we will first need to generate it.</p>
+<p>We assume that the total number of users that participate in the A/B experiement is 2000, equally devided between the control and treated groups. This means that the probability to be assigned to either the treatment or control group is 0.5.</p>
+<h3 id="Step-4-Generate-toy-data"><a href="#Step-4-Generate-toy-data" class="headerlink" title="Step 4: Generate toy data"></a>Step 4: Generate toy data</h3><p>Notations:</p>
+<ul>
+<li>group A = control patients</li>
+<li>group B = treated patients </li>
+<li>p_c = click-though probability for the control group</li>
+<li>p_t = click-thorugh probability for the treated group</li>
+</ul>
+<h4 id="Step-4-1-Set-seed"><a href="#Step-4-1-Set-seed" class="headerlink" title="Step 4.1: Set seed"></a>Step 4.1: Set seed</h4><pre class="line-numbers language-python"><code class="language-python">random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">1234</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Step-4-2-Create-user-group-column"><a href="#Step-4-2-Create-user-group-column" class="headerlink" title="Step 4.2: Create user_group column"></a>Step 4.2: Create user_group column</h4><p>(with values A and B)</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># draw from Bernoulli distribution</span>
+user_group <span class="token operator">=</span> scs<span class="token punctuation">.</span>bernoulli<span class="token punctuation">.</span>rvs<span class="token punctuation">(</span>p <span class="token operator">=</span> <span class="token number">0.4</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># rename values, such that 0 = A and 1 = B; keep track of the length of group A and B</span>
+len_A <span class="token operator">=</span> <span class="token number">0</span>
+len_B <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> index<span class="token punctuation">,</span> val <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>user_group<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token keyword">if</span> val <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        user_group<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"A"</span>
+        len_A <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        user_group<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"B"</span>
+        len_B <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Step-4-3-Create-user-click-column"><a href="#Step-4-3-Create-user-click-column" class="headerlink" title="Step 4.3: Create user_click column"></a>Step 4.3: Create user_click column</h4><p>(= 1 if a unique user clicked “create an ad” at least once)</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># first define the desired p_c and p_t, assuming p_t > p_c</span>
+p_c <span class="token operator">=</span> <span class="token number">0.10</span>
+p_t <span class="token operator">=</span> <span class="token number">0.12</span>
+
+<span class="token comment" spellcheck="true"># draw user_click column from Bernoulli distribution for both group A and B</span>
+user_click_A <span class="token operator">=</span> scs<span class="token punctuation">.</span>bernoulli<span class="token punctuation">.</span>rvs<span class="token punctuation">(</span>p_c<span class="token punctuation">,</span> size <span class="token operator">=</span> len_A<span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+user_click_B <span class="token operator">=</span> scs<span class="token punctuation">.</span>bernoulli<span class="token punctuation">.</span>rvs<span class="token punctuation">(</span>p_t<span class="token punctuation">,</span> size <span class="token operator">=</span> len_B<span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Step-4-4-Combine-user-group-and-user-click-columns"><a href="#Step-4-4-Combine-user-group-and-user-click-columns" class="headerlink" title="Step 4.4 Combine user_group and user_click columns"></a>Step 4.4 Combine user_group and user_click columns</h4><p>create a dataframe</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># merge the two columns</span>
+user_click <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+index_A <span class="token operator">=</span> <span class="token number">0</span>
+index_B <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> index<span class="token punctuation">,</span> val <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>user_group<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> val <span class="token operator">==</span> <span class="token string">"A"</span><span class="token punctuation">:</span>
+        user_click<span class="token punctuation">.</span>append<span class="token punctuation">(</span>user_click_A<span class="token punctuation">[</span>index_A<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        index_A <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        user_click<span class="token punctuation">.</span>append<span class="token punctuation">(</span>user_click_B<span class="token punctuation">[</span>index_B<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        index_B <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token comment" spellcheck="true"># create dataframe        </span>
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"user_group"</span><span class="token punctuation">:</span> user_group<span class="token punctuation">,</span> <span class="token string">"user_click"</span><span class="token punctuation">:</span> user_click<span class="token punctuation">}</span><span class="token punctuation">)</span>        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># print the first five rows:</span>
+data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_group</th>
+      <th>user_click</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>B</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="Step-5-Summary-statistics"><a href="#Step-5-Summary-statistics" class="headerlink" title="Step 5: Summary statistics"></a>Step 5: Summary statistics</h3><p>We assume our toy data is the real data of <strong>facebook.com/business</strong>‘ experiment</p>
+<p>Notation:</p>
+<ul>
+<li>n_c = sample size control group</li>
+<li>n_t = sample size treated group</li>
+<li>x_c = number of users in the control group who click “create an ad”</li>
+<li>x_t = number of users in the treated group who click “create an ad”</li>
+<li>p_c_hat = estimated click-thorugh propbability of control group</li>
+<li>p_t_hat = estimated click-thorugh probability of treated group</li>
+</ul>
+<h4 id="Step-5-1-Sample-sizes"><a href="#Step-5-1-Sample-sizes" class="headerlink" title="Step 5.1: Sample sizes"></a>Step 5.1: Sample sizes</h4><pre class="line-numbers language-python"><code class="language-python">n_c <span class="token operator">=</span> len_A
+n_t <span class="token operator">=</span> len_B
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"n_c ="</span><span class="token punctuation">,</span> n_c<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"n_t ="</span><span class="token punctuation">,</span> n_t<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>n_c = 6038
+n_t = 3962</code></pre><h4 id="Step-5-2-Sum-of-user-click-by-group"><a href="#Step-5-2-Sum-of-user-click-by-group" class="headerlink" title="Step 5.2: Sum of user_click by group"></a>Step 5.2: Sum of user_click by group</h4><pre class="line-numbers language-python"><code class="language-python">x_c <span class="token operator">=</span> <span class="token number">0</span>
+x_t <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> ind <span class="token keyword">in</span> data<span class="token punctuation">.</span>index<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> data<span class="token punctuation">[</span><span class="token string">"user_group"</span><span class="token punctuation">]</span><span class="token punctuation">[</span>ind<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"A"</span> <span class="token operator">and</span> data<span class="token punctuation">[</span><span class="token string">"user_click"</span><span class="token punctuation">]</span><span class="token punctuation">[</span>ind<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+         x_c <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">if</span> data<span class="token punctuation">[</span><span class="token string">"user_group"</span><span class="token punctuation">]</span><span class="token punctuation">[</span>ind<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"B"</span> <span class="token operator">and</span> data<span class="token punctuation">[</span><span class="token string">"user_click"</span><span class="token punctuation">]</span><span class="token punctuation">[</span>ind<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+         x_t <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"x_c = "</span><span class="token punctuation">,</span> x_c<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"x_t = "</span><span class="token punctuation">,</span> x_t<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>x_c =  605
+x_t =  471</code></pre><h4 id="Step-5-3-Click-thourgh-probability-by-group"><a href="#Step-5-3-Click-thourgh-probability-by-group" class="headerlink" title="Step 5.3: Click-thourgh probability by group"></a>Step 5.3: Click-thourgh probability by group</h4><p>Def: click-thorugh probability = unique users who click / unique total users <br>
+We can think of the click-through probability as being the sample proportion</p>
+<pre class="line-numbers language-python"><code class="language-python">p_c_hat <span class="token operator">=</span> x_c<span class="token operator">/</span>n_c
+p_t_hat <span class="token operator">=</span> x_t<span class="token operator">/</span>n_t
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"p_c_hat = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>p_c_hat<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"p_t_hat = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>p_t_hat<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>p_c_hat =  0.1
+p_t_hat =  0.12</code></pre><h3 id="Step-6-Hypothesis-testing"><a href="#Step-6-Hypothesis-testing" class="headerlink" title="Step 6: Hypothesis testing"></a>Step 6: Hypothesis testing</h3><p>We want to see if chaging the color of the “create an ad” has any statistically significant effects on the click-through probability. <br>
+Remember that “create an ad” button is orange for the control gorup, and blue for the the treated group. <br></p>
+<p>Our hypothesis is as follows: <br>
+H0: p_c = p_t, in other words p_c - p_t = 0 <br>
+Ha: p_t - p_c != 0 (try both one tail and two tail test)</p>
+<p><strong>Let</strong>: <br>
+d = p_c - p_t <br>
+alpha = P(reject H0 | H0 is true) <br>
+beta = P(accept H0 | H0 is false) <br>
+power = 1 - beta = P(reject H0 | H0 is false)</p>
+<p>To test the hypthesis we construct the z_statistic ~ N(0, 1)</p>
+<h4 id="Step-6-1-Compute-the-z-statistic"><a href="#Step-6-1-Compute-the-z-statistic" class="headerlink" title="Step 6.1 Compute the z_statistic"></a>Step 6.1 Compute the z_statistic</h4><p>We assume the followings:</p>
+<ul>
+<li>H0 is true</li>
+<li>random variables</li>
+<li>iid</li>
+</ul>
+<p>Then, <br>
+z = (p_t_hat - p_c_hat) - 0/ SE(p_t_hat - p_c_hat) <br></p>
+<p>Note:</p>
+<ul>
+<li>For a Bernoulli random variable: mean = p; variance = p(1-p); se = sqrt(p(1-p))</li>
+<li>For Binomial random variable: mean = n <em> p; variance = n </em> p(1-p) = sqrt(n * (p(1-p))</li>
+<li>Under the Central Limit Theorem, as the number of samples increases, the distribution of the sample proportion means (p_hat), will be ~ N(p, sqrt(p(1-p)/n))</li>
+</ul>
+<p>Thus,<br>
+se(p_t_hat - p_c_hat) = sqrt(p_t_hat(1-p_t_hat)/n_t) + sqrt(p_c_hat(1-p_c_hat)/n_c)</p>
+<p>Note:</p>
+<ul>
+<li>cov(p_t_hat, p_c_hat) = 0 due to iid assumption.</li>
+<li>because we assume that H0 is true (p_t = p_c), then we can compute SE_pool</li>
+</ul>
+<p>Thus, <br>
+se_pool = sqrt(p_pool_hat(1-p_pool_hat) * (1/n_t + 1/n_c) <br>
+where,<br>
+p_pool_hat = (x_c + x_t)/(n_c + n_t)</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># compute d = p_t_hat - p_c_hat</span>
+d_hat <span class="token operator">=</span> p_t_hat <span class="token operator">-</span> p_c_hat
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"d_hat ="</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>d_hat<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>d_hat = 0.02</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># compute p_pool_hat</span>
+p_pool_hat <span class="token operator">=</span> <span class="token punctuation">(</span>x_c <span class="token operator">+</span> x_t<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>n_c <span class="token operator">+</span> n_t<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"p_pool_hat = "</span><span class="token punctuation">,</span> p_pool_hat<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>p_pool_hat =  0.1076</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># compute se_pool_hat</span>
+se_pool_hat <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>p_pool_hat <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>p_pool_hat<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>n_c <span class="token operator">+</span> <span class="token number">1</span><span class="token operator">/</span>n_t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"se_pool_hat = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>se_pool_hat<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>se_pool_hat =  0.01</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># compute the z-statistic</span>
+z_statistic <span class="token operator">=</span> d_hat<span class="token operator">/</span>se_pool_hat
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"z_statistic ="</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>z_statistic<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Remeber that the z-statistic is ~ N(0, 1)"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>z_statistic = 2.95
+Remeber that the z-statistic is ~ N(0, 1)</code></pre><h4 id="Step-6-2-Find-p-val-Test-if-H0-is-true"><a href="#Step-6-2-Find-p-val-Test-if-H0-is-true" class="headerlink" title="Step 6.2: Find p_val. Test if H0 is true"></a>Step 6.2: Find p_val. Test if H0 is true</h4><p>Define p_val:</p>
+<ul>
+<li>if one-tailed test: p_val = P(Z &gt;= z) = 1 - P(Z &lt; z)</li>
+<li>if two-tailed test: p_val = P(Z &lt;= -z or Z &gt;= z) = 1 - P(-z &lt; Z &lt; z) = 1- [P(Z &lt; z) - P (Z &lt; -z)]</li>
+</ul>
+<p>For a one-tailed test:</p>
+<ul>
+<li>if p_val &gt; alpha, accept H0 <br></li>
+<li>if p_val &lt; alpha, reject H0 </li>
+</ul>
+<p>For a two-tailed test:</p>
+<ul>
+<li>if p_val &gt; alpha/2, accept H0 <br></li>
+<li>if p_val &lt; alpha/2, reject H0 </li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># print message</span>
+accept <span class="token operator">=</span> <span class="token string">"Accept H0. p_val > alpha\n"</span>
+reject <span class="token operator">=</span> <span class="token string">"Reject H0. p_val &lt; alpha\n"</span>
+
+<span class="token comment" spellcheck="true"># z_distribution</span>
+z_dist <span class="token operator">=</span> scs<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># alpha level</span>
+alpha <span class="token operator">=</span> <span class="token number">0.05</span>
+
+<span class="token comment" spellcheck="true">## one-tailed test, find P(Z &lt; z_statistic) and then compute p_val</span>
+cdf_onetail <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span>z_statistic<span class="token punctuation">)</span>
+p_val_onetail <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> cdf_onetail
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"one-tail test: p_val = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>p_val_onetail<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> p_val_onetail <span class="token operator">&lt;</span> alpha<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>reject<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>accept<span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">## two_tailed test, find P (Z &lt; z) - P (Z &lt; -z), then compute p_val</span>
+cdf_twotail <span class="token operator">=</span> z_dist<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span>z_statistic<span class="token punctuation">)</span> <span class="token operator">-</span> z_dist<span class="token punctuation">.</span>cdf<span class="token punctuation">(</span><span class="token operator">-</span>z_statistic<span class="token punctuation">)</span>
+p_val_twotail <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> cdf_twotail
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"two-tailed test: p_val = "</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>p_val_twotail<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> p_val_twotail <span class="token operator">&lt;</span> alpha<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>reject<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>accept<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>one-tail test: p_val =  0.0016
+Reject H0. p_val &lt; alpha
+
+two-tailed test: p_val =  0.0032
+Reject H0. p_val &lt; alpha</code></pre><p>​    </p>
+<h4 id="Step-6-3-Plot-the-distribution-of-d-under-H0-and-Ha"><a href="#Step-6-3-Plot-the-distribution-of-d-under-H0-and-Ha" class="headerlink" title="Step 6.3: Plot the distribution of d under H0 and Ha"></a>Step 6.3: Plot the distribution of d under H0 and Ha</h4><pre class="line-numbers language-python"><code class="language-python">d_distribution<span class="token punctuation">(</span>alpha <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Green shaded area: H0 is false</code></pre><p><img src="1_34_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python">d_distribution<span class="token punctuation">(</span>beta <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Beta = 0.097
+Yelolw shaded area: Type II error area: P(accept H0|H0 is false)</code></pre><p><img src="1_35_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python">d_distribution<span class="token punctuation">(</span>power <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Power = 0.903
+Blue shaded area: Power = 1- Beta, P(reject H0|H0 is false)</code></pre><p><img src="1_36_1.png" alt="png"></p>
+<h3 id="Step-7-Find-appropiate-sample-size-for-A-B-test"><a href="#Step-7-Find-appropiate-sample-size-for-A-B-test" class="headerlink" title="Step 7: Find appropiate sample size for A/B test"></a>Step 7: Find appropiate sample size for A/B test</h3><p>Note: user introduces desired beta, power, alpha, one-tail or two-tail test parameters</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># define beta, power, and alpha</span>
+beta <span class="token operator">=</span> <span class="token number">0.2</span>
+power <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> beta
+alpha <span class="token operator">=</span> <span class="token number">0.05</span>
+one_tail <span class="token operator">=</span> <span class="token boolean">False</span>
+
+<span class="token comment" spellcheck="true"># find the value of z that corresponds to the value of the power level (user input required)</span>
+z_power <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">,</span> power <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The value of the z statistics for this level of power is"</span><span class="token punctuation">,</span> z_power<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># find the value of z that corresponds to the value of alpha</span>
+<span class="token keyword">if</span> one_tail<span class="token punctuation">:</span>
+    z_alpha <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    z_alpha <span class="token operator">=</span> z_val<span class="token punctuation">(</span>alpha<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># find sample size</span>
+n <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> p_pool_hat <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span> p_pool_hat<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>z_power <span class="token operator">+</span> z_alpha<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>p_t_hat <span class="token operator">-</span> p_c_hat<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"The sample size needed for the parameters listed above ="</span><span class="token punctuation">,</span> round<span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>Introduce the desired level of power: 0.8
+The value of the z statistics for this level of power is 0.842
+The sample size needed for the parameters listed above = 4320.61</code></pre>
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>Reprint policy</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《AB Test summary》
+                </span> by
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/22/ab-test-summary/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                Naixin Zhang
+            </a> is licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                Creative Commons Attribution 4.0 International License
+            </a> 
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
+        id: '2019/12/22/ab-test-summary/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/01/02/demo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="KPI dashboard">
+                        
+                        <span class="card-title">KPI dashboard</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This is my kPI dashboard making by Excel. I learned it from Udemy https://www.udemy.com/course/excel-dashboards-reports/
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/EXCEL/" class="post-category" target="_blank">
+                                    EXCEL
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DashBoard/" target="_blank">
+                        <span class="chip bg-color">DashBoard</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/22/free-trial-screener/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Free Trail Screen">
+                        
+                        <span class="card-title">Free Trail Screen</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            📘  Experiment design📖 Experiment Overview: Free Trial ScreenerAt the time of this experiment, Udacity courses currentl
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/A-B-Test/" class="post-category" target="_blank">
+                                    A_B Test
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/A-B-Test/" target="_blank">
+                        <span class="chip bg-color">A_B Test</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color center-align">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020 NaixinZhang. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

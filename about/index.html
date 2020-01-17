@@ -70,23 +70,9 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <span>Tags</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/categories" class="waves-effect waves-light">
             
             <span>Learning_notes</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <span>Archives</span>
         </a>
     </li>
     
@@ -146,29 +132,11 @@
         </li>
         
         <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                Tags
-            </a>
-        </li>
-        
-        <li>
             <a href="/categories" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-link"></i>
                 
                 Learning_notes
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                Archives
             </a>
         </li>
         
@@ -319,21 +287,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">2</a></span>
+    <span class="count"><a href="/" target="_blank">10</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">2</a></span>
+    <span class="count"><a href="/categories" target="_blank">8</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">2</a></span>
+    <span class="count"><a href="/tags" target="_blank">8</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -348,21 +316,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/" target="_blank">2</a></span>
+    <span class="count"><a href="/" target="_blank">10</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories" target="_blank">2</a></span>
+    <span class="count"><a href="/categories" target="_blank">8</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags" target="_blank">2</a></span>
+    <span class="count"><a href="/tags" target="_blank">8</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -487,7 +455,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: 'Number of posts',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                data: [0,0,0,0,0,0,0,0,0,0,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -529,7 +497,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Data Analysis","value":1},{"name":"随笔","value":1}],
+                data: [{"name":"Data Analysis","value":5},{"name":"随笔","value":0},{"name":"Data Analysis, Machine Learning","value":1},{"name":"AB TEST","value":0},{"name":"A_B Test","value":2},{"name":"Machine Learning","value":1},{"name":"ML","value":0},{"name":"EXCEL","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -553,7 +521,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["Python","随笔"]
+                data: ["Python_Take home challenge","A_B Test","Regression","DashBoard","随笔","AB test","ISLR notes","ML"]
             }
         ],
         yAxis: [
@@ -566,7 +534,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1],
+                data: [6,2,1,1,0,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -778,10 +746,46 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Python_Take home challenge</span>
+            </a>
+            
             
             
             <a href="/tags/随笔/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">随笔</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/A-B-Test/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">A_B Test</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ISLR-notes/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ISLR notes</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ML/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ML</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Regression/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Regression</span>
+            </a>
+            
+            
+            
+            <a href="/tags/DashBoard/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">DashBoard</span>
             </a>
             
             

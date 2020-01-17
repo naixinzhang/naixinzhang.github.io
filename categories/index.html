@@ -70,23 +70,9 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <span>Tags</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
         <a href="/categories" class="waves-effect waves-light">
             
             <span>Learning_notes</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <span>Archives</span>
         </a>
     </li>
     
@@ -146,29 +132,11 @@
         </li>
         
         <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                Tags
-            </a>
-        </li>
-        
-        <li>
             <a href="/categories" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-link"></i>
                 
                 Learning_notes
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-link"></i>
-                
-                Archives
             </a>
         </li>
         
@@ -317,19 +285,73 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
-                <a href="/categories/Data-Analysis/" title="Data Analysis: 1">
+                <a href="/categories/Data-Analysis/" title="Data Analysis: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">Data Analysis
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/随笔/" title="随笔: 0">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">随笔
+                        <span class="tag-length">0</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Data-Analysis-Machine-Learning/" title="Data Analysis, Machine Learning: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">Data Analysis, Machine Learning
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/随笔/" title="随笔: 1">
+                <a href="/categories/AB-TEST/" title="AB TEST: 0">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">随笔
+                            style="background-color: #E8F8F5;">AB TEST
+                        <span class="tag-length">0</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/A-B-Test/" title="A_B Test: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">A_B Test
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Machine-Learning/" title="Machine Learning: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">Machine Learning
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/ML/" title="ML: 0">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">ML
+                        <span class="tag-length">0</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/EXCEL/" title="EXCEL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">EXCEL
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -376,7 +398,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Data Analysis","max":2},{"name":"随笔","max":2}],
+            indicator: [{"name":"Data Analysis","max":5},{"name":"随笔","max":5},{"name":"Data Analysis, Machine Learning","max":5},{"name":"AB TEST","max":5},{"name":"A_B Test","max":5},{"name":"Machine Learning","max":5},{"name":"ML","max":5},{"name":"EXCEL","max":5}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -387,7 +409,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,1],
+                    value : [5,0,1,0,2,1,0,1],
                     name : 'Number of Categories'
                 }
             ]
