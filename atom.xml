@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-01-13T11:30:44.987Z</updated>
+  <updated>2020-01-17T00:42:49.024Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://naixinzhang.github.io/2020/01/16/conversion-rate/"/>
+    <id>http://naixinzhang.github.io/2020/01/16/conversion-rate/</id>
+    <published>2020-01-17T00:40:52.122Z</published>
+    <updated>2020-01-17T00:42:49.024Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: “P1 Conversion rate”&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>二零一七年终总结</title>
