@@ -2,6 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/9.1maximal-margin-classifier/</loc>
+    
+    <lastmod>2020-01-23T19:37:59.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/8.2bagging-random-forest-boosting/</loc>
+    
+    <lastmod>2020-01-23T19:37:07.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/8.1the-basics-of-decision-trees/</loc>
+    
+    <lastmod>2020-01-23T19:36:27.057Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/6.4considerations-in-high-dimensions/</loc>
+    
+    <lastmod>2020-01-23T19:35:53.547Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/6.3dimension-reduction-pca/</loc>
+    
+    <lastmod>2020-01-23T19:35:02.405Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/6.2shrinkage-methods/</loc>
+    
+    <lastmod>2020-01-23T19:34:23.618Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/6.1subset-selection/</loc>
+    
+    <lastmod>2020-01-23T19:33:38.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/6.0intro-model-selection/</loc>
+    
+    <lastmod>2020-01-23T19:32:59.065Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/5.2the-bootstrap/</loc>
+    
+    <lastmod>2020-01-23T19:32:18.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/5.1cross-validation/</loc>
+    
+    <lastmod>2020-01-23T19:31:35.499Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/4.5comparison-of-classification-methods/</loc>
+    
+    <lastmod>2020-01-23T19:30:45.140Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/4.4linear-discriminant-analysis/</loc>
+    
+    <lastmod>2020-01-23T19:29:51.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/4.3logistic-regression/</loc>
+    
+    <lastmod>2020-01-23T19:29:10.067Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</loc>
+    
+    <lastmod>2020-01-23T19:28:13.422Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/</loc>
+    
+    <lastmod>2020-01-23T19:27:10.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/</loc>
+    
+    <lastmod>2020-01-23T19:26:56.102Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</loc>
+    
+    <lastmod>2020-01-23T19:26:43.664Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/islr/3.3potential-problems/</loc>
+    
+    <lastmod>2020-01-23T19:26:34.295Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/23/2-spanish-translation-ab-test/</loc>
+    
+    <lastmod>2020-01-23T17:54:11.587Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naixinzhang.github.io/2018/01/31/6-price-test/</loc>
     
     <lastmod>2020-01-23T17:48:04.575Z</lastmod>
@@ -93,7 +226,7 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2018/01/22/islr-multiple-linear-regression/</loc>
+    <loc>http://naixinzhang.github.io/2018/01/22/islr-multiple-linear-regression/islr-multiple-linear-regression/</loc>
     
     <lastmod>2020-01-17T04:24:30.810Z</lastmod>
     
@@ -110,13 +243,6 @@
     <loc>http://naixinzhang.github.io/2019/11/22/free-trial-screener/</loc>
     
     <lastmod>2020-01-17T03:08:16.199Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/23/2-spanish-translation-ab-test/</loc>
-    
-    <lastmod>2020-01-17T02:27:41.202Z</lastmod>
     
   </url>
   
@@ -142,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/categories/index.html</loc>
+    <loc>http://naixinzhang.github.io/archives/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/archives/index.html</loc>
+    <loc>http://naixinzhang.github.io/categories/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
     
