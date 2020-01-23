@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-01-17T04:50:06.327Z</updated>
+  <updated>2020-01-23T17:33:37.401Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://naixinzhang.github.io/2020/01/22/cs301-proj8/"/>
+    <id>http://naixinzhang.github.io/2020/01/22/cs301-proj8/</id>
+    <published>2020-01-23T02:42:43.579Z</published>
+    <updated>2020-01-23T17:33:37.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: CS301_Proj8
+date: 2019-011-23 12:32:09
+top: false
+cover: false
+password:
+toc: true
+mathjax: false
+tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CS301
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>KPI dashboard</title>
@@ -69,6 +101,58 @@
   </entry>
   
   <entry>
+    <title>CS301_Proj10</title>
+    <link href="http://naixinzhang.github.io/2019/12/15/cs301-proj10/"/>
+    <id>http://naixinzhang.github.io/2019/12/15/cs301-proj10/</id>
+    <published>2019-12-15T18:32:09.000Z</published>
+    <updated>2020-01-23T17:35:09.374Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj10&quot;&gt;&lt;a href=&quot;#CS301-Proj10&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj10&quot;&gt;&lt;/a&gt;CS301_Proj10&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj9</title>
+    <link href="http://naixinzhang.github.io/2019/11/30/cs301-proj9/"/>
+    <id>http://naixinzhang.github.io/2019/11/30/cs301-proj9/</id>
+    <published>2019-11-30T18:32:09.000Z</published>
+    <updated>2020-01-23T17:34:28.934Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj9&quot;&gt;&lt;a href=&quot;#CS301-Proj9&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj9&quot;&gt;&lt;/a&gt;CS301_Proj9&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Free Trail Screen</title>
     <link href="http://naixinzhang.github.io/2019/11/22/free-trial-screener/"/>
     <id>http://naixinzhang.github.io/2019/11/22/free-trial-screener/</id>
@@ -91,6 +175,110 @@
     
     
       <category term="A_B Test" scheme="http://naixinzhang.github.io/tags/A-B-Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj7</title>
+    <link href="http://naixinzhang.github.io/2019/11/14/cs301-proj7/"/>
+    <id>http://naixinzhang.github.io/2019/11/14/cs301-proj7/</id>
+    <published>2019-11-14T18:32:09.000Z</published>
+    <updated>2020-01-23T17:31:38.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj7&quot;&gt;&lt;a href=&quot;#CS301-Proj7&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj7&quot;&gt;&lt;/a&gt;CS301_Proj7&lt;/h1&gt;&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj6</title>
+    <link href="http://naixinzhang.github.io/2019/10/31/cs301-proj6/"/>
+    <id>http://naixinzhang.github.io/2019/10/31/cs301-proj6/</id>
+    <published>2019-10-31T17:32:09.000Z</published>
+    <updated>2020-01-23T17:30:49.231Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj6&quot;&gt;&lt;a href=&quot;#CS301-Proj6&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj6&quot;&gt;&lt;/a&gt;CS301_Proj6&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj5</title>
+    <link href="http://naixinzhang.github.io/2019/10/23/cs301-proj5/"/>
+    <id>http://naixinzhang.github.io/2019/10/23/cs301-proj5/</id>
+    <published>2019-10-23T17:32:09.000Z</published>
+    <updated>2020-01-23T17:28:34.682Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj5&quot;&gt;&lt;a href=&quot;#CS301-Proj5&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj5&quot;&gt;&lt;/a&gt;CS301_Proj5&lt;/h1&gt;&lt;h2 id=&quot;Overview&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj3</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/cs301-proj3/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/cs301-proj3/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T16:09:21.512Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj3&quot;&gt;&lt;a href=&quot;#CS301-Proj3&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj3&quot;&gt;&lt;/a&gt;CS301_Proj3&lt;/h1&gt;&lt;h2 id=&quot;Description&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
     
   </entry>
   

@@ -1,0 +1,3780 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CS301_Proj10, Naixin&#39;s blog">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="CS301_Proj10IntroductionFor your final CS 301 project, you’re going to analyze the whole
+world!
+Specifically, you’re goi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CS301_Proj10 | Naixin&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Naixin's blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>Learning_notes</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>Courses</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Naixin's blog</div>
+        <div class="logo-desc">
+            
+            You never lose, you either win or learn.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Learning_notes
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Courses
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/naixinzhang" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/naixinzhang" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CS301_Proj10
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/CS301-Data-Programming-I/" target="_blank">
+                            <span class="chip bg-color">CS301 Data Programming I</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/CS301Proj/" class="post-category" target="_blank">
+                            CS301Proj
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-12-15
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Naixin Zhang
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    33 Min
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="CS301-Proj10"><a href="#CS301-Proj10" class="headerlink" title="CS301_Proj10"></a>CS301_Proj10</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>For your final CS 301 project, you’re going to analyze the whole
+world!</p>
+<p>Specifically, you’re going to study various statistics for 174
+countries, answering questions such as: <em>what is the correlation
+between a country’s literacy rate and GDP?</em></p>
+<p>To start, download <code>test.py</code> and <code>expected.html</code>.  You’ll also need to
+download <code>lint.py</code> (see linter documentation under “Testing” below).
+Do not download any data files manually (you must write Python code to
+download these automatically).  You’ll do all your work in a
+<code>main.ipynb</code>.</p>
+<h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p>For this project, you’ll be using one large JSON file with statistics
+about 174 countries adapted from
+<a href="https://www.kaggle.com/fernandol/countries-of-the-world" target="_blank" rel="noopener">here</a>.
+and you will also extract data from a snapshot of
+<a href="http://techslides.com/list-of-countries-and-capitals" target="_blank" rel="noopener">this page</a>.</p>
+<p>First check these resources:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/tylerharter/caraza-harter-com/master/tyler/cs301/fall19/data/countries.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/tylerharter/caraza-harter-com/master/tyler/cs301/fall19/data/countries.json</a></li>
+<li><a href="http://techslides.com/list-of-countries-and-capitals" target="_blank" rel="noopener">http://techslides.com/list-of-countries-and-capitals</a></li>
+</ul>
+<p>Some of the columns require a little extra explanation:</p>
+<ul>
+<li>area: measured in square miles</li>
+<li>coastline: ratio of coast to area</li>
+<li>birth-rate: births per 1000 people per year</li>
+<li>death-rate: deaths per 1000 people per year</li>
+<li>infant-mortality: per 1000 births</li>
+<li>literacy: (out of 100%)</li>
+<li>phones: number of phone per 1000 people</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#project: p10</span>
+<span class="token comment" spellcheck="true">#submitter: naixinzhang</span>
+<span class="token comment" spellcheck="true">#partner: none</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> requests<span class="token punctuation">,</span>json
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> pandas <span class="token keyword">import</span> DataFrame<span class="token punctuation">,</span> Series
+<span class="token keyword">from</span> math <span class="token keyword">import</span> radians<span class="token punctuation">,</span> cos<span class="token punctuation">,</span> sin<span class="token punctuation">,</span> asin<span class="token punctuation">,</span> sqrt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">download</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># We do not download again if the file already exists</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>str<span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" already exists!"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data <span class="token operator">=</span> r<span class="token punctuation">.</span>text
+        f <span class="token operator">=</span> open<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>str<span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" created!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">download<span class="token punctuation">(</span><span class="token string">"countries.json"</span><span class="token punctuation">,</span><span class="token string">"https://raw.githubusercontent.com/tylerharter/caraza-harter-com/master/tyler/cs301/fall19/data/countries.json"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&#39;countries.json already exists!&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python">countries <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_json<span class="token punctuation">(</span><span class="token string">'countries.json'</span><span class="token punctuation">)</span>
+countries<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>birth-rate</th>
+      <th>coastline</th>
+      <th>continent</th>
+      <th>country</th>
+      <th>death-rate</th>
+      <th>gdp-per-capita</th>
+      <th>infant-mortality</th>
+      <th>literacy</th>
+      <th>net-migration</th>
+      <th>phones</th>
+      <th>population</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>756950</td>
+      <td>15.23</td>
+      <td>0.85</td>
+      <td>South America</td>
+      <td>Chile</td>
+      <td>5.81</td>
+      <td>9900</td>
+      <td>8.80</td>
+      <td>96,2</td>
+      <td>0.00</td>
+      <td>213,0</td>
+      <td>16134219</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>665</td>
+      <td>17.80</td>
+      <td>24.21</td>
+      <td>Asia</td>
+      <td>Bahrain</td>
+      <td>4.14</td>
+      <td>16900</td>
+      <td>17.27</td>
+      <td>89,1</td>
+      <td>1.05</td>
+      <td>281,3</td>
+      <td>698585</td>
+      <td>NEAR EAST</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>22966</td>
+      <td>28.84</td>
+      <td>1.68</td>
+      <td>North America</td>
+      <td>Belize</td>
+      <td>5.72</td>
+      <td>4900</td>
+      <td>25.69</td>
+      <td>94,1</td>
+      <td>0.00</td>
+      <td>115,7</td>
+      <td>287730</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>582650</td>
+      <td>39.72</td>
+      <td>0.09</td>
+      <td>Africa</td>
+      <td>Kenya</td>
+      <td>14.02</td>
+      <td>1000</td>
+      <td>61.47</td>
+      <td>85,1</td>
+      <td>-0.10</td>
+      <td>8,1</td>
+      <td>34707817</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11854</td>
+      <td>33.05</td>
+      <td>3.12</td>
+      <td>Australia</td>
+      <td>Marshall Islands</td>
+      <td>4.78</td>
+      <td>1600</td>
+      <td>29.45</td>
+      <td>93,7</td>
+      <td>-6.04</td>
+      <td>91,2</td>
+      <td>60422</td>
+      <td>OCEANIA</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>111370</td>
+      <td>44.77</td>
+      <td>0.52</td>
+      <td>Africa</td>
+      <td>Liberia</td>
+      <td>23.10</td>
+      <td>1000</td>
+      <td>128.87</td>
+      <td>57,5</td>
+      <td>0.00</td>
+      <td>2,3</td>
+      <td>3042004</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>504782</td>
+      <td>10.06</td>
+      <td>0.98</td>
+      <td>Europe</td>
+      <td>Spain</td>
+      <td>9.72</td>
+      <td>22000</td>
+      <td>4.42</td>
+      <td>97,9</td>
+      <td>0.99</td>
+      <td>453,5</td>
+      <td>40397842</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>65610</td>
+      <td>15.51</td>
+      <td>2.04</td>
+      <td>Asia</td>
+      <td>Sri Lanka</td>
+      <td>6.52</td>
+      <td>3700</td>
+      <td>14.35</td>
+      <td>92,3</td>
+      <td>-1.31</td>
+      <td>61,5</td>
+      <td>20222240</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>212460</td>
+      <td>36.24</td>
+      <td>0.98</td>
+      <td>Asia</td>
+      <td>Oman</td>
+      <td>3.81</td>
+      <td>13100</td>
+      <td>19.51</td>
+      <td>75,8</td>
+      <td>0.28</td>
+      <td>85,5</td>
+      <td>3102229</td>
+      <td>NEAR EAST</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>316</td>
+      <td>10.22</td>
+      <td>62.28</td>
+      <td>Europe</td>
+      <td>Malta</td>
+      <td>8.10</td>
+      <td>17700</td>
+      <td>3.89</td>
+      <td>92,8</td>
+      <td>2.07</td>
+      <td>505,0</td>
+      <td>400214</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>185180</td>
+      <td>27.76</td>
+      <td>0.10</td>
+      <td>Asia</td>
+      <td>Syria</td>
+      <td>4.81</td>
+      <td>3300</td>
+      <td>29.53</td>
+      <td>76,9</td>
+      <td>0.00</td>
+      <td>153,8</td>
+      <td>18881361</td>
+      <td>NEAR EAST</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1759540</td>
+      <td>26.49</td>
+      <td>0.10</td>
+      <td>Africa</td>
+      <td>Libya</td>
+      <td>3.48</td>
+      <td>6400</td>
+      <td>24.60</td>
+      <td>82,6</td>
+      <td>0.00</td>
+      <td>127,1</td>
+      <td>5900754</td>
+      <td>NORTHERN AFRICA</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>752614</td>
+      <td>41.00</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Zambia</td>
+      <td>19.93</td>
+      <td>800</td>
+      <td>88.29</td>
+      <td>80,6</td>
+      <td>0.00</td>
+      <td>8,2</td>
+      <td>11502010</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>10991</td>
+      <td>20.82</td>
+      <td>9.30</td>
+      <td>North America</td>
+      <td>Jamaica</td>
+      <td>6.52</td>
+      <td>3900</td>
+      <td>12.36</td>
+      <td>87,9</td>
+      <td>-4.92</td>
+      <td>124,0</td>
+      <td>2758124</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>447400</td>
+      <td>26.36</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Uzbekistan</td>
+      <td>7.84</td>
+      <td>1700</td>
+      <td>71.10</td>
+      <td>99,3</td>
+      <td>-1.72</td>
+      <td>62,9</td>
+      <td>27307134</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>61</td>
+      <td>10.02</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>San Marino</td>
+      <td>8.17</td>
+      <td>34600</td>
+      <td>5.73</td>
+      <td>96,0</td>
+      <td>10.98</td>
+      <td>704,3</td>
+      <td>29251</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>488100</td>
+      <td>27.61</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Turkmenistan</td>
+      <td>8.60</td>
+      <td>5800</td>
+      <td>73.08</td>
+      <td>98,0</td>
+      <td>-0.86</td>
+      <td>74,6</td>
+      <td>5042920</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>33843</td>
+      <td>15.70</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>Moldova</td>
+      <td>12.64</td>
+      <td>1800</td>
+      <td>40.42</td>
+      <td>99,1</td>
+      <td>-0.26</td>
+      <td>208,1</td>
+      <td>4466706</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>28748</td>
+      <td>15.11</td>
+      <td>1.26</td>
+      <td>Europe</td>
+      <td>Albania</td>
+      <td>5.22</td>
+      <td>4500</td>
+      <td>21.52</td>
+      <td>86,5</td>
+      <td>-4.93</td>
+      <td>71,2</td>
+      <td>3581655</td>
+      <td>EASTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>53</td>
+      <td>11.40</td>
+      <td>194.34</td>
+      <td>North America</td>
+      <td>Bermuda</td>
+      <td>7.74</td>
+      <td>36000</td>
+      <td>8.53</td>
+      <td>98,0</td>
+      <td>2.49</td>
+      <td>851,4</td>
+      <td>65773</td>
+      <td>NORTHERN AMERICA</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>803940</td>
+      <td>29.74</td>
+      <td>0.13</td>
+      <td>Asia</td>
+      <td>Pakistan</td>
+      <td>8.23</td>
+      <td>2100</td>
+      <td>72.44</td>
+      <td>45,7</td>
+      <td>-2.77</td>
+      <td>31,8</td>
+      <td>165803560</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>30528</td>
+      <td>10.38</td>
+      <td>0.22</td>
+      <td>Europe</td>
+      <td>Belgium</td>
+      <td>10.27</td>
+      <td>29100</td>
+      <td>4.68</td>
+      <td>98,0</td>
+      <td>1.23</td>
+      <td>462,6</td>
+      <td>10379067</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>47000</td>
+      <td>33.65</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Bhutan</td>
+      <td>12.70</td>
+      <td>1300</td>
+      <td>100.44</td>
+      <td>42,2</td>
+      <td>0.00</td>
+      <td>14,3</td>
+      <td>2279723</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>587040</td>
+      <td>41.41</td>
+      <td>0.82</td>
+      <td>Africa</td>
+      <td>Madagascar</td>
+      <td>11.11</td>
+      <td>800</td>
+      <td>76.83</td>
+      <td>68,9</td>
+      <td>0.00</td>
+      <td>3,6</td>
+      <td>18595469</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>17363</td>
+      <td>27.41</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Swaziland</td>
+      <td>29.74</td>
+      <td>4900</td>
+      <td>69.27</td>
+      <td>81,6</td>
+      <td>0.00</td>
+      <td>30,8</td>
+      <td>1136334</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>4167</td>
+      <td>16.68</td>
+      <td>60.60</td>
+      <td>Australia</td>
+      <td>French Polynesia</td>
+      <td>4.69</td>
+      <td>17500</td>
+      <td>8.44</td>
+      <td>98,0</td>
+      <td>2.94</td>
+      <td>194,5</td>
+      <td>274578</td>
+      <td>OCEANIA</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>64589</td>
+      <td>9.24</td>
+      <td>0.82</td>
+      <td>Europe</td>
+      <td>Latvia</td>
+      <td>13.66</td>
+      <td>10200</td>
+      <td>9.55</td>
+      <td>99,8</td>
+      <td>-2.23</td>
+      <td>321,4</td>
+      <td>2274735</td>
+      <td>BALTICS</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>93030</td>
+      <td>9.72</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>Hungary</td>
+      <td>13.11</td>
+      <td>13900</td>
+      <td>8.57</td>
+      <td>99,4</td>
+      <td>0.86</td>
+      <td>336,2</td>
+      <td>9981334</td>
+      <td>EASTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>693</td>
+      <td>9.34</td>
+      <td>27.85</td>
+      <td>Asia</td>
+      <td>Singapore</td>
+      <td>4.28</td>
+      <td>23700</td>
+      <td>2.29</td>
+      <td>92,5</td>
+      <td>11.53</td>
+      <td>411,4</td>
+      <td>4492150</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>160</td>
+      <td>10.21</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>Liechtenstein</td>
+      <td>7.18</td>
+      <td>25000</td>
+      <td>4.70</td>
+      <td>100,0</td>
+      <td>4.85</td>
+      <td>585,5</td>
+      <td>33987</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>267667</td>
+      <td>36.16</td>
+      <td>0.33</td>
+      <td>Africa</td>
+      <td>Gabon</td>
+      <td>12.25</td>
+      <td>5500</td>
+      <td>53.64</td>
+      <td>63,2</td>
+      <td>0.00</td>
+      <td>27,4</td>
+      <td>1424906</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>13790</td>
+      <td>12.77</td>
+      <td>3.63</td>
+      <td>North America</td>
+      <td>Puerto Rico</td>
+      <td>7.65</td>
+      <td>16800</td>
+      <td>8.24</td>
+      <td>94,1</td>
+      <td>-1.46</td>
+      <td>283,1</td>
+      <td>3927188</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>338145</td>
+      <td>10.45</td>
+      <td>0.37</td>
+      <td>Europe</td>
+      <td>Finland</td>
+      <td>9.86</td>
+      <td>27400</td>
+      <td>3.57</td>
+      <td>100,0</td>
+      <td>0.95</td>
+      <td>405,3</td>
+      <td>5231372</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>1240000</td>
+      <td>49.82</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Mali</td>
+      <td>16.89</td>
+      <td>900</td>
+      <td>116.79</td>
+      <td>46,4</td>
+      <td>-0.33</td>
+      <td>6,4</td>
+      <td>11716829</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>2170</td>
+      <td>36.93</td>
+      <td>15.67</td>
+      <td>Africa</td>
+      <td>Comoros</td>
+      <td>8.20</td>
+      <td>700</td>
+      <td>74.93</td>
+      <td>56,5</td>
+      <td>0.00</td>
+      <td>24,5</td>
+      <td>690948</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>7686850</td>
+      <td>12.14</td>
+      <td>0.34</td>
+      <td>Australia</td>
+      <td>Australia</td>
+      <td>7.51</td>
+      <td>29000</td>
+      <td>4.69</td>
+      <td>100,0</td>
+      <td>3.98</td>
+      <td>565,5</td>
+      <td>20264082</td>
+      <td>OCEANIA</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>825418</td>
+      <td>24.32</td>
+      <td>0.19</td>
+      <td>Africa</td>
+      <td>Namibia</td>
+      <td>18.86</td>
+      <td>7200</td>
+      <td>48.98</td>
+      <td>84,0</td>
+      <td>0.00</td>
+      <td>62,6</td>
+      <td>2044147</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>181040</td>
+      <td>26.90</td>
+      <td>0.24</td>
+      <td>Asia</td>
+      <td>Cambodia</td>
+      <td>9.06</td>
+      <td>1900</td>
+      <td>71.48</td>
+      <td>69,4</td>
+      <td>0.00</td>
+      <td>2,6</td>
+      <td>13881427</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>236040</td>
+      <td>47.35</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Uganda</td>
+      <td>12.24</td>
+      <td>1400</td>
+      <td>67.83</td>
+      <td>69,9</td>
+      <td>0.00</td>
+      <td>3,6</td>
+      <td>28195754</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>945087</td>
+      <td>37.71</td>
+      <td>0.15</td>
+      <td>Africa</td>
+      <td>Tanzania</td>
+      <td>16.39</td>
+      <td>600</td>
+      <td>98.54</td>
+      <td>78,2</td>
+      <td>-2.06</td>
+      <td>4,0</td>
+      <td>37445392</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>27830</td>
+      <td>42.22</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Burundi</td>
+      <td>13.46</td>
+      <td>600</td>
+      <td>69.29</td>
+      <td>51,6</td>
+      <td>-0.06</td>
+      <td>3,4</td>
+      <td>8090068</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>82880</td>
+      <td>18.96</td>
+      <td>1.59</td>
+      <td>Asia</td>
+      <td>United Arab Emirates</td>
+      <td>4.40</td>
+      <td>23200</td>
+      <td>14.51</td>
+      <td>77,9</td>
+      <td>1.03</td>
+      <td>475,3</td>
+      <td>2602713</td>
+      <td>NEAR EAST</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>329750</td>
+      <td>22.86</td>
+      <td>1.42</td>
+      <td>Asia</td>
+      <td>Malaysia</td>
+      <td>5.05</td>
+      <td>9000</td>
+      <td>17.70</td>
+      <td>88,7</td>
+      <td>0.00</td>
+      <td>179,0</td>
+      <td>24385858</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>78866</td>
+      <td>9.02</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>Czech Republic</td>
+      <td>10.59</td>
+      <td>15700</td>
+      <td>3.93</td>
+      <td>99,9</td>
+      <td>0.97</td>
+      <td>314,3</td>
+      <td>10235455</td>
+      <td>EASTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>514000</td>
+      <td>13.87</td>
+      <td>0.63</td>
+      <td>Asia</td>
+      <td>Thailand</td>
+      <td>7.04</td>
+      <td>7400</td>
+      <td>20.48</td>
+      <td>92,6</td>
+      <td>0.00</td>
+      <td>108,9</td>
+      <td>64631595</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>70280</td>
+      <td>14.45</td>
+      <td>2.06</td>
+      <td>Europe</td>
+      <td>Ireland</td>
+      <td>7.82</td>
+      <td>29600</td>
+      <td>5.39</td>
+      <td>98,0</td>
+      <td>4.99</td>
+      <td>500,5</td>
+      <td>4062235</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>18270</td>
+      <td>22.55</td>
+      <td>6.18</td>
+      <td>Australia</td>
+      <td>Fiji</td>
+      <td>5.65</td>
+      <td>5800</td>
+      <td>12.62</td>
+      <td>93,7</td>
+      <td>-3.14</td>
+      <td>112,6</td>
+      <td>905949</td>
+      <td>OCEANIA</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>2717300</td>
+      <td>16.00</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Kazakhstan</td>
+      <td>9.42</td>
+      <td>6300</td>
+      <td>29.21</td>
+      <td>98,4</td>
+      <td>-3.35</td>
+      <td>164,1</td>
+      <td>15233244</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>1564116</td>
+      <td>21.59</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Mongolia</td>
+      <td>6.95</td>
+      <td>1800</td>
+      <td>53.79</td>
+      <td>97,8</td>
+      <td>0.00</td>
+      <td>55,1</td>
+      <td>2832224</td>
+      <td>ASIA (EX. NEAR EAST)</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>198500</td>
+      <td>22.80</td>
+      <td>0.00</td>
+      <td>Asia</td>
+      <td>Kyrgyzstan</td>
+      <td>7.08</td>
+      <td>1600</td>
+      <td>35.64</td>
+      <td>97,0</td>
+      <td>-2.45</td>
+      <td>84,0</td>
+      <td>5213898</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>527970</td>
+      <td>42.89</td>
+      <td>0.36</td>
+      <td>Asia</td>
+      <td>Yemen</td>
+      <td>8.30</td>
+      <td>800</td>
+      <td>61.50</td>
+      <td>50,2</td>
+      <td>0.00</td>
+      <td>37,2</td>
+      <td>21456188</td>
+      <td>NEAR EAST</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>9984670</td>
+      <td>10.78</td>
+      <td>2.02</td>
+      <td>North America</td>
+      <td>Canada</td>
+      <td>7.80</td>
+      <td>29800</td>
+      <td>4.75</td>
+      <td>97,0</td>
+      <td>5.96</td>
+      <td>552,2</td>
+      <td>33098932</td>
+      <td>NORTHERN AMERICA</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>262</td>
+      <td>12.74</td>
+      <td>61.07</td>
+      <td>North America</td>
+      <td>Cayman Islands</td>
+      <td>4.89</td>
+      <td>35000</td>
+      <td>8.19</td>
+      <td>98,0</td>
+      <td>18.75</td>
+      <td>836,3</td>
+      <td>45436</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>118480</td>
+      <td>43.13</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Malawi</td>
+      <td>19.33</td>
+      <td>600</td>
+      <td>103.32</td>
+      <td>62,7</td>
+      <td>0.00</td>
+      <td>7,9</td>
+      <td>13013926</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>86600</td>
+      <td>20.74</td>
+      <td>0.00</td>
+      <td>Europe</td>
+      <td>Azerbaijan</td>
+      <td>9.75</td>
+      <td>3400</td>
+      <td>81.74</td>
+      <td>97,0</td>
+      <td>-4.90</td>
+      <td>137,1</td>
+      <td>7961619</td>
+      <td>C.W. OF IND. STATES</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>2381740</td>
+      <td>17.14</td>
+      <td>0.04</td>
+      <td>Africa</td>
+      <td>Algeria</td>
+      <td>4.61</td>
+      <td>6000</td>
+      <td>31.00</td>
+      <td>70,0</td>
+      <td>-0.39</td>
+      <td>78,1</td>
+      <td>32930091</td>
+      <td>NORTHERN AFRICA</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>103000</td>
+      <td>13.64</td>
+      <td>4.83</td>
+      <td>Europe</td>
+      <td>Iceland</td>
+      <td>6.72</td>
+      <td>30900</td>
+      <td>3.31</td>
+      <td>99,9</td>
+      <td>2.38</td>
+      <td>647,7</td>
+      <td>299388</td>
+      <td>WESTERN EUROPE</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>748</td>
+      <td>25.37</td>
+      <td>56.02</td>
+      <td>Australia</td>
+      <td>Tonga</td>
+      <td>5.28</td>
+      <td>2200</td>
+      <td>12.62</td>
+      <td>98,5</td>
+      <td>0.00</td>
+      <td>97,7</td>
+      <td>114689</td>
+      <td>OCEANIA</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>27750</td>
+      <td>36.44</td>
+      <td>6.38</td>
+      <td>North America</td>
+      <td>Haiti</td>
+      <td>12.17</td>
+      <td>1600</td>
+      <td>73.45</td>
+      <td>52,9</td>
+      <td>-3.40</td>
+      <td>16,9</td>
+      <td>8308504</td>
+      <td>LATIN AMER. &amp; CARIB</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>1284000</td>
+      <td>45.73</td>
+      <td>0.00</td>
+      <td>Africa</td>
+      <td>Chad</td>
+      <td>16.38</td>
+      <td>1200</td>
+      <td>93.82</td>
+      <td>47,5</td>
+      <td>-0.11</td>
+      <td>1,3</td>
+      <td>9944201</td>
+      <td>SUB-SAHARAN AFRICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>174 rows × 13 columns</p>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q1 How many countries do we have in our dataset?</span>
+<span class="token keyword">def</span> <span class="token function">get_num_countries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> countries<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>nunique<span class="token punctuation">(</span><span class="token punctuation">)</span>
+get_num_countries<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>174</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q2 what is the total area across all the countries in our dataset?</span>
+<span class="token keyword">def</span> <span class="token function">get_total_area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> countries<span class="token punctuation">[</span><span class="token string">'area'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+get_total_area<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>127170843</code></pre><pre class="line-numbers language-python"><code class="language-python">
+download<span class="token punctuation">(</span><span class="token string">'capitals.html'</span><span class="token punctuation">,</span> <span class="token string">'https://raw.githubusercontent.com/tylerharter/cs301-projects/master/fall19/p10/techslides-snapshot.html'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>&#39;capitals.html already exists!&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">state_stats</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    stats <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+    html_string <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    doc <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html_string<span class="token punctuation">,</span> <span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+    trs <span class="token operator">=</span> doc<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"tr"</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> tr <span class="token keyword">in</span> trs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        cells <span class="token operator">=</span> tr<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"td"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+        j <span class="token operator">=</span> cells<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        stats<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"country"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+        j <span class="token operator">=</span> cells<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        stats<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"capital"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span> 
+        j <span class="token operator">=</span> cells<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        stats<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"latitude"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        j <span class="token operator">=</span> cells<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        stats<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">"longitude"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token keyword">return</span> stats
+
+wi_stats <span class="token operator">=</span> state_stats<span class="token punctuation">(</span><span class="token string">"capitals.html"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">data <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"country"</span><span class="token punctuation">:</span>wi_stats<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+           <span class="token string">"capital"</span><span class="token punctuation">:</span>wi_stats<span class="token punctuation">[</span><span class="token string">'capital'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+           <span class="token string">"latitude"</span><span class="token punctuation">:</span>wi_stats<span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+           <span class="token string">"longitude"</span><span class="token punctuation">:</span>wi_stats<span class="token punctuation">[</span><span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">full <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>data<span class="token punctuation">,</span> countries<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'inner'</span><span class="token punctuation">)</span>
+capitals <span class="token operator">=</span> full<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">,</span><span class="token string">'capital'</span><span class="token punctuation">,</span><span class="token string">'latitude'</span><span class="token punctuation">,</span><span class="token string">'longitude'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+capitals<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>capital</th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Kabul</td>
+      <td>34.516667</td>
+      <td>69.183333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>Tirana</td>
+      <td>41.316667</td>
+      <td>19.816667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>Algiers</td>
+      <td>36.750000</td>
+      <td>3.050000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Anguilla</td>
+      <td>The Valley</td>
+      <td>18.216667</td>
+      <td>-63.050000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Argentina</td>
+      <td>Buenos Aires</td>
+      <td>-34.583333</td>
+      <td>-58.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q3 What are the country names in capitals.json?</span>
+<span class="token keyword">def</span> <span class="token function">get_country</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> capitals<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> sorted<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+get_country<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>[&#39;Afghanistan&#39;,
+ &#39;Albania&#39;,
+ &#39;Algeria&#39;,
+ &#39;Anguilla&#39;,
+ &#39;Argentina&#39;,
+ &#39;Armenia&#39;,
+ &#39;Aruba&#39;,
+ &#39;Australia&#39;,
+ &#39;Austria&#39;,
+ &#39;Azerbaijan&#39;,
+ &#39;Bahrain&#39;,
+ &#39;Bangladesh&#39;,
+ &#39;Barbados&#39;,
+ &#39;Belarus&#39;,
+ &#39;Belgium&#39;,
+ &#39;Belize&#39;,
+ &#39;Benin&#39;,
+ &#39;Bermuda&#39;,
+ &#39;Bhutan&#39;,
+ &#39;Bolivia&#39;,
+ &#39;Botswana&#39;,
+ &#39;Brazil&#39;,
+ &#39;Bulgaria&#39;,
+ &#39;Burkina Faso&#39;,
+ &#39;Burundi&#39;,
+ &#39;Cambodia&#39;,
+ &#39;Cameroon&#39;,
+ &#39;Canada&#39;,
+ &#39;Cape Verde&#39;,
+ &#39;Cayman Islands&#39;,
+ &#39;Chad&#39;,
+ &#39;Chile&#39;,
+ &#39;China&#39;,
+ &#39;Colombia&#39;,
+ &#39;Comoros&#39;,
+ &#39;Costa Rica&#39;,
+ &#39;Croatia&#39;,
+ &#39;Cuba&#39;,
+ &#39;Czech Republic&#39;,
+ &#39;Denmark&#39;,
+ &#39;Djibouti&#39;,
+ &#39;Dominica&#39;,
+ &#39;Dominican Republic&#39;,
+ &#39;Ecuador&#39;,
+ &#39;Egypt&#39;,
+ &#39;El Salvador&#39;,
+ &#39;Equatorial Guinea&#39;,
+ &#39;Eritrea&#39;,
+ &#39;Estonia&#39;,
+ &#39;Ethiopia&#39;,
+ &#39;Fiji&#39;,
+ &#39;Finland&#39;,
+ &#39;France&#39;,
+ &#39;French Polynesia&#39;,
+ &#39;Gabon&#39;,
+ &#39;Georgia&#39;,
+ &#39;Germany&#39;,
+ &#39;Ghana&#39;,
+ &#39;Greece&#39;,
+ &#39;Grenada&#39;,
+ &#39;Guam&#39;,
+ &#39;Guatemala&#39;,
+ &#39;Guinea&#39;,
+ &#39;Guinea-Bissau&#39;,
+ &#39;Guyana&#39;,
+ &#39;Haiti&#39;,
+ &#39;Honduras&#39;,
+ &#39;Hungary&#39;,
+ &#39;Iceland&#39;,
+ &#39;India&#39;,
+ &#39;Indonesia&#39;,
+ &#39;Iran&#39;,
+ &#39;Iraq&#39;,
+ &#39;Ireland&#39;,
+ &#39;Israel&#39;,
+ &#39;Italy&#39;,
+ &#39;Jamaica&#39;,
+ &#39;Japan&#39;,
+ &#39;Jordan&#39;,
+ &#39;Kazakhstan&#39;,
+ &#39;Kenya&#39;,
+ &#39;Kuwait&#39;,
+ &#39;Kyrgyzstan&#39;,
+ &#39;Laos&#39;,
+ &#39;Latvia&#39;,
+ &#39;Lebanon&#39;,
+ &#39;Lesotho&#39;,
+ &#39;Liberia&#39;,
+ &#39;Libya&#39;,
+ &#39;Liechtenstein&#39;,
+ &#39;Lithuania&#39;,
+ &#39;Luxembourg&#39;,
+ &#39;Madagascar&#39;,
+ &#39;Malawi&#39;,
+ &#39;Malaysia&#39;,
+ &#39;Maldives&#39;,
+ &#39;Mali&#39;,
+ &#39;Malta&#39;,
+ &#39;Marshall Islands&#39;,
+ &#39;Mauritania&#39;,
+ &#39;Mauritius&#39;,
+ &#39;Mexico&#39;,
+ &#39;Moldova&#39;,
+ &#39;Monaco&#39;,
+ &#39;Mongolia&#39;,
+ &#39;Morocco&#39;,
+ &#39;Mozambique&#39;,
+ &#39;Namibia&#39;,
+ &#39;Nepal&#39;,
+ &#39;Netherlands&#39;,
+ &#39;New Caledonia&#39;,
+ &#39;New Zealand&#39;,
+ &#39;Nicaragua&#39;,
+ &#39;Niger&#39;,
+ &#39;Nigeria&#39;,
+ &#39;Norway&#39;,
+ &#39;Oman&#39;,
+ &#39;Pakistan&#39;,
+ &#39;Palau&#39;,
+ &#39;Panama&#39;,
+ &#39;Papua New Guinea&#39;,
+ &#39;Paraguay&#39;,
+ &#39;Peru&#39;,
+ &#39;Philippines&#39;,
+ &#39;Poland&#39;,
+ &#39;Portugal&#39;,
+ &#39;Puerto Rico&#39;,
+ &#39;Qatar&#39;,
+ &#39;Romania&#39;,
+ &#39;Russia&#39;,
+ &#39;Rwanda&#39;,
+ &#39;Saint Helena&#39;,
+ &#39;Saint Lucia&#39;,
+ &#39;Saint Vincent and the Grenadines&#39;,
+ &#39;Samoa&#39;,
+ &#39;San Marino&#39;,
+ &#39;Saudi Arabia&#39;,
+ &#39;Senegal&#39;,
+ &#39;Seychelles&#39;,
+ &#39;Sierra Leone&#39;,
+ &#39;Singapore&#39;,
+ &#39;Slovenia&#39;,
+ &#39;Somalia&#39;,
+ &#39;South Africa&#39;,
+ &#39;Spain&#39;,
+ &#39;Sri Lanka&#39;,
+ &#39;Sudan&#39;,
+ &#39;Suriname&#39;,
+ &#39;Swaziland&#39;,
+ &#39;Sweden&#39;,
+ &#39;Switzerland&#39;,
+ &#39;Syria&#39;,
+ &#39;Taiwan&#39;,
+ &#39;Tajikistan&#39;,
+ &#39;Tanzania&#39;,
+ &#39;Thailand&#39;,
+ &#39;Togo&#39;,
+ &#39;Tonga&#39;,
+ &#39;Tunisia&#39;,
+ &#39;Turkey&#39;,
+ &#39;Turkmenistan&#39;,
+ &#39;Uganda&#39;,
+ &#39;Ukraine&#39;,
+ &#39;United Arab Emirates&#39;,
+ &#39;United Kingdom&#39;,
+ &#39;United States&#39;,
+ &#39;Uruguay&#39;,
+ &#39;Uzbekistan&#39;,
+ &#39;Vanuatu&#39;,
+ &#39;Venezuela&#39;,
+ &#39;Vietnam&#39;,
+ &#39;Yemen&#39;,
+ &#39;Zambia&#39;,
+ &#39;Zimbabwe&#39;]</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q4 What is the capital of Cuba?</span>
+<span class="token keyword">def</span> <span class="token function">get_capital</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    capitals_country <span class="token operator">=</span> capitals<span class="token punctuation">[</span>capitals<span class="token punctuation">.</span>country <span class="token operator">==</span> <span class="token string">'Cuba'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> next<span class="token punctuation">(</span>iter<span class="token punctuation">(</span>capitals_country<span class="token punctuation">[</span><span class="token string">'capital'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+get_capital<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Havana&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q5 Which country's capital is Tbilisi?</span>
+<span class="token keyword">def</span> <span class="token function">get_countries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    capital <span class="token operator">=</span> capitals<span class="token punctuation">[</span>capitals<span class="token punctuation">.</span>capital <span class="token operator">==</span> <span class="token string">'Tbilisi'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> next<span class="token punctuation">(</span>iter<span class="token punctuation">(</span>capital<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+get_countries<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Georgia&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q6 Which 7 countries have the southern-most capitals?</span>
+<span class="token keyword">def</span> <span class="token function">get_southern_most</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> capitals<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'latitude'</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res
+get_southern_most<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>[&#39;New Zealand&#39;,
+ &#39;Australia&#39;,
+ &#39;Uruguay&#39;,
+ &#39;Argentina&#39;,
+ &#39;Chile&#39;,
+ &#39;Lesotho&#39;,
+ &#39;Swaziland&#39;]</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q7 Which 5 countries have the northern-most capitals?</span>
+<span class="token keyword">def</span> <span class="token function">get_northern_most</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> capitals<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'latitude'</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> res
+get_northern_most<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>[&#39;Iceland&#39;, &#39;Finland&#39;, &#39;Norway&#39;, &#39;Estonia&#39;, &#39;Sweden&#39;]</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q8 For birth-rate and death-rate, what are various summary statistics (e.g., mean, max, standard deviation, etc)?</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'birth-rate'</span><span class="token punctuation">:</span>countries<span class="token punctuation">[</span><span class="token string">'birth-rate'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                         <span class="token string">'death-rate'</span><span class="token punctuation">:</span>countries<span class="token punctuation">[</span><span class="token string">'death-rate'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>birth-rate</th>
+      <th>death-rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>174.000000</td>
+      <td>174.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>22.463851</td>
+      <td>9.625172</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>11.278992</td>
+      <td>5.187143</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>8.250000</td>
+      <td>2.410000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>12.597500</td>
+      <td>6.027500</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>20.010000</td>
+      <td>8.230000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>29.860000</td>
+      <td>11.715000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>50.730000</td>
+      <td>29.740000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q9 For columns literacy and phones, what are various summary statistics?</span>
+countries<span class="token punctuation">[</span><span class="token string">'literacy'</span><span class="token punctuation">]</span> <span class="token operator">=</span> countries<span class="token punctuation">[</span><span class="token string">'literacy'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>str<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> regex<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+countries<span class="token punctuation">[</span><span class="token string">'literacy'</span><span class="token punctuation">]</span> <span class="token operator">=</span> countries<span class="token punctuation">[</span><span class="token string">'literacy'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'float'</span><span class="token punctuation">)</span>
+
+countries<span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span> <span class="token operator">=</span> countries<span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>str<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> regex<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+countries<span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span> <span class="token operator">=</span> countries<span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">'float'</span><span class="token punctuation">)</span>
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'literacy'</span><span class="token punctuation">:</span>countries<span class="token punctuation">[</span><span class="token string">'literacy'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                         <span class="token string">'phones'</span><span class="token punctuation">:</span>countries<span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>literacy</th>
+      <th>phones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>174.000000</td>
+      <td>174.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>82.362069</td>
+      <td>215.770690</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>20.003166</td>
+      <td>218.713811</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>17.600000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>70.100000</td>
+      <td>32.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>92.100000</td>
+      <td>140.350000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>98.000000</td>
+      <td>331.750000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>100.000000</td>
+      <td>1035.600000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q10 What is the largest land-locked country in Europe?</span>
+<span class="token keyword">def</span> <span class="token function">get_EU_largest_land_country</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    countries_EU_land <span class="token operator">=</span> countries<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'Europe'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'coastline'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    countries_EU_land_largest <span class="token operator">=</span> countries_EU_land<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'area'</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> countries_EU_land_largest
+get_EU_largest_land_country<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Belarus&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q11 What is the largest land-locked country in Asia?</span>
+<span class="token keyword">def</span> <span class="token function">get_AS_largest_land_country</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    countries_AS_land <span class="token operator">=</span> countries<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'Asia'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'coastline'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    countries_AS_land_largest <span class="token operator">=</span> countries_AS_land<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'area'</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> countries_AS_land_largest
+get_AS_largest_land_country<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Kazakhstan&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q12 What is the most populous land-locked country in Asia?</span>
+<span class="token keyword">def</span> <span class="token function">get_AS_most_pop_land_country</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    countries_AS_land <span class="token operator">=</span> countries<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'Asia'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'coastline'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    countries_AS_land_most_pop <span class="token operator">=</span> countries_AS_land<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'population'</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> countries_AS_land_most_pop
+get_AS_most_pop_land_country<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Afghanistan&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Haversine Formula (https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points)</span>
+
+<span class="token keyword">def</span> <span class="token function">haversine</span><span class="token punctuation">(</span>lon1<span class="token punctuation">,</span> lat1<span class="token punctuation">,</span> lon2<span class="token punctuation">,</span> lat2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees)
+    """</span>
+    <span class="token comment" spellcheck="true"># convert decimal degrees to radians </span>
+    lon1<span class="token punctuation">,</span> lat1<span class="token punctuation">,</span> lon2<span class="token punctuation">,</span> lat2 <span class="token operator">=</span> map<span class="token punctuation">(</span>radians<span class="token punctuation">,</span> <span class="token punctuation">[</span>lon1<span class="token punctuation">,</span> lat1<span class="token punctuation">,</span> lon2<span class="token punctuation">,</span> lat2<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># haversine formula </span>
+    dlon <span class="token operator">=</span> lon2 <span class="token operator">-</span> lon1 
+    dlat <span class="token operator">=</span> lat2 <span class="token operator">-</span> lat1 
+    a <span class="token operator">=</span> sin<span class="token punctuation">(</span>dlat<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> cos<span class="token punctuation">(</span>lat1<span class="token punctuation">)</span> <span class="token operator">*</span> cos<span class="token punctuation">(</span>lat2<span class="token punctuation">)</span> <span class="token operator">*</span> sin<span class="token punctuation">(</span>dlon<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>
+    c <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> asin<span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    r <span class="token operator">=</span> <span class="token number">3956</span> <span class="token comment" spellcheck="true"># Radius of earth in kilometers. Use 3956 for miles</span>
+    <span class="token keyword">return</span> c <span class="token operator">*</span> r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q13 What is the distance between Camp Randall Stadium and the Wisconsin State Capital?</span>
+
+Randall_lon <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">89.411893</span>
+Randall_lat <span class="token operator">=</span> <span class="token number">43.070231</span>
+Wisconsin_lon <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">89.384113</span>
+Wisconsin_lat <span class="token operator">=</span> <span class="token number">43.074645</span>
+
+haversine<span class="token punctuation">(</span>Randall_lon<span class="token punctuation">,</span> Randall_lat<span class="token punctuation">,</span> Wisconsin_lon<span class="token punctuation">,</span> Wisconsin_lat<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>1.433899492072933</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q14 What is the distance between France and Japan?</span>
+
+<span class="token keyword">def</span> <span class="token function">get_distance</span><span class="token punctuation">(</span>country1<span class="token punctuation">,</span> country2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    country1_lon <span class="token operator">=</span> capitals<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>capitals<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span> <span class="token operator">==</span> country1<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'longitude'</span><span class="token punctuation">]</span>
+    country1_lat <span class="token operator">=</span> capitals<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>capitals<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span> <span class="token operator">==</span> country1<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">]</span>
+    country2_lon <span class="token operator">=</span> capitals<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>capitals<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span> <span class="token operator">==</span> country2<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'longitude'</span><span class="token punctuation">]</span>
+    country2_lat <span class="token operator">=</span> capitals<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>capitals<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span> <span class="token operator">==</span> country2<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> haversine<span class="token punctuation">(</span>country1_lon<span class="token punctuation">,</span> country1_lat<span class="token punctuation">,</span> country2_lon<span class="token punctuation">,</span> country2_lat<span class="token punctuation">)</span>
+get_distance<span class="token punctuation">(</span><span class="token string">'France'</span><span class="token punctuation">,</span> <span class="token string">'Japan'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>6032.330932363535</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q15 What are the distances between Guam, New Zealand, and Australia?</span>
+
+country_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Guam"</span><span class="token punctuation">,</span> <span class="token string">"New Zealand"</span><span class="token punctuation">,</span> <span class="token string">"Australia"</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">get_distances</span><span class="token punctuation">(</span>country_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">for</span> country1 <span class="token keyword">in</span> country_list<span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> country2 <span class="token keyword">in</span> country_list<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> country1 <span class="token operator">==</span> country2<span class="token punctuation">:</span>
+                tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                tmp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>get_distance<span class="token punctuation">(</span>country1<span class="token punctuation">,</span> country2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        data<span class="token punctuation">[</span>country1<span class="token punctuation">]</span> <span class="token operator">=</span> tmp
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index <span class="token operator">=</span> country_list<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> df
+get_distances<span class="token punctuation">(</span>country_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Guam</th>
+      <th>New Zealand</th>
+      <th>Australia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Guam</th>
+      <td>NaN</td>
+      <td>4239.314912</td>
+      <td>3377.103870</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>4239.314912</td>
+      <td>NaN</td>
+      <td>1445.147895</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>3377.103870</td>
+      <td>1445.147895</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q16 What is the distance between every pair of countries in the Australian continent?</span>
+
+<span class="token keyword">def</span> <span class="token function">get_distance_Australian</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    country_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    country_AU <span class="token operator">=</span> countries<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'Australia'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> country_AU<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        country_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> get_distances<span class="token punctuation">(</span>country_list<span class="token punctuation">)</span>
+get_distance_Australian<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Marshall Islands</th>
+      <th>French Polynesia</th>
+      <th>New Zealand</th>
+      <th>Vanuatu</th>
+      <th>Palau</th>
+      <th>Papua New Guinea</th>
+      <th>Guam</th>
+      <th>Samoa</th>
+      <th>New Caledonia</th>
+      <th>Australia</th>
+      <th>Fiji</th>
+      <th>Tonga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>NaN</td>
+      <td>3159.856137</td>
+      <td>3348.725378</td>
+      <td>1727.328621</td>
+      <td>2516.301728</td>
+      <td>2019.144119</td>
+      <td>1861.584428</td>
+      <td>1849.150692</td>
+      <td>2054.905160</td>
+      <td>3263.901948</td>
+      <td>1806.972599</td>
+      <td>2151.129410</td>
+    </tr>
+    <tr>
+      <th>French Polynesia</th>
+      <td>3159.856137</td>
+      <td>NaN</td>
+      <td>2668.807328</td>
+      <td>2765.339382</td>
+      <td>5447.018761</td>
+      <td>4265.757856</td>
+      <td>4961.131713</td>
+      <td>1496.953816</td>
+      <td>2864.497308</td>
+      <td>3920.570216</td>
+      <td>2102.135722</td>
+      <td>1686.539411</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>3348.725378</td>
+      <td>2668.807328</td>
+      <td>NaN</td>
+      <td>1671.641167</td>
+      <td>4218.188412</td>
+      <td>2767.607095</td>
+      <td>4239.314912</td>
+      <td>2062.548020</td>
+      <td>1400.483623</td>
+      <td>1445.147895</td>
+      <td>1613.916992</td>
+      <td>1510.219450</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>1727.328621</td>
+      <td>2765.339382</td>
+      <td>1671.641167</td>
+      <td>NaN</td>
+      <td>2882.041892</td>
+      <td>1527.495923</td>
+      <td>2687.395771</td>
+      <td>1349.904435</td>
+      <td>335.602971</td>
+      <td>1687.810709</td>
+      <td>663.967196</td>
+      <td>1098.016273</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>2516.301728</td>
+      <td>5447.018761</td>
+      <td>4218.188412</td>
+      <td>2882.041892</td>
+      <td>NaN</td>
+      <td>1453.306058</td>
+      <td>800.243081</td>
+      <td>3956.305436</td>
+      <td>2974.892838</td>
+      <td>3099.023227</td>
+      <td>3468.037102</td>
+      <td>3931.843110</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>2019.144119</td>
+      <td>4265.757856</td>
+      <td>2767.607095</td>
+      <td>1527.495923</td>
+      <td>1453.306058</td>
+      <td>NaN</td>
+      <td>1591.171595</td>
+      <td>2789.123270</td>
+      <td>1552.708901</td>
+      <td>1786.749660</td>
+      <td>2174.712829</td>
+      <td>2623.742354</td>
+    </tr>
+    <tr>
+      <th>Guam</th>
+      <td>1861.584428</td>
+      <td>4961.131713</td>
+      <td>4239.314912</td>
+      <td>2687.395771</td>
+      <td>800.243081</td>
+      <td>1591.171595</td>
+      <td>NaN</td>
+      <td>3520.883355</td>
+      <td>2871.868601</td>
+      <td>3377.103870</td>
+      <td>3165.570014</td>
+      <td>3617.512808</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>1849.150692</td>
+      <td>1496.953816</td>
+      <td>2062.548020</td>
+      <td>1349.904435</td>
+      <td>3956.305436</td>
+      <td>2789.123270</td>
+      <td>3520.883355</td>
+      <td>NaN</td>
+      <td>1542.152644</td>
+      <td>2840.091065</td>
+      <td>716.316054</td>
+      <td>553.393188</td>
+    </tr>
+    <tr>
+      <th>New Caledonia</th>
+      <td>2054.905160</td>
+      <td>2864.497308</td>
+      <td>1400.483623</td>
+      <td>335.602971</td>
+      <td>2974.892838</td>
+      <td>1552.708901</td>
+      <td>2871.868601</td>
+      <td>1542.152644</td>
+      <td>NaN</td>
+      <td>1375.924712</td>
+      <td>825.890876</td>
+      <td>1179.069567</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>3263.901948</td>
+      <td>3920.570216</td>
+      <td>1445.147895</td>
+      <td>1687.810709</td>
+      <td>3099.023227</td>
+      <td>1786.749660</td>
+      <td>3377.103870</td>
+      <td>2840.091065</td>
+      <td>1375.924712</td>
+      <td>NaN</td>
+      <td>2145.768971</td>
+      <td>2362.766922</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>1806.972599</td>
+      <td>2102.135722</td>
+      <td>1613.916992</td>
+      <td>663.967196</td>
+      <td>3468.037102</td>
+      <td>2174.712829</td>
+      <td>3165.570014</td>
+      <td>716.316054</td>
+      <td>825.890876</td>
+      <td>2145.768971</td>
+      <td>NaN</td>
+      <td>463.843872</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>2151.129410</td>
+      <td>1686.539411</td>
+      <td>1510.219450</td>
+      <td>1098.016273</td>
+      <td>3931.843110</td>
+      <td>2623.742354</td>
+      <td>3617.512808</td>
+      <td>553.393188</td>
+      <td>1179.069567</td>
+      <td>2362.766922</td>
+      <td>463.843872</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q17 What is the most central country in the Australian continent?</span>
+
+<span class="token keyword">def</span> <span class="token function">get_most_central_AU</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df_AU <span class="token operator">=</span> get_distance_Australian<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_mean <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> numeric_only <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    df_AU_mean <span class="token operator">=</span> df_AU_mean<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> df_AU_mean<span class="token punctuation">.</span>index<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+get_most_central_AU<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;Vanuatu&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q18 What is the least central country in Australia?</span>
+
+<span class="token keyword">def</span> <span class="token function">get_least_central_AU</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df_AU <span class="token operator">=</span> get_distance_Australian<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_mean <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>axis <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> numeric_only <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    df_AU_mean <span class="token operator">=</span> df_AU_mean<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> df_AU_mean<span class="token punctuation">.</span>index<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+get_least_central_AU<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;French Polynesia&#39;</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q19 How close is each country in Australia to it's nearest neighbor?</span>
+
+<span class="token keyword">def</span> <span class="token function">AU_nearest_neighbor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df_AU <span class="token operator">=</span> get_distance_Australian<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_idxmin <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>idxmin<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_min <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    country_list <span class="token operator">=</span> df_AU_min<span class="token punctuation">.</span>index
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'nearest'</span><span class="token punctuation">:</span>df_AU_idxmin<span class="token punctuation">.</span>values<span class="token punctuation">,</span> <span class="token string">'distance'</span><span class="token punctuation">:</span>df_AU_min<span class="token punctuation">.</span>values<span class="token punctuation">}</span>
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index <span class="token operator">=</span> country_list<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> df
+AU_nearest_neighbor<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nearest</th>
+      <th>distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>Vanuatu</td>
+      <td>1727.328621</td>
+    </tr>
+    <tr>
+      <th>French Polynesia</th>
+      <td>Samoa</td>
+      <td>1496.953816</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>New Caledonia</td>
+      <td>1400.483623</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>New Caledonia</td>
+      <td>335.602971</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>Guam</td>
+      <td>800.243081</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>Palau</td>
+      <td>1453.306058</td>
+    </tr>
+    <tr>
+      <th>Guam</th>
+      <td>Palau</td>
+      <td>800.243081</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>Tonga</td>
+      <td>553.393188</td>
+    </tr>
+    <tr>
+      <th>New Caledonia</th>
+      <td>Vanuatu</td>
+      <td>335.602971</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>New Caledonia</td>
+      <td>1375.924712</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>Tonga</td>
+      <td>463.843872</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>Fiji</td>
+      <td>463.843872</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q20 How far is each country in Australia to it's furthest neighbor?</span>
+
+<span class="token keyword">def</span> <span class="token function">AU_furthest_neighbor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df_AU <span class="token operator">=</span> get_distance_Australian<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_idxmax <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>idxmax<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    df_AU_max <span class="token operator">=</span> df_AU<span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    country_list <span class="token operator">=</span> df_AU_max<span class="token punctuation">.</span>index
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'furthest'</span><span class="token punctuation">:</span>df_AU_idxmax<span class="token punctuation">.</span>values<span class="token punctuation">,</span> <span class="token string">'distance'</span><span class="token punctuation">:</span>df_AU_max<span class="token punctuation">.</span>values<span class="token punctuation">}</span>
+    df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index <span class="token operator">=</span> country_list<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> df
+AU_furthest_neighbor<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>furthest</th>
+      <th>distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>New Zealand</td>
+      <td>3348.725378</td>
+    </tr>
+    <tr>
+      <th>French Polynesia</th>
+      <td>Palau</td>
+      <td>5447.018761</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>Guam</td>
+      <td>4239.314912</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>Palau</td>
+      <td>2882.041892</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>French Polynesia</td>
+      <td>5447.018761</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>French Polynesia</td>
+      <td>4265.757856</td>
+    </tr>
+    <tr>
+      <th>Guam</th>
+      <td>French Polynesia</td>
+      <td>4961.131713</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>Palau</td>
+      <td>3956.305436</td>
+    </tr>
+    <tr>
+      <th>New Caledonia</th>
+      <td>Palau</td>
+      <td>2974.892838</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>French Polynesia</td>
+      <td>3920.570216</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>Palau</td>
+      <td>3468.037102</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>Palau</td>
+      <td>3931.843110</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sqlite3
+conn <span class="token operator">=</span> sqlite3<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">'countries.db'</span><span class="token punctuation">)</span>
+countries<span class="token punctuation">.</span>to_sql<span class="token punctuation">(</span><span class="token string">"countries"</span><span class="token punctuation">,</span> conn<span class="token punctuation">,</span> if_exists<span class="token operator">=</span><span class="token string">"replace"</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+capitals<span class="token punctuation">.</span>to_sql<span class="token punctuation">(</span><span class="token string">"capitals"</span><span class="token punctuation">,</span> conn<span class="token punctuation">,</span> if_exists<span class="token operator">=</span><span class="token string">"replace"</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q21 In our dataset, how many countries are in each continent?</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">'select continent, count(country) AS `number of countries` from countries group by continent order by `number of countries`'</span><span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>number of countries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Australia</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>South America</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>North America</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Asia</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Europe</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Africa</td>
+      <td>47</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q22 How many countries are in each continent? (answer with a plot)</span>
+<span class="token comment" spellcheck="true">#plt.figure(figsize = (10,3)) </span>
+plt<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>df<span class="token punctuation">[</span><span class="token string">'number of countries'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fc <span class="token operator">=</span> <span class="token string">'black'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'continent'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'number of countries'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>([0, 1, 2, 3, 4, 5], &lt;a list of 6 Text xticklabel objects&gt;)</code></pre><p><img src="output_32_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q23 What is the total population of each continent?</span>
+df_pop <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">'select continent,sum(population) AS `total population` from countries group by continent order by `total population` DESC'</span><span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+bl <span class="token operator">=</span> df_pop<span class="token punctuation">[</span><span class="token string">'total population'</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">1000000</span>
+df_pop<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token string">'total population (million)'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bl
+df_pop<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns <span class="token operator">=</span> <span class="token string">'total population'</span><span class="token punctuation">,</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+df_pop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>total population (million)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Asia</td>
+      <td>3739.902863</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Africa</td>
+      <td>807.299195</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Europe</td>
+      <td>792.053486</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>North America</td>
+      <td>515.041558</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>South America</td>
+      <td>375.441666</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Australia</td>
+      <td>32.163025</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q24 What is the total population of each continent? (answer with a plot)</span>
+<span class="token comment" spellcheck="true">#plt.figure(figsize = (10,3)) </span>
+plt<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>df_pop<span class="token punctuation">[</span><span class="token string">'continent'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>df_pop<span class="token punctuation">[</span><span class="token string">'total population (million)'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fc <span class="token operator">=</span> <span class="token string">'black'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'continent'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'total population (million)'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>([0, 1, 2, 3, 4, 5], &lt;a list of 6 Text xticklabel objects&gt;)</code></pre><p><img src="output_34_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q25 What is the population of each country in South America?</span>
+df_sou <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">"select country,sum(population) AS population from countries where continent = 'South America' group by country order by population DESC "</span><span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+df_sou
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>188078227</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Colombia</td>
+      <td>43593035</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina</td>
+      <td>39921833</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Peru</td>
+      <td>28302603</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Venezuela</td>
+      <td>25730435</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Chile</td>
+      <td>16134219</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ecuador</td>
+      <td>13547510</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Bolivia</td>
+      <td>8989046</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Paraguay</td>
+      <td>6506464</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Uruguay</td>
+      <td>3431932</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Guyana</td>
+      <td>767245</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Suriname</td>
+      <td>439117</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q26 What are the top 10 countries that have the largest real GDP?</span>
+df_top <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">"select country,population * `gdp-per-capita` AS `real GDP` from countries order by `real GDP` DESC "</span><span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+df_top_10 <span class="token operator">=</span> df_top<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+bl <span class="token operator">=</span> df_top_10<span class="token punctuation">[</span><span class="token string">'real GDP'</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">1000000000</span> 
+df_top_10<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token string">'real GDP (billion)'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bl
+df_top_10<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns <span class="token operator">=</span> <span class="token string">'real GDP'</span><span class="token punctuation">,</span>inplace <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+df_top_10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>real GDP (billion)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>United States</td>
+      <td>11281.191327</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>China</td>
+      <td>6569.868565</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Japan</td>
+      <td>3594.473830</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>India</td>
+      <td>3176.520785</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Germany</td>
+      <td>2274.855452</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>France</td>
+      <td>1680.181354</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United Kingdom</td>
+      <td>1678.873538</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Italy</td>
+      <td>1552.164690</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Brazil</td>
+      <td>1429.394525</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Russia</td>
+      <td>1271.752506</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q27 What are the top 10 countries that have the largest real GDP? (answer with a plot)</span>
+ot <span class="token operator">=</span> sum<span class="token punctuation">(</span>df_top<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'real GDP'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">1000000000</span>
+df_top_10<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">'new'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Other'</span><span class="token punctuation">,</span>ot<span class="token punctuation">]</span>
+df_top_10 <span class="token operator">=</span> df_top_10<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#plt.figure(figsize = (10,3))</span>
+plt<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>df_top_10<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>df_top_10<span class="token punctuation">[</span><span class="token string">'real GDP (billion)'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fc <span class="token operator">=</span> <span class="token string">'black'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'contry'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'GDP (billions)'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">20000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+my_y_ticks <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20000</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span>my_y_ticks<span class="token punctuation">)</span> 
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], &lt;a list of 11 Text xticklabel objects&gt;)</code></pre><p><img src="output_37_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q28 What are the top 15 countries that have the largest gap between birth rate and death rate?</span>
+df_gap <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">"select country,`birth-rate`,`death-rate` from countries order by (`birth-rate`-`death-rate`) DESC  "</span><span class="token punctuation">,</span>conn<span class="token punctuation">)</span>
+df_gap<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>birth-rate</th>
+      <th>death-rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Uganda</td>
+      <td>47.35</td>
+      <td>12.24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Yemen</td>
+      <td>42.89</td>
+      <td>8.30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mali</td>
+      <td>49.82</td>
+      <td>16.89</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Oman</td>
+      <td>36.24</td>
+      <td>3.81</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Madagascar</td>
+      <td>41.41</td>
+      <td>11.11</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Burkina Faso</td>
+      <td>45.62</td>
+      <td>15.60</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Niger</td>
+      <td>50.73</td>
+      <td>20.91</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Chad</td>
+      <td>45.73</td>
+      <td>16.38</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Mauritania</td>
+      <td>40.99</td>
+      <td>12.16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Burundi</td>
+      <td>42.22</td>
+      <td>13.46</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Comoros</td>
+      <td>36.93</td>
+      <td>8.20</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Somalia</td>
+      <td>45.13</td>
+      <td>16.63</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Marshall Islands</td>
+      <td>33.05</td>
+      <td>4.78</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Maldives</td>
+      <td>34.81</td>
+      <td>7.06</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Togo</td>
+      <td>37.01</td>
+      <td>9.83</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q29 What are the top 15 countries that have the largest gap between birth rate and death rate? (answer with a plot)</span>
+df_gap<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> df_gap<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">.</span>plot<span class="token punctuation">.</span>barh<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"rate"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_yticklabels<span class="token punctuation">(</span>df_gap<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">.</span>country<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>[Text(0, 0, &#39;Uganda&#39;),
+ Text(0, 0, &#39;Yemen&#39;),
+ Text(0, 0, &#39;Mali&#39;),
+ Text(0, 0, &#39;Oman&#39;),
+ Text(0, 0, &#39;Madagascar&#39;),
+ Text(0, 0, &#39;Burkina Faso&#39;),
+ Text(0, 0, &#39;Niger&#39;),
+ Text(0, 0, &#39;Chad&#39;),
+ Text(0, 0, &#39;Mauritania&#39;),
+ Text(0, 0, &#39;Burundi&#39;),
+ Text(0, 0, &#39;Comoros&#39;),
+ Text(0, 0, &#39;Somalia&#39;),
+ Text(0, 0, &#39;Marshall Islands&#39;),
+ Text(0, 0, &#39;Maldives&#39;),
+ Text(0, 0, &#39;Togo&#39;)]</code></pre><p><img src="output_39_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q30 What is the relationship between death rates and birth rates? (answer with a plot)</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+
+ax <span class="token operator">=</span> df_gap<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'death-rate'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'birth-rate'</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'death-rate'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>Text(0.5, 0, &#39;death-rate&#39;)</code></pre><p><img src="output_40_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q31 Did you notice the six outliers? Which countries are they?</span>
+df_part <span class="token operator">=</span> df_gap<span class="token punctuation">[</span>df_gap<span class="token punctuation">[</span><span class="token string">'death-rate'</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token number">16</span><span class="token punctuation">]</span>
+df_part <span class="token operator">=</span> df_part<span class="token punctuation">[</span>df_part<span class="token punctuation">[</span><span class="token string">'birth-rate'</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">]</span>
+df_1 <span class="token operator">=</span> df_part<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">,</span><span class="token string">'death-rate'</span><span class="token punctuation">,</span><span class="token string">'birth-rate'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+df_1<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'death-rate'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>drop<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>death-rate</th>
+      <th>birth-rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Namibia</td>
+      <td>18.86</td>
+      <td>24.32</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Zimbabwe</td>
+      <td>21.84</td>
+      <td>28.01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>South Africa</td>
+      <td>22.00</td>
+      <td>18.20</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Lesotho</td>
+      <td>28.71</td>
+      <td>24.75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Botswana</td>
+      <td>29.50</td>
+      <td>23.08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Swaziland</td>
+      <td>29.74</td>
+      <td>27.41</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q32 What is the correlation between death rates and birth rates?</span>
+countries<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'death-rate'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"birth-rate"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>0.3965086117752512</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q33 What is the relationship between GDP per capita and the number of phones per capita?</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'phones'</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_43_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q34 What is the correlation between GDP per capita and number of phones per capita?</span>
+countries<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'phones'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>0.8786946640591311</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q35 What is the relationship between literacy and GDP per capita?</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'literacy'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_45_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q36 What is the relationship between GDP per capita and death rates?:</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'death-rate'</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_46_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q37 What is the relationship between GDP per capita and birth rates?</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'birth-rate'</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_47_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q38 What is the relationship between GDP per capita and the inverse of birth rates?</span>
+countries<span class="token punctuation">[</span><span class="token string">'inverse'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>countries<span class="token punctuation">[</span><span class="token string">'birth-rate'</span><span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.size"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'inverse'</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_48_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q39 fit a y = m * x + n line to the scatter plot in question 38 using the least-squares method; what are the coefficients m and n?</span>
+countries<span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+res <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>lstsq<span class="token punctuation">(</span>countries<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"gdp-per-capita"</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> countries<span class="token punctuation">[</span><span class="token string">"inverse"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> rcond<span class="token operator">=</span>None<span class="token punctuation">)</span>
+
+coefficients <span class="token operator">=</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># coefficients is (m,n:</span>
+m <span class="token operator">=</span> coefficients<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># slope</span>
+n <span class="token operator">=</span> coefficients<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># intercept</span>
+
+coef_tuple <span class="token operator">=</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+coef_tuple<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>(1.8365703926233426e-06, 0.03916624252079354)</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#q40 plot the regression line to the scatter plot</span>
+ax <span class="token operator">=</span> countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'inverse'</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token string">'gray'</span><span class="token punctuation">)</span>
+countries<span class="token punctuation">[</span><span class="token string">"fit"</span><span class="token punctuation">]</span> <span class="token operator">=</span> countries<span class="token punctuation">[</span><span class="token string">"gdp-per-capita"</span><span class="token punctuation">]</span> <span class="token operator">*</span> m <span class="token operator">+</span> n
+countries<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>line<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">'gdp-per-capita'</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'fit'</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a6a75308d0&gt;</code></pre><p><img src="output_50_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python">conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>Reprint policy</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《CS301_Proj10》
+                </span> by
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/15/cs301-proj10/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                Naixin Zhang
+            </a> is licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                Creative Commons Attribution 4.0 International License
+            </a> 
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
+        id: '2019/12/15/cs301-proj10/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/12/22/ab-test-summary/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="AB Test summary">
+                        
+                        <span class="card-title">AB Test summary</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Main script to perform an A/B experiment using simulated dataModules: N/A 
+Author: Cornelia Ilin 
+Email: cilin@wisc.edu 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/A-B-Test/" class="post-category" target="_blank">
+                                    A_B Test
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/A-B-Test/" target="_blank">
+                        <span class="chip bg-color">A_B Test</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/30/cs301-proj9/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="CS301_Proj9">
+                        
+                        <span class="card-title">CS301_Proj9</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            CS301_Proj9IntroductionIn this project, you’ll be analyzing a collection of reviews of Amazon products (adapted from htt
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS301Proj/" class="post-category" target="_blank">
+                                    CS301Proj
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CS301-Data-Programming-I/" target="_blank">
+                        <span class="chip bg-color">CS301 Data Programming I</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color center-align">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020 NaixinZhang. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>
