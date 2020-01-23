@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://naixinzhang.github.io/2018/01/31/6-price-test/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/22/1-conversion-rate/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/02/01/7-marketing-email-campaign/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/3-employee-rentention/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/4-identifying-fraudulent-activities/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2019/10/23/cs301-proj5/</loc>
+    <lastmod>2020-01-23</lastmod>
+  </url>  <url>
     <loc>http://naixinzhang.github.io/2019/12/15/cs301-proj10/</loc>
     <lastmod>2020-01-23</lastmod>
   </url>  <url>
@@ -14,9 +32,6 @@
     <lastmod>2020-01-23</lastmod>
   </url>  <url>
     <loc>http://naixinzhang.github.io/2019/10/31/cs301-proj6/</loc>
-    <lastmod>2020-01-23</lastmod>
-  </url>  <url>
-    <loc>http://naixinzhang.github.io/2019/10/23/cs301-proj5/</loc>
     <lastmod>2020-01-23</lastmod>
   </url>  <url>
     <loc>http://naixinzhang.github.io/2019/09/23/cs301-proj3/</loc>
@@ -34,22 +49,7 @@
     <loc>http://naixinzhang.github.io/2019/11/22/free-trial-screener/</loc>
     <lastmod>2020-01-17</lastmod>
   </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/02/01/7-marketing-email-campaign/</loc>
-    <lastmod>2020-01-17</lastmod>
-  </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/01/24/4-identifying-fraudulent-activities/</loc>
-    <lastmod>2020-01-17</lastmod>
-  </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/01/24/3-employee-rentention/</loc>
-    <lastmod>2020-01-17</lastmod>
-  </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/01/22/1-conversion-rate/</loc>
-    <lastmod>2020-01-17</lastmod>
-  </url>  <url>
     <loc>http://naixinzhang.github.io/2018/01/23/2-spanish-translation-ab-test/</loc>
-    <lastmod>2020-01-17</lastmod>
-  </url>  <url>
-    <loc>http://naixinzhang.github.io/2018/01/31/6-price-test/</loc>
     <lastmod>2020-01-17</lastmod>
   </url>
 </urlset>
