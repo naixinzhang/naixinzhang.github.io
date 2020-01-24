@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-01-23T19:37:59.322Z</updated>
+  <updated>2020-01-17T04:50:06.327Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -15,469 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/9.1maximal-margin-classifier/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/9.1maximal-margin-classifier/</id>
-    <published>2020-01-23T19:15:28.053Z</published>
-    <updated>2020-01-23T19:37:59.322Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch9.1 Maximal_Margin_Classifier
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/8.2bagging-random-forest-boosting/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/8.2bagging-random-forest-boosting/</id>
-    <published>2020-01-23T19:14:39.207Z</published>
-    <updated>2020-01-23T19:37:07.839Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch8.2 Bagging,Random_Forest,Boosting
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/8.1the-basics-of-decision-trees/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/8.1the-basics-of-decision-trees/</id>
-    <published>2020-01-23T19:14:07.641Z</published>
-    <updated>2020-01-23T19:36:27.057Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch8.1 The_Basics_of_Decision_Trees
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/6.0intro-model-selection/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/6.0intro-model-selection/</id>
-    <published>2020-01-23T19:13:01.036Z</published>
-    <updated>2020-01-23T19:32:59.065Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch6.0 Intro_Model_Selection
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/6.4considerations-in-high-dimensions/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/6.4considerations-in-high-dimensions/</id>
-    <published>2020-01-23T19:11:36.909Z</published>
-    <updated>2020-01-23T19:35:53.547Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch6.4 Considerations_In_High_Dimensions
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/6.3dimension-reduction-pca/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/6.3dimension-reduction-pca/</id>
-    <published>2020-01-23T19:11:08.874Z</published>
-    <updated>2020-01-23T19:35:02.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch6.3 Dimension_Reduction-PCA
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/6.2shrinkage-methods/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/6.2shrinkage-methods/</id>
-    <published>2020-01-23T19:10:21.426Z</published>
-    <updated>2020-01-23T19:34:23.618Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch6.2 Shrinkage Methods
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/6.1subset-selection/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/6.1subset-selection/</id>
-    <published>2020-01-23T19:09:42.658Z</published>
-    <updated>2020-01-23T19:33:38.622Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch6.1 Subset_Selection
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/5.2the-bootstrap/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/5.2the-bootstrap/</id>
-    <published>2020-01-23T18:39:27.057Z</published>
-    <updated>2020-01-23T19:32:18.718Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch5.2 Potential Problems
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/5.1cross-validation/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/5.1cross-validation/</id>
-    <published>2020-01-23T18:38:56.232Z</published>
-    <updated>2020-01-23T19:31:35.499Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch5.1 Cross_Validation
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/4.5comparison-of-classification-methods/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/4.5comparison-of-classification-methods/</id>
-    <published>2020-01-23T18:36:33.370Z</published>
-    <updated>2020-01-23T19:30:45.140Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch4.5 Comparison_of_Classification_Methods
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/4.4linear-discriminant-analysis/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/4.4linear-discriminant-analysis/</id>
-    <published>2020-01-23T18:36:00.219Z</published>
-    <updated>2020-01-23T19:29:51.267Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch4.4 Linear_Discriminant_Analysis
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/4.3logistic-regression/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/4.3logistic-regression/</id>
-    <published>2020-01-23T18:35:08.482Z</published>
-    <updated>2020-01-23T19:29:10.067Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch4.3 Logistic_Regression
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</id>
-    <published>2020-01-23T18:30:54.235Z</published>
-    <updated>2020-01-23T19:28:13.422Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch3.5 Comparison_of_Linear_Regression_with_K-Nearest_Neighbors
-date: 2019-09-23 12:32:09
-top: false
-cover:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/23/islr/3.3potential-problems/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/islr/3.3potential-problems/</id>
-    <published>2020-01-23T18:29:29.434Z</published>
-    <updated>2020-01-23T19:26:34.295Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: ISLR_ch3.3 Potential Problems
-date: 2019-09-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/01/22/cs301-proj8/"/>
-    <id>http://naixinzhang.github.io/2020/01/22/cs301-proj8/</id>
-    <published>2020-01-23T02:42:43.579Z</published>
-    <updated>2020-01-23T17:33:37.401Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: CS301_Proj8
-date: 2019-011-23 12:32:09
-top: false
-cover: false
-password:
-toc: true
-mathjax: false
-tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;CS301
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>KPI dashboard</title>
@@ -580,6 +117,422 @@ tags:&lt;/p&gt;
     
     
       <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj8</title>
+    <link href="http://naixinzhang.github.io/2019/11/23/cs301-proj8/"/>
+    <id>http://naixinzhang.github.io/2019/11/23/cs301-proj8/</id>
+    <published>2019-11-23T18:32:09.000Z</published>
+    <updated>2020-01-24T00:24:52.423Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj8&quot;&gt;&lt;a href=&quot;#CS301-Proj8&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj8&quot;&gt;&lt;/a&gt;CS301_Proj8&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Free Trail Screen</title>
+    <link href="http://naixinzhang.github.io/2019/11/22/free-trial-screener/"/>
+    <id>http://naixinzhang.github.io/2019/11/22/free-trial-screener/</id>
+    <published>2019-11-23T03:06:09.000Z</published>
+    <updated>2020-01-17T03:08:16.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;📘-Experiment-design&quot;&gt;&lt;a href=&quot;#📘-Experiment-design&quot; class=&quot;headerlink&quot; title=&quot;📘  Experiment design&quot;&gt;&lt;/a&gt;📘  Experiment
+        
+      
+    
+    </summary>
+    
+      <category term="A_B Test" scheme="http://naixinzhang.github.io/categories/A-B-Test/"/>
+    
+    
+      <category term="A_B Test" scheme="http://naixinzhang.github.io/tags/A-B-Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj7</title>
+    <link href="http://naixinzhang.github.io/2019/11/14/cs301-proj7/"/>
+    <id>http://naixinzhang.github.io/2019/11/14/cs301-proj7/</id>
+    <published>2019-11-14T18:32:09.000Z</published>
+    <updated>2020-01-23T17:31:38.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj7&quot;&gt;&lt;a href=&quot;#CS301-Proj7&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj7&quot;&gt;&lt;/a&gt;CS301_Proj7&lt;/h1&gt;&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj6</title>
+    <link href="http://naixinzhang.github.io/2019/10/31/cs301-proj6/"/>
+    <id>http://naixinzhang.github.io/2019/10/31/cs301-proj6/</id>
+    <published>2019-10-31T17:32:09.000Z</published>
+    <updated>2020-01-23T17:30:49.231Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj6&quot;&gt;&lt;a href=&quot;#CS301-Proj6&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj6&quot;&gt;&lt;/a&gt;CS301_Proj6&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj5</title>
+    <link href="http://naixinzhang.github.io/2019/10/23/cs301-proj5/"/>
+    <id>http://naixinzhang.github.io/2019/10/23/cs301-proj5/</id>
+    <published>2019-10-23T17:32:09.000Z</published>
+    <updated>2020-01-23T17:38:37.749Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj5&quot;&gt;&lt;a href=&quot;#CS301-Proj5&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj5&quot;&gt;&lt;/a&gt;CS301_Proj5&lt;/h1&gt;&lt;h2 id=&quot;Overview&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj3</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/cs301-proj3/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/cs301-proj3/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T16:09:21.512Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj3&quot;&gt;&lt;a href=&quot;#CS301-Proj3&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj3&quot;&gt;&lt;/a&gt;CS301_Proj3&lt;/h1&gt;&lt;h2 id=&quot;Description&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch2.2 Assessing Model Accuracy</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T19:27:10.418Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch2-2-Assessing-Model-Accuracy&quot;&gt;&lt;a href=&quot;#ISLR-ch2-2-Assessing-Model-Accuracy&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch2.2 Assessing
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch3.1 Simple Linear Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T19:26:56.102Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-1-Simple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-1-Simple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.1 Simple
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch3.2 Multiple Linear Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T19:26:43.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch3.3 Potential Problems</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:20:36.450Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-3-Potential-Problems&quot;&gt;&lt;a href=&quot;#ISLR-ch3-3-Potential-Problems&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.3 Potential
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch3.5 Comparison_of_Linear_Regression_with_K-Nearest_Neighbors</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:21:48.360Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-5-Comparison-of-Linear-Regression-with-K-Nearest-Neighbors&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch4.3 Logistic_Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:21:58.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch4-3-Logistic-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch4-3-Logistic-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch4.3
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch4.5 Comparison_of_Classification_Methods</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/4.5comparison-of-classification-methods/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/4.5comparison-of-classification-methods/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:22:20.263Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch4-5-Comparison-of-Classification-Methods&quot;&gt;&lt;a href=&quot;#ISLR-ch4-5-Comparison-of-Classification-Methods&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch4.4 Linear_Discriminant_Analysis</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/4.4linear-discriminant-analysis/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/4.4linear-discriminant-analysis/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:22:09.471Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch4-4-Linear-Discriminant-Analysis&quot;&gt;&lt;a href=&quot;#ISLR-ch4-4-Linear-Discriminant-Analysis&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch4.4
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch5.1 Cross_Validation</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/5.1cross-validation/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/5.1cross-validation/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:22:32.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch5-1-Cross-Validation&quot;&gt;&lt;a href=&quot;#ISLR-ch5-1-Cross-Validation&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch5.1
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch5.2 Potential Problems</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/5.2the-bootstrap/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/5.2the-bootstrap/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-24T00:22:43.152Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch5-2-Potential-Problems&quot;&gt;&lt;a href=&quot;#ISLR-ch5-2-Potential-Problems&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch5.2 Potential
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
     
   </entry>
   
