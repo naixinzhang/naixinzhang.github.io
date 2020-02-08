@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-02-08T04:21:48.537Z</updated>
+  <updated>2020-02-08T17:18:51.142Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec2/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec2/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T04:21:48.537Z</updated>
+    <updated>2020-02-08T17:18:51.142Z</updated>
     
     <summary type="html">
     
@@ -47,7 +47,7 @@
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec3/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec3/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T05:35:08.946Z</updated>
+    <updated>2020-02-08T17:26:52.561Z</updated>
     
     <summary type="html">
     
@@ -73,7 +73,7 @@
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec4/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec4/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T05:36:26.032Z</updated>
+    <updated>2020-02-08T17:51:20.161Z</updated>
     
     <summary type="html">
     
@@ -95,11 +95,11 @@
   </entry>
   
   <entry>
-    <title>Regional profit analysis</title>
-    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
+    <title>populations developing across countries of the world</title>
+    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec5/"/>
+    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T05:36:54.969Z</updated>
+    <updated>2020-02-08T17:52:28.441Z</updated>
     
     <summary type="html">
     
@@ -107,7 +107,7 @@
       
         
         
-          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been approached by a
+          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are hired by the World
         
       
     
@@ -121,11 +121,11 @@
   </entry>
   
   <entry>
-    <title>populations developing across countries of the world</title>
-    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec5/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</id>
+    <title>Regional profit analysis</title>
+    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
+    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T05:40:28.492Z</updated>
+    <updated>2020-02-08T17:52:55.527Z</updated>
     
     <summary type="html">
     
@@ -133,7 +133,7 @@
       
         
         
-          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are hired by the World
+          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been approached by a
         
       
     
@@ -407,32 +407,6 @@
   </entry>
   
   <entry>
-    <title>ISLR_ch3.2 Multiple Linear Regression</title>
-    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
-    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
-    <published>2019-09-23T17:32:09.000Z</published>
-    <updated>2020-01-23T19:26:43.664Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
-        
-      
-    
-    </summary>
-    
-      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
-    
-    
-      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ISLR_ch3.1 Simple Linear Regression</title>
     <link href="http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/"/>
     <id>http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/</id>
@@ -472,6 +446,32 @@
         
         
           &lt;h1 id=&quot;ISLR-ch2-2-Assessing-Model-Accuracy&quot;&gt;&lt;a href=&quot;#ISLR-ch2-2-Assessing-Model-Accuracy&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch2.2 Assessing
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ISLR_ch3.2 Multiple Linear Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T19:26:43.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
         
       
     
