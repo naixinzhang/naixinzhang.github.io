@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ISLR_ch8.2 Bagging,Random_Forest,Boosting, Naixin&#39;s blog">
+    <meta name="keywords" content="Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="ISLR_ch8.2 Bagging,Random_Forest,BoostingBaggingBootstrap aggregation, or bagging, is a general-purpose procedure for re">
+    <meta name="description" content="IntroductionYou are hired by the World Bank as a Tableau Developer.
+You assignment is to deliver an animated dashboard s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ISLR_ch8.2 Bagging,Random_Forest,Boosting | Naixin&#39;s blog</title>
+    <title>Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ISLR_ch8.2 Bagging,Random_Forest,Boosting
+                        
                     </div>
                 </div>
             </div>
@@ -375,8 +376,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Machine-Learning-notes/" target="_blank">
-                            <span class="chip bg-color">Machine Learning notes</span>
+                        <a href="/tags/Tableau/" target="_blank">
+                            <span class="chip bg-color">Tableau</span>
                         </a>
                         
                     </div>
@@ -387,8 +388,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                            An Introduction to statistical Learning
+                        <a href="/categories/Tableau/" class="post-category" target="_blank">
+                            Tableau
                         </a>
                         
                     </div>
@@ -399,7 +400,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-23
+                    2020-01-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -413,14 +414,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    110
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    1 Min
                 </div>
                 
                 
@@ -436,166 +437,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ISLR-ch8-2-Bagging-Random-Forest-Boosting"><a href="#ISLR-ch8-2-Bagging-Random-Forest-Boosting" class="headerlink" title="ISLR_ch8.2 Bagging,Random_Forest,Boosting"></a>ISLR_ch8.2 Bagging,Random_Forest,Boosting</h1><h1 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h1><p><strong>Bootstrap aggregation</strong>, or <strong>bagging</strong>, is a general-purpose procedure for reducing the
-variance of a statistical learning method, frequently used in the context of decision trees.</p>
-<p><strong>Averaging a set of observations reduces variance</strong>: Recall that given a set of n independent observations Z1, . . . , Zn, each
-with variance $σ^2$, the variance of the mean $\bar{Z}$ of the observations is given
-by $σ^2/n$. </p>
+                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>You are hired by the World Bank as a Tableau Developer.</p>
+<p>You assignment is to deliver an animated dashboard showing how populations of countries across the world have been developing over the past 50 years.</p>
+<p>Specifically, the stake holders of this assignment are interested to see overall trend in fertility, life expectancy and population. In addition to overall trends they would like to be able to drill into individual countries.</p>
+<h1 id="Visualization"><a href="#Visualization" class="headerlink" title="Visualization"></a>Visualization</h1><p>demo:</p>
+<p><a href="https://prod-useast-a.online.tableau.com/#/site/naixinsdashboard/views/WorldDemographicAnalysisDashboard/WorldDemographics?:iid=2" target="_blank" rel="noopener">https://prod-useast-a.online.tableau.com/#/site/naixinsdashboard/views/WorldDemographicAnalysisDashboard/WorldDemographics?:iid=2</a></p>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>In this section:</p>
+<p>we learned:</p>
 <ul>
-<li>A natural way to reduce the variance and hence increase the prediction
-accuracy of a statistical learning method is to <strong>take many training sets
-from the population</strong>, build a separate prediction model using each training
-set, and average the resulting predictions.</li>
-</ul>
-<p><strong>Bootstrap</strong> taking repeated samples from the (single) training data set </p>
-<p><strong>Bagging</strong></p>
-<ul>
-<li>Generate B different bootstrapped training data sets. </li>
-<li>Train our method on
-the bth bootstrapped training set in order to get $\hat{f}^{*b}(x)$</li>
-<li>Finally average
-all the predictions, to obtain</li>
-</ul>
-<p>\begin{align}
-\hat{f}_{bag}(x)=\frac{1}{B}\sum_{b=1}^B\hat{f}^{*b}(x)
-\end{align}</p>
-<p><strong>Apply bagging to regression trees</strong></p>
-<ul>
-<li>Construct B regression trees using B bootstrapped training
-sets</li>
-<li>Average the resulting predictions. These trees are grown deep,
-and are not pruned. Hence each individual tree has high variance, but
-low bias. Averaging these B trees reduces the variance. </li>
-</ul>
-<p><strong>Bagging on Classification Tree</strong></p>
-<ul>
-<li>For a given test observation, we can record the class predicted by each of the B trees, and
-take a <strong>majority vote</strong>: the overall prediction is the most commonly occurring
-class among the B predictions.</li>
-</ul>
-<p><strong>B</strong></p>
-<p> The number of trees B is not a critical parameter with bagging ,using a very large value of B will not lead to overfitting.
-- In practice we
-use a value of B sufficiently large that the error has settled down, like B=100.
-
-</p><h2 id="Out-of-Bag-Error-Estimation"><a href="#Out-of-Bag-Error-Estimation" class="headerlink" title="Out-of-Bag Error Estimation"></a>Out-of-Bag Error Estimation</h2><p>Recall that the key to bagging is that trees are
-repeatedly fit to bootstrapped subsets of the observations. One can show
-that on average, each bagged tree makes use of around 2/3 of the
-observations. The remaining one-third of the observations not used to fit a
-given bagged tree are referred to as the <strong>out-of-bag (OOB)</strong> observations. </p>
-<blockquote>
-<p>We
-can predict the response for the ith observation using each of the trees in which that observation was OOB. </p>
-</blockquote>
-<ul>
-<li>This will yield around B/3 predictions
-for the ith observation. </li>
-<li>To obtain a single prediction for the ith
-observation, we can <strong>average</strong> these predicted responses (regression) or can take a <strong>majority vote</strong> (classification). </li>
-<li>This leads
-to a single OOB prediction for the ith observation.</li>
-</ul>
-<p>The OOB approach for estimating
-the test error is particularly convenient when performing bagging on large
-data sets for which <strong>cross-validation</strong> would be computationally onerous.</p>
-<h2 id="Variable-Importance-Measures"><a href="#Variable-Importance-Measures" class="headerlink" title="Variable Importance Measures"></a>Variable Importance Measures</h2><p><strong>Bagging improves prediction
-accuracy at the expense of interpretability</strong></p>
-<ul>
-<li>When we bag a large number of trees, it is no longer possible to represent the resulting statistical learning
-procedure using a single tree, and it is no longer clear which variables
-are most important to the procedure</li>
-</ul>
-<p><strong>Variable Importance</strong></p>
-<ul>
-<li>One can obtain an overall summary of the importance of
-each predictor using the RSS (for bagging regression trees) or the Gini index
-(for bagging classification trees). </li>
-<li><strong>Bagging regression trees</strong>: Record the total amount that the RSS is decreased due to splits
-over a given predictor, averaged over all B trees. A large value indicates
-an important predictor. 
-\begin{align}
-RSS=\sum_{j=1}^J\sum_{i \in R_j} (y_i-\hat{y}_{R_j})^2
-\end{align}</li>
-<li><strong>Bagging classification
-trees</strong>: Add up the total amount that the <strong>Gini index</strong> is decreased
-by splits over a given predictor, averaged over all B trees.</li>
-</ul>
-<img src="./images/11.png" width="600">
-
-<h1 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h1><p><strong>Random forests</strong> provide an improvement over bagged trees by way of a
-small tweak that <strong>decorrelates</strong> the trees. </p>
-<p>As in bagging, we build a number 
-of decision trees on bootstrapped training samples. But when building these
-decision trees, each time a split in a tree is considered, <em>a random sample of
-m predictors is chosen as split candidates</em> from the full set of p predictors.</p>
-<p>Bigest difference between random forest and bagging:
-<strong>The split is allowed to use only one of those m predictors.</strong> A fresh sample of
-m predictors is taken at each split, and typically we choose $m ≈\sqrt{p}$ </p>
-<p><strong>Rationale</strong>:</p>
-<ul>
-<li>Suppose that there is one very strong predictor in the data set, along with a number
-of other moderately strong predictors. Then in the collection of bagged
-trees, most or all of the trees will use this strong predictor in the top split.
-Consequently, <em>all of the bagged trees will look quite similar to each other.</em></li>
-<li>Hence the predictions from the bagged trees will be highly correlated. Unfortunately,
-averaging many highly correlated quantities does not lead to
-as large of a reduction in variance as averaging many uncorrelated quantities.</li>
-</ul>
-<p><strong>Decorrelating</strong> the trees: Random forests forces each split to consider
-only a subset of the predictors, making the average of the resulting trees less variable
-and hence more reliable.</p>
-<p><strong>B</strong>
-As with bagging, random forests will not overfit if we increase B, so in practice we use a value of B sufficiently large for the error rate to have settled down.</p>
-<h1 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h1><p><strong>Boosting</strong>: another approach for improving the predictions resulting from a decision tree.</p>
-<ul>
-<li>Trees are grown <strong>sequentially</strong>: each tree is grown using information from previously
-grown trees. </li>
-<li>Boosting does not involve bootstrap sampling; instead each
-tree is fit on a modified version of the original data set.</li>
-</ul>
-<img src="./images/12.png" width="600">
-
-<p><strong>Idea behind this procedure</strong></p>
-<ul>
-<li>Unlike fitting a single large decision
-tree to the data, which amounts to fitting the data hard and potentially
-overfitting, the boosting approach instead <strong>learns slowly</strong>. </li>
-<li>Given the current
-model, we fit a decision tree to the residuals from the model. That is, we
-fit a tree using the current residuals, rather than the outcome Y , as the response.</li>
-<li>We then add this new decision tree into the fitted function in order
-to update the residuals. Each of these trees can be rather small, with just
-a few terminal nodes, determined by the parameter <strong>d</strong> in the algorithm. </li>
-<li>By
-fitting small trees to the residuals, we slowly improve $\hat{f}$ in areas where it
-does not perform well. </li>
-<li>The shrinkage parameter <strong>λ</strong> slows the process down
-even further, allowing more and different shaped trees to attack the residuals.</li>
-</ul>
-<blockquote>
-<p>Note that in boosting, unlike in bagging, the construction of
-each tree depends strongly on the trees that have already been grown.</p>
-</blockquote>
-<p><strong>Boosting has three tuning parameters:</strong></p>
-<ol>
-<li>The number of trees $B$.
-Unlike bagging and random forests, boostingcan overfit if B is too large, although this overfitting tends to occur slowly if at all. We use cross-validation to select B.</li>
-<li>The shrinkage parameter $λ$, a small positive number. This controls the rate at which boosting learns.</li>
-<li>The number $d$ of splits in each tree, which controls the complexity
-of the boosted ensemble. Often d = 1 works well, in which case each
-tree is a <strong>stump</strong>, consisting of a single split. In this case, the boosted
-ensemble is fitting an <strong>additive model</strong>, since each term involves only a
-single variable. More generally $d$ is the <strong>interaction depth</strong>, and controls
-the interaction order of the boosted model, since $d$ splits can involve 
-at most d variables.</li>
-</ol>
-<p><strong>Boosting V.S. Random forests:</strong></p>
-<ul>
-<li>In boosting, because the growth of a particular tree
-takes into account the other trees that have already been grown, smaller
-trees are typically sufficient. </li>
-<li>Using smaller trees can aid in interpretability
-as well; for instance, using <strong>stumps</strong> leads to an additive model.</li>
+<li><p>create animations in Tableau</p>
+</li>
+<li><p>edit blending relationships</p>
+</li>
+<li><p>build visualization</p>
+</li>
+<li><p>adding animation</p>
+</li>
+<li><p>manually sorting blended data</p>
+</li>
+<li><p>leaving a trail in animations</p>
+</li>
 </ul>
 
             </div>
@@ -635,7 +496,7 @@ as well; for instance, using <strong>stumps</strong> leads to an additive model.
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2019/09/23/islr/8.2bagging-random-forest-boosting/',
+        id: '2020/01/23/tableau/sec5/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -922,31 +783,31 @@ as well; for instance, using <strong>stumps</strong> leads to an additive model.
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/09/23/islr/9.1maximal-margin-classifier/">
+                <a href="/2020/01/23/tableau/sec2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ISLR_ch9.1 Maximal_Margin_Classifier">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Investment opportunities Identify">
                         
-                        <span class="card-title">ISLR_ch9.1 Maximal_Margin_Classifier</span>
+                        <span class="card-title">Investment opportunities Identify</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ISLR_ch9.1 Maximal_Margin_ClassifierWhat Is a Hyperplane?In a p-dimensional space, a hyperplane is a flat affine subspac
+                            IntroductionYou have been approached by a Venture Capital Fund. The board of Directors are currently review 1000 interes
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                                    An Introduction to statistical Learning
+                            <a href="/categories/Tableau/" class="post-category" target="_blank">
+                                    Tableau
                                 </a>
                             
                             
@@ -956,8 +817,8 @@ as well; for instance, using <strong>stumps</strong> leads to an additive model.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning-notes/" target="_blank">
-                        <span class="chip bg-color">Machine Learning notes</span>
+                    <a href="/tags/Tableau/" target="_blank">
+                        <span class="chip bg-color">Tableau</span>
                     </a>
                     
                 </div>
@@ -971,36 +832,31 @@ as well; for instance, using <strong>stumps</strong> leads to an additive model.
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/02/01/7-marketing-email-campaign/">
+                <a href="/2020/01/02/demo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="7-Marketing Email campaign">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="KPI dashboard">
                         
-                        <span class="card-title">7-Marketing Email campaign</span>
+                        <span class="card-title">KPI dashboard</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            import itertools
-import _pickle as cPickle
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-plt.st
+                            This is my kPI dashboard making by Excel. I learned it from Udemy https://www.udemy.com/course/excel-dashboards-reports/
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-02-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
-                                    Take home data challenge
+                            <a href="/categories/EXCEL/" class="post-category" target="_blank">
+                                    EXCEL
                                 </a>
                             
                             
@@ -1010,8 +866,8 @@ plt.st
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python-Take-home-challenge/" target="_blank">
-                        <span class="chip bg-color">Python_Take home challenge</span>
+                    <a href="/tags/DashBoard/" target="_blank">
+                        <span class="chip bg-color">DashBoard</span>
                     </a>
                     
                 </div>
@@ -1121,13 +977,6 @@ plt.st
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">
