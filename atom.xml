@@ -125,7 +125,7 @@
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
     <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T17:52:55.527Z</updated>
+    <updated>2020-02-08T18:11:31.489Z</updated>
     
     <summary type="html">
     
@@ -407,6 +407,32 @@
   </entry>
   
   <entry>
+    <title>ISLR_ch3.2 Multiple Linear Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
+    <published>2019-09-23T17:32:09.000Z</published>
+    <updated>2020-01-23T19:26:43.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
+        
+      
+    
+    </summary>
+    
+      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
+    
+    
+      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ISLR_ch3.1 Simple Linear Regression</title>
     <link href="http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/"/>
     <id>http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/</id>
@@ -459,11 +485,11 @@
   </entry>
   
   <entry>
-    <title>ISLR_ch3.2 Multiple Linear Regression</title>
-    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
-    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
+    <title>ISLR_ch4.3 Logistic_Regression</title>
+    <link href="http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/"/>
+    <id>http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/</id>
     <published>2019-09-23T17:32:09.000Z</published>
-    <updated>2020-01-23T19:26:43.664Z</updated>
+    <updated>2020-01-24T00:21:58.750Z</updated>
     
     <summary type="html">
     
@@ -471,33 +497,7 @@
       
         
         
-          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
-        
-      
-    
-    </summary>
-    
-      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
-    
-    
-      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ISLR_ch3.3 Potential Problems</title>
-    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/"/>
-    <id>http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/</id>
-    <published>2019-09-23T17:32:09.000Z</published>
-    <updated>2020-01-24T00:20:36.450Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;ISLR-ch3-3-Potential-Problems&quot;&gt;&lt;a href=&quot;#ISLR-ch3-3-Potential-Problems&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.3 Potential
+          &lt;h1 id=&quot;ISLR-ch4-3-Logistic-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch4-3-Logistic-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch4.3
         
       
     
