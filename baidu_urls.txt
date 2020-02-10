@@ -1,7 +1,7 @@
 http://naixinzhang.github.io/2020/01/23/tableau/sec2/
 http://naixinzhang.github.io/2020/01/23/tableau/sec3/
-http://naixinzhang.github.io/2020/01/23/tableau/sec5/
 http://naixinzhang.github.io/2020/01/23/tableau/sec4/
+http://naixinzhang.github.io/2020/01/23/tableau/sec5/
 http://naixinzhang.github.io/2020/01/23/tableau/sec6/
 http://naixinzhang.github.io/2020/01/02/excel/demo/
 http://naixinzhang.github.io/2019/12/22/abtest/ab-test-summary/
@@ -15,8 +15,8 @@ http://naixinzhang.github.io/2019/10/23/cs301/cs301-proj5/
 http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/
 http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/
 http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/
-http://naixinzhang.github.io/2019/09/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/
 http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/
+http://naixinzhang.github.io/2019/09/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/
 http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/
 http://naixinzhang.github.io/2019/09/23/islr/4.4linear-discriminant-analysis/
 http://naixinzhang.github.io/2019/09/23/islr/4.5comparison-of-classification-methods/
@@ -31,3 +31,9 @@ http://naixinzhang.github.io/2019/09/23/islr/8.1the-basics-of-decision-trees/
 http://naixinzhang.github.io/2019/09/23/islr/8.2bagging-random-forest-boosting/
 http://naixinzhang.github.io/2019/09/23/islr/9.1maximal-margin-classifier/
 http://naixinzhang.github.io/2019/09/23/cs301/cs301-proj3/
+http://naixinzhang.github.io/2018/02/01/take-home-challenge/5-market-email/market-email/
+http://naixinzhang.github.io/2018/01/31/take-home-challenge/6-price-test/price-test/
+http://naixinzhang.github.io/2018/01/24/take-home-challenge/2-employee-rentention/employee-rentention/
+http://naixinzhang.github.io/2018/01/24/take-home-challenge/3-identifyfraduluent/identifyfraduluent/
+http://naixinzhang.github.io/2018/01/23/take-home-challenge/7-spanish-translation-ab-test/spanish-translation-ab-test/
+http://naixinzhang.github.io/2018/01/22/take-home-challenge/1-conversion-rate/conversion-rate/

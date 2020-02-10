@@ -1,0 +1,2443 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="6-Price Test, Naixin&#39;s blog">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="Background:
+This notebook aims to evaluate whether a pricing test running on the site has been successful.
+Specifically,">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>6-Price Test | Naixin&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Naixin's blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>Learning notes</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>Courses</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Naixin's blog</div>
+        <div class="logo-desc">
+            
+            You never lose, you either win or learn.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Learning notes
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Courses
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/naixinzhang" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/naixinzhang" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        6-Price Test
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                            <span class="chip bg-color">Python_Take home challenge</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                            Take home data challenge
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2018-01-31
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Naixin Zhang
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    19 Min
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Background:
+This notebook aims to evaluate whether a pricing test running on the site has been successful.
+Specifically, we will invesigate:</p>
+<ul>
+<li>Should the company sell its software for 39 or 59?</li>
+<li>The VP of Product is interested in having a holistic view into user behavior, especially focusing on actionable insights that might increase conversion rate. What are your main ﬁndings looking at the data?</li>
+<li>The VP of Product feels that the test has been running for too long and he should have been able to get statistically signiﬁcant results in a shorter time. Do you agree with her intuition? After how many days you would have stopped the test? Please, explain why.</li>
+</ul>
+<h1 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h1><ul>
+<li><a href="#Load-the-data">Load the data</a></li>
+<li><a href="#Check-whether-test-and-control-group-is-randomly-splitted?">Check whether test/control group is randomly splitted?</a></li>
+<li><a href="#Answer-question-1">Answer question 1</a></li>
+<li><a href="#Answer-question-2">Answer question 2</a><ul>
+<li><a href="#Chi-Square-test">Chi-Square test</a></li>
+<li><a href="#How-price-affects-conversion?">How price affects conversion?</a></li>
+<li><a href="#How-OS-affects-conversion?">How OS affects conversion?</a></li>
+<li><a href="#Model-by-Decision-Tree">Model by Decision Tree</a></li>
+<li><a href="#Actionable-Insights"><strong>Actionable-Insights</strong></a></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">as</span> ss
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> LabelEncoder
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> chi2<span class="token punctuation">,</span>f_classif
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword">import</span> DecisionTreeClassifier<span class="token punctuation">,</span>export_graphviz
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+plt<span class="token punctuation">.</span>style<span class="token punctuation">.</span>use<span class="token punctuation">(</span><span class="token string">'ggplot'</span><span class="token punctuation">)</span>
+<span class="token operator">%</span>matplotlib inline
+
+seed <span class="token operator">=</span> <span class="token number">999</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Load-the-data"><a href="#Load-the-data" class="headerlink" title="Load the data"></a>Load the data</h2><pre class="line-numbers language-python"><code class="language-python">testdata <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"test_results.csv"</span><span class="token punctuation">,</span>index_col<span class="token operator">=</span><span class="token string">"user_id"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># users contains [id,city,country,lat,long]</span>
+<span class="token comment" spellcheck="true"># and all 'country' column is USA</span>
+<span class="token comment" spellcheck="true"># I don't think users can provide useful information to the problems, so just ignore user_table.csv</span>
+<span class="token comment" spellcheck="true"># users = pd.read_csv("user_table.csv")</span>
+
+<span class="token comment" spellcheck="true"># some time has 60 seconds/minute, which cannot be processed by to_datetime</span>
+<span class="token comment" spellcheck="true"># if given more time, I will fix this incorrect format</span>
+<span class="token comment" spellcheck="true"># testdata["timestamp"] = pd.to_datetime(testdata.timestamp)</span>
+
+<span class="token comment" spellcheck="true"># rename to short names, make it easier to display</span>
+testdata<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'operative_system'</span><span class="token punctuation">:</span><span class="token string">'OS'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">testdata<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>device</th>
+      <th>OS</th>
+      <th>test</th>
+      <th>price</th>
+      <th>converted</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>604839</th>
+      <td>2015-05-08 03:38:34</td>
+      <td>ads_facebook</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>624057</th>
+      <td>2015-05-10 21:08:46</td>
+      <td>seo-google</td>
+      <td>mobile</td>
+      <td>android</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>317970</th>
+      <td>2015-04-04 15:01:23</td>
+      <td>ads-bing</td>
+      <td>mobile</td>
+      <td>android</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>685636</th>
+      <td>2015-05-07 07:26:01</td>
+      <td>direct_traffic</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>820854</th>
+      <td>2015-05-24 11:04:40</td>
+      <td>ads_facebook</td>
+      <td>web</td>
+      <td>mac</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="Check-whether-test-and-control-group-is-randomly-splitted"><a href="#Check-whether-test-and-control-group-is-randomly-splitted" class="headerlink" title="Check whether test and control group is randomly splitted?"></a>Check whether test and control group is randomly splitted?</h2><pre class="line-numbers language-python"><code class="language-python">X <span class="token operator">=</span> testdata<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'timestamp'</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># to use sklearn to check feature importance, we must convert string values to numbers</span>
+src_label_encoder <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+dev_label_encoder <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+os_label_encoder <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+X<span class="token punctuation">[</span><span class="token string">"source"</span><span class="token punctuation">]</span> <span class="token operator">=</span> src_label_encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>testdata<span class="token punctuation">.</span>source<span class="token punctuation">)</span>
+X<span class="token punctuation">[</span><span class="token string">"device"</span><span class="token punctuation">]</span> <span class="token operator">=</span> dev_label_encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>testdata<span class="token punctuation">.</span>device<span class="token punctuation">)</span>
+X<span class="token punctuation">[</span><span class="token string">"OS"</span><span class="token punctuation">]</span> <span class="token operator">=</span> os_label_encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>testdata<span class="token punctuation">.</span>OS<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">X<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>device</th>
+      <th>OS</th>
+      <th>test</th>
+      <th>price</th>
+      <th>converted</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>604839</th>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>624057</th>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>317970</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>685636</th>
+      <td>5</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>820854</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>run <em><em> Chi-Square test </em></em> to see which factor impact the splitting between test/control group</p>
+<pre class="line-numbers language-python"><code class="language-python">colnames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"source"</span><span class="token punctuation">,</span><span class="token string">"device"</span><span class="token punctuation">,</span><span class="token string">"OS"</span><span class="token punctuation">]</span>
+ch2values<span class="token punctuation">,</span>pvalues <span class="token operator">=</span> chi2<span class="token punctuation">(</span>X<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>colnames<span class="token punctuation">]</span><span class="token punctuation">,</span>X<span class="token punctuation">[</span><span class="token string">"test"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'chi2_value'</span><span class="token punctuation">:</span>ch2values<span class="token punctuation">,</span><span class="token string">'pvalue'</span><span class="token punctuation">:</span>pvalues<span class="token punctuation">}</span><span class="token punctuation">,</span>index <span class="token operator">=</span> colnames<span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'pvalue'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chi2_value</th>
+      <th>pvalue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>OS</th>
+      <td>83.085986</td>
+      <td>7.856065e-20</td>
+    </tr>
+    <tr>
+      <th>device</th>
+      <td>44.366335</td>
+      <td>2.723301e-11</td>
+    </tr>
+    <tr>
+      <th>source</th>
+      <td>0.924742</td>
+      <td>3.362329e-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>from above result, we know that the splitting between test/control groups aren’t random. OS and device has great impact on the split.</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc_ratios</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    d <span class="token operator">=</span> s<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    d<span class="token punctuation">[</span><span class="token string">'total'</span><span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> d
+test_ctrl_by_os <span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'OS'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'test'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span>calc_ratios<span class="token punctuation">)</span><span class="token punctuation">.</span>unstack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+test_ctrl_by_os<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>total</th>
+    </tr>
+    <tr>
+      <th>OS</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>android</th>
+      <td>0.643358</td>
+      <td>0.356642</td>
+      <td>74935.0</td>
+    </tr>
+    <tr>
+      <th>iOS</th>
+      <td>0.647934</td>
+      <td>0.352066</td>
+      <td>95465.0</td>
+    </tr>
+    <tr>
+      <th>linux</th>
+      <td>0.533736</td>
+      <td>0.466264</td>
+      <td>4135.0</td>
+    </tr>
+    <tr>
+      <th>mac</th>
+      <td>0.652422</td>
+      <td>0.347578</td>
+      <td>25085.0</td>
+    </tr>
+    <tr>
+      <th>other</th>
+      <td>0.647865</td>
+      <td>0.352135</td>
+      <td>16204.0</td>
+    </tr>
+    <tr>
+      <th>windows</th>
+      <td>0.629764</td>
+      <td>0.370236</td>
+      <td>100976.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">test_ctrl_by_os<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18b2f2c8c50&gt;</code></pre><p><img src="output_14_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python">os_by_test_ctrl <span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'OS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> s<span class="token punctuation">:</span> s<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>unstack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+os_by_test_ctrl <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>windows</th>
+      <th>iOS</th>
+      <th>android</th>
+      <th>mac</th>
+      <th>other</th>
+      <th>linux</th>
+    </tr>
+    <tr>
+      <th>test</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.313678</td>
+      <td>0.305115</td>
+      <td>0.237807</td>
+      <td>0.080729</td>
+      <td>0.051784</td>
+      <td>0.010887</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.327729</td>
+      <td>0.294636</td>
+      <td>0.234280</td>
+      <td>0.076434</td>
+      <td>0.050021</td>
+      <td>0.016901</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">os_by_test_ctrl<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18b2f3647f0&gt;</code></pre><p><img src="output_16_1.png" alt="png"></p>
+<p>we can see that <span style="color:red;font-weight:bold">OS distribution in test/control groups are very different</span>.</p>
+<p>the experiment claim that ‘66% of the users have seen the old price (39), while a random sample of 33% users a higher price (59).’, but <a id="linux_imbalance"></a><span style="color:red;font-weight:bold">users from Linux don’t obey such rule, but 53% go to control group, 47% go to test group</span>.</p>
+<h2 id="Answer-question-1"><a href="#Answer-question-1" class="headerlink" title="Answer question 1"></a>Answer question 1</h2><p>Should the company sell its software for 39 or 59?</p>
+<pre class="line-numbers language-python"><code class="language-python">revenues <span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> df<span class="token punctuation">:</span> df<span class="token punctuation">.</span>price <span class="token operator">*</span> df<span class="token punctuation">.</span>converted<span class="token punctuation">)</span>
+ctrl_revenues <span class="token operator">=</span> revenues<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+test_revenues <span class="token operator">=</span> revenues<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">group_statistics</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'n_users'</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                      <span class="token string">'convert_rate'</span><span class="token punctuation">:</span> df<span class="token punctuation">.</span>converted<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+                      <span class="token string">'mean_revenue'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>df<span class="token punctuation">.</span>price <span class="token operator">*</span> df<span class="token punctuation">.</span>converted<span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span>group_statistics<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n_users</th>
+      <th>convert_rate</th>
+      <th>mean_revenue</th>
+    </tr>
+    <tr>
+      <th>test</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>202727.0</td>
+      <td>0.019904</td>
+      <td>0.776734</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>114073.0</td>
+      <td>0.015543</td>
+      <td>0.916843</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>we are going to perform a t-test to test whether the test group’s average revenue is higher than control group’s average revenue</p>
+<ul>
+<li>H0: test group’s average revenue equal to control group’s average revenue</li>
+<li>HA: test group’s average revenue is higher than control group’s average revenue</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">ttest_result <span class="token operator">=</span> ss<span class="token punctuation">.</span>ttest_ind<span class="token punctuation">(</span>test_revenues<span class="token punctuation">,</span>ctrl_revenues<span class="token punctuation">,</span>equal_var<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># ttest_ind is a two tailed</span>
+<span class="token comment" spellcheck="true"># since our HA is test_mean > ctrl_mean, so we need to divide by 2</span>
+ttest_result<span class="token punctuation">.</span>pvalue<span class="token operator">/</span><span class="token number">2</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>7.703749302339191e-09</code></pre><p>since the p-value is much smaller than 0.05 threshold, so we reject H0, and accept HA, that is, test group’s average revenue is significantly higher than control group’s average revenue.</p>
+<p>but due to <a href="#linux_imbalance">OS distribution aren’t the same between test/control groups</a>, price isn’t the only difference between test/control groups, so we cannot contribute the increase in average revenue to price.</p>
+<p>the experiment design fails, I cannot answer decide whether we can sell software to all users in 59 dollars. I suggest </p>
+<ol>
+<li>find the reason why linux users have different representation ratio than other OS.</li>
+<li>then run the experiment again, make sure price is the only difference between test and control group</li>
+<li>then run t-test again, to see whether the average revenue is significantly improved.</li>
+<li>then I can draw the conclusion.</li>
+</ol>
+<h2 id="Answer-question-2"><a href="#Answer-question-2" class="headerlink" title="Answer question 2"></a>Answer question 2</h2><p>The VP of Product is interested in having a holistic view into user behavior, especially focusing on actionable insights that might increase conversion rate. What are your main ﬁndings looking at the data?</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># X is the data after being transformed by LabelEncoder</span>
+X<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># glance the data</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>device</th>
+      <th>OS</th>
+      <th>test</th>
+      <th>price</th>
+      <th>converted</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17427</th>
+      <td>3</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>687787</th>
+      <td>5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>618863</th>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>154636</th>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>832372</th>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="Chi-Square-test"><a href="#Chi-Square-test" class="headerlink" title="Chi-Square test"></a>Chi-Square test</h3><p>I first run <em><em> Chi-Square test </em></em> to see which feature greatly impact converted or not</p>
+<pre class="line-numbers language-python"><code class="language-python">colnames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"source"</span><span class="token punctuation">,</span><span class="token string">"device"</span><span class="token punctuation">,</span><span class="token string">"OS"</span><span class="token punctuation">,</span><span class="token string">'price'</span><span class="token punctuation">]</span>
+ch2values<span class="token punctuation">,</span>pvalues <span class="token operator">=</span> chi2<span class="token punctuation">(</span>X<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>colnames<span class="token punctuation">]</span><span class="token punctuation">,</span>X<span class="token punctuation">[</span><span class="token string">"converted"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'chi2_value'</span><span class="token punctuation">:</span>ch2values<span class="token punctuation">,</span><span class="token string">'pvalue'</span><span class="token punctuation">:</span>pvalues<span class="token punctuation">}</span><span class="token punctuation">,</span>index <span class="token operator">=</span> colnames<span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token string">'pvalue'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chi2_value</th>
+      <th>pvalue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>price</th>
+      <td>150.992849</td>
+      <td>1.051844e-34</td>
+    </tr>
+    <tr>
+      <th>OS</th>
+      <td>7.642955</td>
+      <td>5.699447e-03</td>
+    </tr>
+    <tr>
+      <th>source</th>
+      <td>2.373391</td>
+      <td>1.234187e-01</td>
+    </tr>
+    <tr>
+      <th>device</th>
+      <td>0.729490</td>
+      <td>3.930485e-01</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>Chi-Square test tells us, </p>
+<ul>
+<li><span style="color:orange;font-weight:bold;font-size:1.2em">Price and OS are two main factor which impact converted or not</span>. </li>
+<li><span style="color:orange;font-weight:bold;font-size:1.2em">Source and Device don’t impact conversion rate that much.</span></li>
+</ul>
+<h3 id="How-price-affects-conversion"><a href="#How-price-affects-conversion" class="headerlink" title="How price affects conversion?"></a>How price affects conversion?</h3><pre class="line-numbers language-python"><code class="language-python">converted_by_price<span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">"price"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> s<span class="token punctuation">:</span> s<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>unstack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+converted_by_price<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>price</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>39</th>
+      <td>0.980111</td>
+      <td>0.019889</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>0.984430</td>
+      <td>0.015570</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p><span style="color:orange;font-weight:bold;font-size:1.2em">Users see 59 dollar has lower conversion rate than users see 39 dollars.</span></p>
+<h3 id="How-OS-affects-conversion"><a href="#How-OS-affects-conversion" class="headerlink" title="How OS affects conversion?"></a>How OS affects conversion?</h3><pre class="line-numbers language-python"><code class="language-python">converted_by_os <span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">"OS"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'converted'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> s<span class="token punctuation">:</span> s<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>unstack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+converted_by_os<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>OS</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mac</th>
+      <td>0.976002</td>
+      <td>0.023998</td>
+    </tr>
+    <tr>
+      <th>iOS</th>
+      <td>0.977678</td>
+      <td>0.022322</td>
+    </tr>
+    <tr>
+      <th>windows</th>
+      <td>0.983045</td>
+      <td>0.016955</td>
+    </tr>
+    <tr>
+      <th>android</th>
+      <td>0.985067</td>
+      <td>0.014933</td>
+    </tr>
+    <tr>
+      <th>other</th>
+      <td>0.987040</td>
+      <td>0.012960</td>
+    </tr>
+    <tr>
+      <th>linux</th>
+      <td>0.991778</td>
+      <td>0.008222</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">os_by_converted <span class="token operator">=</span> testdata<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">"converted"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'OS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> s<span class="token punctuation">:</span> s<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span>normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>unstack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+os_by_converted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>android</th>
+      <th>iOS</th>
+      <th>linux</th>
+      <th>mac</th>
+      <th>other</th>
+      <th>windows</th>
+    </tr>
+    <tr>
+      <th>converted</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.237357</td>
+      <td>0.300117</td>
+      <td>0.013187</td>
+      <td>0.078725</td>
+      <td>0.051429</td>
+      <td>0.319185</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.192665</td>
+      <td>0.366908</td>
+      <td>0.005854</td>
+      <td>0.103650</td>
+      <td>0.036157</td>
+      <td>0.294766</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">os_by_converted<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18b2f403e80&gt;</code></pre><p><img src="output_33_1.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python">os_by_converted<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18b2f521668&gt;</code></pre><p><img src="output_34_1.png" alt="png"></p>
+<p>from above result, we can see</p>
+<ul>
+<li><span style="color:orange;font-size:1.5em">Mac and iOS users have higher conversion rate than users from other OS.</span></li>
+<li><span style="color:orange;font-size:1.5em">Linux users have lower conversion rate than users from other OS.</span></li>
+</ul>
+<h3 id="Model-by-Decision-Tree"><a href="#Model-by-Decision-Tree" class="headerlink" title="Model by Decision Tree"></a>Model by Decision Tree</h3><p>I will build a Decision Tree to get feature importance. Since the question is asking about “actionable insight” other than a model which precisely predict converted or not, so I will just fit a shallow Decision Tree on all the data, without giving out model’s performance on test set.</p>
+<pre class="line-numbers language-python"><code class="language-python">testdata<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># glance the data</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>device</th>
+      <th>OS</th>
+      <th>test</th>
+      <th>price</th>
+      <th>converted</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>523888</th>
+      <td>2015-04-24 11:44:22</td>
+      <td>ads-yahoo</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>42215</th>
+      <td>2015-05-22 05:48:48</td>
+      <td>ads-yahoo</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>747474</th>
+      <td>2015-04-04 03:09:29</td>
+      <td>ads_facebook</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>1</td>
+      <td>59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>340105</th>
+      <td>2015-04-30 09:43:25</td>
+      <td>direct_traffic</td>
+      <td>web</td>
+      <td>linux</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>43494</th>
+      <td>2015-03-06 08:12:10</td>
+      <td>seo-bing</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>588932</th>
+      <td>2015-04-10 10:28:60</td>
+      <td>ads-yahoo</td>
+      <td>mobile</td>
+      <td>other</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>729102</th>
+      <td>2015-04-20 09:41:18</td>
+      <td>ads_facebook</td>
+      <td>web</td>
+      <td>windows</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>949907</th>
+      <td>2015-04-19 01:32:28</td>
+      <td>direct_traffic</td>
+      <td>mobile</td>
+      <td>android</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>882247</th>
+      <td>2015-04-24 02:04:20</td>
+      <td>ads_other</td>
+      <td>mobile</td>
+      <td>android</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>489936</th>
+      <td>2015-04-10 05:52:26</td>
+      <td>ads-bing</td>
+      <td>mobile</td>
+      <td>iOS</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">X <span class="token operator">=</span> testdata<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'timestamp'</span><span class="token punctuation">]</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'test'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">X<span class="token punctuation">.</span>source<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>direct_traffic     60357
+ads-google         59379
+ads_facebook       53396
+ads_other          29876
+seo-google         23175
+ads-bing           22873
+seo_facebook       21205
+friend_referral    20695
+seo-other           9260
+ads-yahoo           7583
+seo-yahoo           6848
+seo-bing            2153
+Name: source, dtype: int64</code></pre><pre class="line-numbers language-python"><code class="language-python">X<span class="token punctuation">.</span>device<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>mobile    186471
+web       130329
+Name: device, dtype: int64</code></pre><pre class="line-numbers language-python"><code class="language-python">X<span class="token punctuation">.</span>OS<span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>windows    100976
+iOS         95465
+android     74935
+mac         25085
+other       16204
+linux        4135
+Name: OS, dtype: int64</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># One-Hot-Encoding on categorical features</span>
+X <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># a categorical feature of K unique values, only need K-1 vectors</span>
+<span class="token comment" spellcheck="true"># I don't use 'drop_first' parameter in get_dummies, since it cannot specify which level to drop</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'source_ads_other'</span><span class="token punctuation">]</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'device_web'</span><span class="token punctuation">]</span>
+<span class="token keyword">del</span> X<span class="token punctuation">[</span><span class="token string">'OS_other'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">X<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># glance the data</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>price</th>
+      <th>converted</th>
+      <th>source_ads-bing</th>
+      <th>source_ads-google</th>
+      <th>source_ads-yahoo</th>
+      <th>source_ads_facebook</th>
+      <th>source_direct_traffic</th>
+      <th>source_friend_referral</th>
+      <th>source_seo-bing</th>
+      <th>source_seo-google</th>
+      <th>source_seo-other</th>
+      <th>source_seo-yahoo</th>
+      <th>source_seo_facebook</th>
+      <th>device_mobile</th>
+      <th>OS_android</th>
+      <th>OS_iOS</th>
+      <th>OS_linux</th>
+      <th>OS_mac</th>
+      <th>OS_windows</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17427</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>687787</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>618863</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>154636</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>832372</th>
+      <td>59</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">Xtrain <span class="token operator">=</span> X<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span>X<span class="token punctuation">.</span>columns <span class="token operator">!=</span> <span class="token string">'converted'</span><span class="token punctuation">]</span>
+ytrain <span class="token operator">=</span> X<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token string">'converted'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">Xtrain<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># glance the data</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>price</th>
+      <th>source_ads-bing</th>
+      <th>source_ads-google</th>
+      <th>source_ads-yahoo</th>
+      <th>source_ads_facebook</th>
+      <th>source_direct_traffic</th>
+      <th>source_friend_referral</th>
+      <th>source_seo-bing</th>
+      <th>source_seo-google</th>
+      <th>source_seo-other</th>
+      <th>source_seo-yahoo</th>
+      <th>source_seo_facebook</th>
+      <th>device_mobile</th>
+      <th>OS_android</th>
+      <th>OS_iOS</th>
+      <th>OS_linux</th>
+      <th>OS_mac</th>
+      <th>OS_windows</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>604839</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>624057</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>317970</th>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>685636</th>
+      <td>59</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>820854</th>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">dt <span class="token operator">=</span> DecisionTreeClassifier<span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
+dt<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>Xtrain<span class="token punctuation">,</span>ytrain<span class="token punctuation">)</span>
+export_graphviz<span class="token punctuation">(</span>dt<span class="token punctuation">,</span>feature_names<span class="token operator">=</span>Xtrain<span class="token punctuation">.</span>columns<span class="token punctuation">,</span>proportion<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>leaves_parallel<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;digraph Tree {\nnode [shape=box] ;\ngraph [ranksep=equally, splines=polyline] ;\n0 [label=&quot;source_friend_referral &lt;= 0.5\\ngini = 0.036\\nsamples = 100.0%\\nvalue = [0.982, 0.018]&quot;] ;\n1 [label=&quot;OS_iOS &lt;= 0.5\\ngini = 0.033\\nsamples = 93.5%\\nvalue = [0.983, 0.017]&quot;] ;\n0 -&gt; 1 [labeldistance=2.5, labelangle=45, headlabel=&quot;True&quot;] ;\n2 [label=&quot;OS_mac &lt;= 0.5\\ngini = 0.03\\nsamples = 65.3%\\nvalue = [0.985, 0.015]&quot;] ;\n1 -&gt; 2 ;\n3 [label=&quot;source_direct_traffic &lt;= 0.5\\ngini = 0.028\\nsamples = 58.0%\\nvalue = [0.986, 0.014]&quot;] ;\n2 -&gt; 3 ;\n4 [label=&quot;gini = 0.03\\nsamples = 46.1%\\nvalue = [0.985, 0.015]&quot;] ;\n3 -&gt; 4 ;\n5 [label=&quot;gini = 0.02\\nsamples = 11.9%\\nvalue = [0.99, 0.01]&quot;] ;\n3 -&gt; 5 ;\n6 [label=&quot;source_ads-bing &lt;= 0.5\\ngini = 0.044\\nsamples = 7.4%\\nvalue = [0.977, 0.023]&quot;] ;\n2 -&gt; 6 ;\n7 [label=&quot;gini = 0.046\\nsamples = 6.8%\\nvalue = [0.976, 0.024]&quot;] ;\n6 -&gt; 7 ;\n8 [label=&quot;gini = 0.026\\nsamples = 0.5%\\nvalue = [0.987, 0.013]&quot;] ;\n6 -&gt; 8 ;\n9 [label=&quot;source_ads-google &lt;= 0.5\\ngini = 0.041\\nsamples = 28.1%\\nvalue = [0.979, 0.021]&quot;] ;\n1 -&gt; 9 ;\n10 [label=&quot;source_ads_facebook &lt;= 0.5\\ngini = 0.038\\nsamples = 22.4%\\nvalue = [0.981, 0.019]&quot;] ;\n9 -&gt; 10 ;\n11 [label=&quot;gini = 0.035\\nsamples = 17.2%\\nvalue = [0.982, 0.018]&quot;] ;\n10 -&gt; 11 ;\n12 [label=&quot;gini = 0.049\\nsamples = 5.2%\\nvalue = [0.975, 0.025]&quot;] ;\n10 -&gt; 12 ;\n13 [label=&quot;price &lt;= 49.0\\ngini = 0.051\\nsamples = 5.7%\\nvalue = [0.974, 0.026]&quot;] ;\n9 -&gt; 13 ;\n14 [label=&quot;gini = 0.051\\nsamples = 3.7%\\nvalue = [0.974, 0.026]&quot;] ;\n13 -&gt; 14 ;\n15 [label=&quot;gini = 0.05\\nsamples = 2.0%\\nvalue = [0.974, 0.026]&quot;] ;\n13 -&gt; 15 ;\n16 [label=&quot;price &lt;= 49.0\\ngini = 0.074\\nsamples = 6.5%\\nvalue = [0.961, 0.039]&quot;] ;\n0 -&gt; 16 [labeldistance=2.5, labelangle=-45, headlabel=&quot;False&quot;] ;\n17 [label=&quot;OS_iOS &lt;= 0.5\\ngini = 0.08\\nsamples = 4.1%\\nvalue = [0.958, 0.042]&quot;] ;\n16 -&gt; 17 ;\n18 [label=&quot;OS_linux &lt;= 0.5\\ngini = 0.077\\nsamples = 2.9%\\nvalue = [0.96, 0.04]&quot;] ;\n17 -&gt; 18 ;\n19 [label=&quot;gini = 0.077\\nsamples = 2.8%\\nvalue = [0.96, 0.04]&quot;] ;\n18 -&gt; 19 ;\n20 [label=&quot;gini = 0.096\\nsamples = 0.0%\\nvalue = [0.949, 0.051]&quot;] ;\n18 -&gt; 20 ;\n21 [label=&quot;gini = 0.086\\nsamples = 1.3%\\nvalue = [0.955, 0.045]&quot;] ;\n17 -&gt; 21 ;\n22 [label=&quot;OS_linux &lt;= 0.5\\ngini = 0.065\\nsamples = 2.4%\\nvalue = [0.966, 0.034]&quot;] ;\n16 -&gt; 22 ;\n23 [label=&quot;OS_iOS &lt;= 0.5\\ngini = 0.067\\nsamples = 2.3%\\nvalue = [0.965, 0.035]&quot;] ;\n22 -&gt; 23 ;\n24 [label=&quot;gini = 0.061\\nsamples = 1.6%\\nvalue = [0.969, 0.031]&quot;] ;\n23 -&gt; 24 ;\n25 [label=&quot;gini = 0.08\\nsamples = 0.7%\\nvalue = [0.958, 0.042]&quot;] ;\n23 -&gt; 25 ;\n26 [label=&quot;gini = 0.0\\nsamples = 0.1%\\nvalue = [1.0, 0.0]&quot;] ;\n22 -&gt; 26 ;\n{rank=same ; 0} ;\n{rank=same ; 1; 16} ;\n{rank=same ; 2; 9; 17; 22} ;\n{rank=same ; 3; 6; 10; 13; 18; 23} ;\n{rank=same ; 4; 5; 7; 8; 11; 12; 14; 15; 19; 20; 21; 24; 25; 26} ;\n}&#39;</code></pre><p><img src="tree.png"></p>
+<p>from above tree plot, we can see that, to reach the leaf node with highest conversion rate (the third leaf from right with conversion rate=0.05), the path is:</p>
+<ol>
+<li>source ‘friend_referral’ = true</li>
+<li>price &lt; 49, i.e., price = 39</li>
+<li>OS ‘iOS’= true</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python">pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>dt<span class="token punctuation">.</span>feature_importances_<span class="token punctuation">,</span>index <span class="token operator">=</span> Xtrain<span class="token punctuation">.</span>columns<span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>source_friend_referral    0.582278
+OS_iOS                    0.136605
+OS_mac                    0.093907
+source_direct_traffic     0.059002
+source_ads_facebook       0.041034
+source_ads-google         0.038543
+price                     0.020118
+OS_linux                  0.018002
+source_ads-bing           0.010511
+source_ads-yahoo          0.000000
+OS_windows                0.000000
+source_seo-bing           0.000000
+source_seo-other          0.000000
+source_seo-yahoo          0.000000
+source_seo_facebook       0.000000
+device_mobile             0.000000
+OS_android                0.000000
+source_seo-google         0.000000
+dtype: float64</code></pre><h3 id="Actionable-Insights"><a href="#Actionable-Insights" class="headerlink" title="Actionable Insights"></a>Actionable Insights</h3><ul>
+<li>friend_referral, Apple user (MAC or iOS), low price are three great positive factors which improve the conversion rate</li>
+<li>if we want to increase the price, which impacts negatively on conversion rate, we must compensate on the other two factors<ul>
+<li>lauch special marketing program targeted to Apple users (MAC or iOS users)</li>
+<li>run some program which rewards user which can invite his/her friend to use our software</li>
+</ul>
+</li>
+<li>Linux users don’t like our software as much as users on other OS. Development team should find out the reason. For example, is there any incompatibility issue on Linux?</li>
+</ul>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
+        id: '2018/01/31/take-home-challenge/6-price-test/price-test/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2018/02/01/take-home-challenge/5-market-email/market-email/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="7-Marketing Email campaign">
+                        
+                        <span class="card-title">7-Marketing Email campaign</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Background:
+This notebook aims to optimize the marketing campaigns.
+Specifically, we will achieve:
+    - What percentage
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-02-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                                    Take home data challenge
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                        <span class="chip bg-color">Python_Take home challenge</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/01/24/take-home-challenge/2-employee-rentention/employee-rentention/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="3-Employee_rentention">
+                        
+                        <span class="card-title">3-Employee_rentention</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Background:
+This notebook aims to predict when employees are going to quit by understanding the main drivers of employee
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                                    Take home data challenge
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                        <span class="chip bg-color">Python_Take home challenge</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color center-align">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020 NaixinZhang. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

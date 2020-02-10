@@ -1,0 +1,1692 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="3-Employee_rentention, Naixin&#39;s blog">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="Background:
+This notebook aims to predict when employees are going to quit by understanding the main drivers of employee">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>3-Employee_rentention | Naixin&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Naixin's blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>Learning notes</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>Courses</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Naixin's blog</div>
+        <div class="logo-desc">
+            
+            You never lose, you either win or learn.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Learning notes
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Courses
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/naixinzhang" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/naixinzhang" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        3-Employee_rentention
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                            <span class="chip bg-color">Python_Take home challenge</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                            Take home data challenge
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2018-01-24
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Naixin Zhang
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    10 Min
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Background:
+This notebook aims to predict when employees are going to quit by understanding the main drivers of employee churn based on the dataset with info about the employees.
+specifically,we need to solve these problems:</p>
+<ol>
+<li>create a table with 3 columns: day, employee_headcount,company_id</li>
+<li>what are the main factors drive employee churn? do they make sense? explain</li>
+<li>what variable can be added that could help explain emplyee churn</li>
+</ol>
+<p>This notebook covers:</p>
+<ul>
+<li>create table</li>
+<li>Feature engineering(Data Visualization)</li>
+<li>Decision tree</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span>  warnings
+warnings<span class="token punctuation">.</span>simplefilter<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> graphviz
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> tree
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword">import</span> DecisionTreeClassifier
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> LabelEncoder
+
+<span class="token operator">%</span>matplotlib inline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Load-Dataset"><a href="#Load-Dataset" class="headerlink" title="Load Dataset"></a>Load Dataset</h1><pre class="line-numbers language-python"><code class="language-python">data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'employee_retention.csv'</span><span class="token punctuation">,</span> parse_dates<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'join_date'</span><span class="token punctuation">,</span> <span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee_id</th>
+      <th>company_id</th>
+      <th>dept</th>
+      <th>seniority</th>
+      <th>salary</th>
+      <th>join_date</th>
+      <th>quit_date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13021.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>28</td>
+      <td>89000.0</td>
+      <td>2014-03-24</td>
+      <td>2015-10-30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>825355.0</td>
+      <td>7</td>
+      <td>marketing</td>
+      <td>20</td>
+      <td>183000.0</td>
+      <td>2013-04-29</td>
+      <td>2014-04-04</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>927315.0</td>
+      <td>4</td>
+      <td>marketing</td>
+      <td>14</td>
+      <td>101000.0</td>
+      <td>2014-10-13</td>
+      <td>NaT</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>662910.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>20</td>
+      <td>115000.0</td>
+      <td>2012-05-14</td>
+      <td>2013-06-07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>256971.0</td>
+      <td>2</td>
+      <td>data_science</td>
+      <td>23</td>
+      <td>276000.0</td>
+      <td>2011-10-17</td>
+      <td>2014-08-22</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python">data<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 24702 entries, 0 to 24701
+Data columns (total 7 columns):
+employee_id    24702 non-null float64
+company_id     24702 non-null int64
+dept           24702 non-null object
+seniority      24702 non-null int64
+salary         24702 non-null float64
+join_date      24702 non-null datetime64[ns]
+quit_date      13510 non-null datetime64[ns]
+dtypes: datetime64[ns](2), float64(2), int64(2), object(1)
+memory usage: 1.3+ MB</code></pre><pre class="line-numbers language-python"><code class="language-python">data<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee_id</th>
+      <th>company_id</th>
+      <th>seniority</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>24702.000000</td>
+      <td>24702.000000</td>
+      <td>24702.000000</td>
+      <td>24702.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>501604.403530</td>
+      <td>3.426969</td>
+      <td>14.127803</td>
+      <td>138183.345478</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>288909.026101</td>
+      <td>2.700011</td>
+      <td>8.089520</td>
+      <td>76058.184573</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>36.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>17000.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>250133.750000</td>
+      <td>1.000000</td>
+      <td>7.000000</td>
+      <td>79000.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>500793.000000</td>
+      <td>2.000000</td>
+      <td>14.000000</td>
+      <td>123000.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>753137.250000</td>
+      <td>5.000000</td>
+      <td>21.000000</td>
+      <td>187000.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>999969.000000</td>
+      <td>12.000000</td>
+      <td>99.000000</td>
+      <td>408000.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Null information</span>
+data<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>employee_id        0
+company_id         0
+dept               0
+seniority          0
+salary             0
+join_date          0
+quit_date      11192
+dtype: int64</code></pre><h1 id="Create-Table-for-day-employee-headcount-and-company-id"><a href="#Create-Table-for-day-employee-headcount-and-company-id" class="headerlink" title="Create Table for day, employee_headcount, and company_id"></a>Create Table for <code>day</code>, <code>employee_headcount</code>, and <code>company_id</code></h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Define useful information</span>
+unique_date <span class="token operator">=</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span>start<span class="token operator">=</span><span class="token string">'2011-01-24'</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'2015-12-13'</span><span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">)</span>
+unique_company <span class="token operator">=</span> sorted<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'company_id'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>unique<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">day <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+company <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+headcount <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># Loop through date and company id</span>
+<span class="token keyword">for</span> date <span class="token keyword">in</span> unique_date<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> idx <span class="token keyword">in</span> unique_company<span class="token punctuation">:</span>
+        total_join <span class="token operator">=</span> len<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'join_date'</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> date<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'company_id'</span><span class="token punctuation">]</span> <span class="token operator">==</span> idx<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        total_quit <span class="token operator">=</span> len<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span> <span class="token operator">&lt;=</span> date<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'company_id'</span><span class="token punctuation">]</span> <span class="token operator">==</span> idx<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        day<span class="token punctuation">.</span>append<span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+        company<span class="token punctuation">.</span>append<span class="token punctuation">(</span>idx<span class="token punctuation">)</span>
+        headcount<span class="token punctuation">.</span>append<span class="token punctuation">(</span>total_join <span class="token operator">-</span> total_quit<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Create table for day, employee_headcount, company_id</span>
+table <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'day'</span><span class="token punctuation">:</span> day<span class="token punctuation">,</span> <span class="token string">'company_id'</span><span class="token punctuation">:</span> company<span class="token punctuation">,</span> <span class="token string">'employee_headcount'</span><span class="token punctuation">:</span> headcount<span class="token punctuation">}</span><span class="token punctuation">,</span> 
+                     columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'day'</span><span class="token punctuation">,</span> <span class="token string">'company_id'</span><span class="token punctuation">,</span> <span class="token string">'employee_headcount'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">table<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>day</th>
+      <th>company_id</th>
+      <th>employee_headcount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2011-01-24</td>
+      <td>1</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2011-01-24</td>
+      <td>2</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2011-01-24</td>
+      <td>3</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2011-01-24</td>
+      <td>4</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2011-01-24</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h1 id="Employee-Churn-Analysis"><a href="#Employee-Churn-Analysis" class="headerlink" title="Employee Churn Analysis"></a>Employee Churn Analysis</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Separate stay and quit data</span>
+quit_data <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token operator">~</span>data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+stay_data <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Total working days</span>
+work_days <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>list<span class="token punctuation">(</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>days<span class="token punctuation">,</span> quit_data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span> <span class="token operator">-</span> quit_data<span class="token punctuation">[</span><span class="token string">'join_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+hist_kws<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'histtype'</span><span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'edgecolor'</span><span class="token punctuation">:</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token punctuation">}</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>work_days<span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> kde<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> hist_kws<span class="token operator">=</span>hist_kws<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Histogram of Working Days'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Working Days'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_15_0.png" alt="png"></p>
+<p>there are peaks around each employee year anniversary</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Week No. for quiting</span>
+quit_week <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>list<span class="token punctuation">(</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>month<span class="token punctuation">,</span> quit_data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>countplot<span class="token punctuation">(</span>quit_week<span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Countplot of Quit Month'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Month'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_17_0.png" alt="png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Week No. for quiting</span>
+weeks  <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>list<span class="token punctuation">(</span>map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>week<span class="token punctuation">,</span> quit_data<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hist_kws<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'histtype'</span><span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'edgecolor'</span><span class="token punctuation">:</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token punctuation">}</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>weeks <span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> kde<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> hist_kws<span class="token operator">=</span>hist_kws<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Histogram of Quit Weeks'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Quit Weeks'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Frequency'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_18_0.png" alt="png"></p>
+<p>And it also peaks around the new year. Makes sense, companies have much more money to hire at the beginning of the year. So our goal becomes to prevent employees to quit within 1 year.</p>
+<p>Now, let’s see if we find the characteristics of the people who quit early. Looking at the histogram of employment_length, it looks like we could define early quitters as those people who quit within 1 yr or so.</p>
+<p>So, let’s create two classes of users : quit within 13 months or not (if they haven’t been in the current company for at least 13 months, we remove them).</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Choose quit data</span>
+quit_data<span class="token punctuation">[</span><span class="token string">'work_days'</span><span class="token punctuation">]</span> <span class="token operator">=</span> work_days
+quit_data<span class="token punctuation">[</span><span class="token string">'quit_week'</span><span class="token punctuation">]</span> <span class="token operator">=</span> quit_week
+quit_data<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee_id</th>
+      <th>company_id</th>
+      <th>dept</th>
+      <th>seniority</th>
+      <th>salary</th>
+      <th>join_date</th>
+      <th>quit_date</th>
+      <th>work_days</th>
+      <th>quit_week</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13021.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>28</td>
+      <td>89000.0</td>
+      <td>2014-03-24</td>
+      <td>2015-10-30</td>
+      <td>585</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>825355.0</td>
+      <td>7</td>
+      <td>marketing</td>
+      <td>20</td>
+      <td>183000.0</td>
+      <td>2013-04-29</td>
+      <td>2014-04-04</td>
+      <td>340</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>662910.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>20</td>
+      <td>115000.0</td>
+      <td>2012-05-14</td>
+      <td>2013-06-07</td>
+      <td>389</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>256971.0</td>
+      <td>2</td>
+      <td>data_science</td>
+      <td>23</td>
+      <td>276000.0</td>
+      <td>2011-10-17</td>
+      <td>2014-08-22</td>
+      <td>1040</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>509529.0</td>
+      <td>4</td>
+      <td>data_science</td>
+      <td>14</td>
+      <td>165000.0</td>
+      <td>2012-01-30</td>
+      <td>2013-08-30</td>
+      <td>578</td>
+      <td>35</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="Decision-Tree-Model"><a href="#Decision-Tree-Model" class="headerlink" title="Decision Tree Model"></a>Decision Tree Model</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Choose the subset data</span>
+stop_date <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span><span class="token string">'2015-12-13'</span><span class="token punctuation">)</span> <span class="token operator">-</span> pd<span class="token punctuation">.</span>DateOffset<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">365</span> <span class="token operator">+</span> <span class="token number">31</span><span class="token punctuation">)</span>
+subset <span class="token operator">=</span> data<span class="token punctuation">[</span>data<span class="token punctuation">[</span><span class="token string">'join_date'</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> stop_date<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># Binary label for early quit (less than 13 months)</span>
+quit <span class="token operator">=</span> subset<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>subset<span class="token punctuation">[</span><span class="token string">'quit_date'</span><span class="token punctuation">]</span> <span class="token operator">></span> subset<span class="token punctuation">[</span><span class="token string">'join_date'</span><span class="token punctuation">]</span> <span class="token operator">+</span> pd<span class="token punctuation">.</span>DateOffset<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">396</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+subset<span class="token punctuation">[</span><span class="token string">'quit'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> quit<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+
+subset<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>employee_id</th>
+      <th>company_id</th>
+      <th>dept</th>
+      <th>seniority</th>
+      <th>salary</th>
+      <th>join_date</th>
+      <th>quit_date</th>
+      <th>quit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13021.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>28</td>
+      <td>89000.0</td>
+      <td>2014-03-24</td>
+      <td>2015-10-30</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>825355.0</td>
+      <td>7</td>
+      <td>marketing</td>
+      <td>20</td>
+      <td>183000.0</td>
+      <td>2013-04-29</td>
+      <td>2014-04-04</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>927315.0</td>
+      <td>4</td>
+      <td>marketing</td>
+      <td>14</td>
+      <td>101000.0</td>
+      <td>2014-10-13</td>
+      <td>NaT</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>662910.0</td>
+      <td>7</td>
+      <td>customer_service</td>
+      <td>20</td>
+      <td>115000.0</td>
+      <td>2012-05-14</td>
+      <td>2013-06-07</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>256971.0</td>
+      <td>2</td>
+      <td>data_science</td>
+      <td>23</td>
+      <td>276000.0</td>
+      <td>2011-10-17</td>
+      <td>2014-08-22</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># # One-hot encoding</span>
+<span class="token comment" spellcheck="true"># subset['company_id'] = subset['company_id'].astype(str)</span>
+<span class="token comment" spellcheck="true"># dummies = pd.get_dummies(subset[['company_id', 'dept']])</span>
+<span class="token comment" spellcheck="true"># train_x = pd.concat(objs=[subset[['seniority', 'salary']], dummies], axis=1)</span>
+<span class="token comment" spellcheck="true"># train_y = subset['quit'].values</span>
+
+<span class="token comment" spellcheck="true"># train_x.head()</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Label encoder</span>
+le <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+train_x <span class="token operator">=</span> subset<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'company_id'</span><span class="token punctuation">,</span> <span class="token string">'seniority'</span><span class="token punctuation">,</span> <span class="token string">'salary'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+train_x<span class="token punctuation">[</span><span class="token string">'dept'</span><span class="token punctuation">]</span> <span class="token operator">=</span> le<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>subset<span class="token punctuation">[</span><span class="token string">'dept'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_y <span class="token operator">=</span> subset<span class="token punctuation">[</span><span class="token string">'quit'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
+
+train_x<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>company_id</th>
+      <th>seniority</th>
+      <th>salary</th>
+      <th>dept</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7</td>
+      <td>28</td>
+      <td>89000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7</td>
+      <td>20</td>
+      <td>183000.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>14</td>
+      <td>101000.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7</td>
+      <td>20</td>
+      <td>115000.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>23</td>
+      <td>276000.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Build decision tree</span>
+clf <span class="token operator">=</span> DecisionTreeClassifier<span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> min_samples_leaf<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+clf <span class="token operator">=</span> clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token operator">=</span>train_x<span class="token punctuation">,</span> y<span class="token operator">=</span>train_y<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization</span>
+features <span class="token operator">=</span> list<span class="token punctuation">(</span>train_x<span class="token punctuation">.</span>columns<span class="token punctuation">)</span>
+targets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Not quit'</span><span class="token punctuation">,</span> <span class="token string">'Quit'</span><span class="token punctuation">]</span>
+dot_data <span class="token operator">=</span> tree<span class="token punctuation">.</span>export_graphviz<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> out_file<span class="token operator">=</span>None<span class="token punctuation">,</span> feature_names<span class="token operator">=</span>features<span class="token punctuation">,</span> class_names<span class="token operator">=</span>targets<span class="token punctuation">,</span> 
+                                filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> rounded<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> special_characters<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token punctuation">)</span>  
+graph <span class="token operator">=</span> graphviz<span class="token punctuation">.</span>Source<span class="token punctuation">(</span>dot_data<span class="token punctuation">)</span>
+graph<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_26_0.svg" alt="svg"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Feature importance</span>
+importance <span class="token operator">=</span> sorted<span class="token punctuation">(</span>zip<span class="token punctuation">(</span>features<span class="token punctuation">,</span> clf<span class="token punctuation">.</span>feature_importances_<span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> feature<span class="token punctuation">,</span> val <span class="token keyword">in</span> importance<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0:10s} | {1:.5f}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>feature<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>salary     | 0.97439
+seniority  | 0.02561
+company_id | 0.00000
+dept       | 0.00000</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Visualization</span>
+hist_kws<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'histtype'</span><span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'edgecolor'</span><span class="token punctuation">:</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token punctuation">}</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>subset<span class="token punctuation">[</span>subset<span class="token punctuation">[</span><span class="token string">'quit'</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'salary'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+             label<span class="token operator">=</span><span class="token string">'Not Quit'</span><span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> hist_kws<span class="token operator">=</span>hist_kws<span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>subset<span class="token punctuation">[</span>subset<span class="token punctuation">[</span><span class="token string">'quit'</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'salary'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+             label<span class="token operator">=</span><span class="token string">'Quit'</span><span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> hist_kws<span class="token operator">=</span>hist_kws<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Salary'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'PDF'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="output_28_0.png" alt="png"></p>
+<p>From this graph, people who make a lot of money and very little are not likely to quit. If salary between 80000 and 200000, the employee has higher probability of being an early quitter.</p>
+<h1 id="Other-Factors"><a href="#Other-Factors" class="headerlink" title="Other Factors"></a>Other Factors</h1><ol>
+<li><p>Given how important is salary, I would definitely love to have as a variable the salary the employee who quit was offered in the next job. Otherwise, things like: promotions or raises received during the employee tenure would be interesting.</p>
+</li>
+<li><p>The major findings are that employees quit at year anniversaries or at the beginning of the year. Both cases make sense. Even if you don’t like your current job, you often stay for 1 yr before quitting + you often get stocks after 1 yr so it makes sense to wait. Also, the beginning of the year is well known to be the best time to change job: companies are hiring more and you often want to stay until end of Dec to get the calendar year bonus.</p>
+</li>
+<li><p>Employees with low and high salaries are less likely to quit. Probably because employees with high salaries are happy there and employees with low salaries are not that marketable, so they have a hard time finding a new job.</p>
+</li>
+</ol>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
+        id: '2018/01/24/take-home-challenge/2-employee-rentention/employee-rentention/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2018/01/31/take-home-challenge/6-price-test/price-test/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="6-Price Test">
+                        
+                        <span class="card-title">6-Price Test</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Background:
+This notebook aims to evaluate whether a pricing test running on the site has been successful.
+Specifically,
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                                    Take home data challenge
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                        <span class="chip bg-color">Python_Take home challenge</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/01/24/take-home-challenge/3-identifyfraduluent/identifyfraduluent/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="4-Identifying Fraudulent activities">
+                        
+                        <span class="card-title">4-Identifying Fraudulent activities</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Background:
+This notebook aims to build a machine learning model that predicts the probability that the first transactio
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-01-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Take-home-data-challenge/" class="post-category" target="_blank">
+                                    Take home data challenge
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python-Take-home-challenge/" target="_blank">
+                        <span class="chip bg-color">Python_Take home challenge</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color center-align">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020 NaixinZhang. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>
