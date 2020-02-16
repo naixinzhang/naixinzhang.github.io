@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</loc>
+    <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
     
-    <lastmod>2020-02-13T06:45:24.898Z</lastmod>
+    <lastmod>2020-02-16T07:16:11.692Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</loc>
+    <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/</loc>
     
-    <lastmod>2020-02-13T06:41:08.040Z</lastmod>
+    <lastmod>2020-02-16T04:24:10.684Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</loc>
     
-    <lastmod>2020-02-13T06:23:06.454Z</lastmod>
+    <lastmod>2020-02-15T19:55:57.295Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</loc>
+    
+    <lastmod>2020-02-13T06:50:17.484Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</loc>
+    
+    <lastmod>2020-02-13T06:45:24.898Z</lastmod>
     
   </url>
   

@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ISLR_ch6.3 Dimension_Reduction-PCA, Naixin&#39;s blog">
+    <meta name="keywords" content="SQL_leetcode_database, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="ISLR_ch6.3 Dimension_Reduction-PCAIntro to Dimension Reduction MethodsSubset selection and shrinkage methods all use the">
+    <meta name="description" content="*175. 
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT JOIN Address
+ON Person.Per">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ISLR_ch6.3 Dimension_Reduction-PCA | Naixin&#39;s blog</title>
+    <title>SQL_leetcode_database | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ISLR_ch6.3 Dimension_Reduction-PCA
+                        SQL_leetcode_database
                     </div>
                 </div>
             </div>
@@ -375,8 +379,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Machine-Learning-notes/" target="_blank">
-                            <span class="chip bg-color">Machine Learning notes</span>
+                        <a href="/tags/SQL-Learning-notes/" target="_blank">
+                            <span class="chip bg-color">SQL Learning notes</span>
                         </a>
                         
                     </div>
@@ -387,8 +391,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                            An Introduction to statistical Learning
+                        <a href="/categories/SQL/" class="post-category" target="_blank">
+                            SQL
                         </a>
                         
                     </div>
@@ -399,7 +403,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-23
+                    2020-02-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -413,14 +417,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.1k
+                    543
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    3 Min
                 </div>
                 
                 
@@ -436,147 +440,107 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ISLR-ch6-3-Dimension-Reduction-PCA"><a href="#ISLR-ch6-3-Dimension-Reduction-PCA" class="headerlink" title="ISLR_ch6.3 Dimension_Reduction-PCA"></a>ISLR_ch6.3 Dimension_Reduction-PCA</h1><h1 id="Intro-to-Dimension-Reduction-Methods"><a href="#Intro-to-Dimension-Reduction-Methods" class="headerlink" title="Intro to Dimension Reduction Methods"></a>Intro to Dimension Reduction Methods</h1><p>Subset selection and shrinkage methods all use the original predictors, X1,X2, . . . , Xp. </p>
-<p>Dimension Reduction Methods <strong><em>transform</em></strong> the predictors and then fit a least
-squares model using the transformed variables.</p>
-<h2 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h2><p>Let Z1,Z2, . . . ,ZM represent M &lt; p linear combinations of our original p predictors. That is,</p>
-<p>\begin{align}
-Z_m=\sum_{j=1}^p\phi_{jm}X_j
-\end{align}</p>
-<p>for some constants φ1m, φ2m . . . , φpm, m = 1, . . .,M. We can then fit the
-linear regression model</p>
-<p>\begin{align}
-y_i=\theta_0+\sum_{m=1}^M\theta_m z_{im}+\epsilon_i  \quad  i=1,2,3,4,…,n
-\end{align}</p>
-<p><strong>Dimension reduction</strong>: reduces the problem of estimating the p+1 coefficients β0, β1, . . . , βp to the
-simpler problem of estimating the M + 1 coefficients θ0, θ1, . . . , θM, where
-M &lt; p. In other words, the dimension of the problem has been reduced
-from p + 1 to M + 1.</p>
-<p>\begin{align}
-\sum_{m=1}^M\theta_m z_{im}&amp;=\sum_{m=1}^M\theta_m \sum_{j=1}^p\phi_{jm}x_{ij}=\sum_{m=1}^M\sum_{j=1}^p\theta_m \phi_{jm}x_{ij}=\sum_{j=1}^p \beta_jx_{ij}  \<br>\beta_j&amp;=\sum_{m=1}^M\theta_m \phi_{jm}
-\end{align}</p>
-<p><strong>All dimension reduction methods work in two steps:</strong></p>
-<ol>
-<li>the transformed
-predictors Z1, Z2, . . . , ZM are obtained.</li>
-<li>the model is fit
-using these M predictors. However, the choice of Z1, Z2, . . . , ZM, or equivalently,
-the selection of the φjm’s, can be achieved in different ways. </li>
-</ol>
-<h1 id="Principal-Components-Regression"><a href="#Principal-Components-Regression" class="headerlink" title="Principal Components Regression"></a>Principal Components Regression</h1><h2 id="An-Overview-of-Principal-Components-Analysis"><a href="#An-Overview-of-Principal-Components-Analysis" class="headerlink" title="An Overview of Principal Components Analysis"></a>An Overview of Principal Components Analysis</h2><p><strong>PCA</strong>: is a technique for reducing the dimension of a n × p data matrix X.</p>
-<h3 id="1st-Principal-Component"><a href="#1st-Principal-Component" class="headerlink" title="1st Principal Component"></a>1st Principal Component</h3><h4 id="Interpretation-1-greatest-variability"><a href="#Interpretation-1-greatest-variability" class="headerlink" title="Interpretation 1: greatest variability"></a>Interpretation 1: greatest variability</h4><p><strong>The first principal component</strong> direction of the data: is that along which the
-observations <strong>vary the most</strong>.</p>
-<img src="./images/7.png" width="600">
-
-<p>The first principal component direction is the direction along which there is the greatest
-variability in the data. That is, if we projected the 100 observations onto
-this line (as shown in the left-hand panel of Figure 6.15), then the resulting
-projected observations would have the largest possible variance</p>
-<img src="./images/8.png" width="600">
-
-<p>The first principal component is given by the formula</p>
-<p>\begin{align}
-Z_1 = 0.839 × (pop − \bar{pop}) + 0.544 × (ad − \bar{ad})
-\end{align}</p>
-<p>Here φ11 = 0.839 and φ21 = 0.544 are the <strong>principal component loadings</strong>,
-which define the direction referred to above.</p>
-<blockquote>
-<p>The idea is that out of every possible linear combination
-of pop and ad such that $\phi_{11}^2+\phi_{21}^2=1$, this particular linear combination
-yields the highest variance: i.e. this is the linear combination for which
-$Var(φ_{11} × (pop − \bar{pop}) + φ_{21} × (ad − \bar{ad}))$ is maximized.</p>
-</blockquote>
-<p><strong>Principal Component Scores</strong></p>
-<p>The values of $z_{11}, . . . , z_{n1}$ are known as the <strong>principal component scores</strong>, and
-can be seen in the right-hand panel of Figure 6.15. For example,</p>
-<p>\begin{align}
-z_{i1} = 0.839 × (pop_i − \bar{pop}) + 0.544 × (ad_i − \bar{ad})
-\end{align}</p>
-<h4 id="Interpretation-2-closest-to-data"><a href="#Interpretation-2-closest-to-data" class="headerlink" title="Interpretation 2: closest to data"></a>Interpretation 2: closest to data</h4><p>There is also another interpretation for PCA: the first principal component
-vector defines the line that is as close as possible to the data. </p>
-<p>In Figure 6.14, the first principal component line minimizes the
-sum of the squared perpendicular distances between each point and the
-line.</p>
-<p>In the right-hand panel of Figure 6.15, the left-hand panel has been
-rotated so that the first principal component direction coincides with the
-x-axis. It is possible to show that the <strong><em>first principal component score</em></strong> for
-the ith observation is the distance in the x-direction of the
-ith cross from zero.</p>
-<h4 id="Interpretation-3-single-number-summarization"><a href="#Interpretation-3-single-number-summarization" class="headerlink" title="Interpretation 3: single number summarization"></a>Interpretation 3: single number summarization</h4><p>We can think of the values of the principal component Z1 as single number
-summaries of the joint pop and ad budgets for each location. </p>
-<p>In
-this example, if $z_{i1} = 0.839 × (pop_i − pop) + 0.544 × (ad_i − ad) &lt; 0$,
-then this indicates a city with below-average population size and belowaverage
-ad spending.</p>
-<img src="./images/9.png" width="650">
-
-<p>Figure 6.16 displays
-$z_{i1}$ versus both pop and ad. The plots show a strong relationship between
-the first principal component and the two features. In other words, the first
-principal component appears to <em>capture most of the information</em> contained
-in the pop and ad predictors.</p>
-<h3 id="2nd-Principal-Component"><a href="#2nd-Principal-Component" class="headerlink" title="2nd Principal Component"></a>2nd Principal Component</h3><p>The second
-principal component Z2 is a linear combination of the variables that is uncorrelated
-with Z1, and has largest variance subject to this constraint.</p>
-<p>It turns out that the zero correlation condition of Z1 with Z2 is equivalent to the condition that the direction must be perpendicular, or orthogonal, to the first principal component direction. </p>
-<p>The second principal
-component is given by the formula:</p>
-<p>\begin{align}
-Z_2 = 0.544 × (pop − \bar{pop}) − 0.839 × (ad − \bar{ad}).
-\end{align}</p>
-<p>Figure 6.15. The fact that the
-second principal component scores are much closer to zero indicates that
-this component captures far less information.</p>
-<h2 id="The-Principal-Components-Regression-Approach"><a href="#The-Principal-Components-Regression-Approach" class="headerlink" title="The Principal Components Regression Approach"></a>The Principal Components Regression Approach</h2><p>The principal components regression (PCR) approach involves constructing
-principal
-components
-regression
-the first M principal components, Z1, . . ., ZM, and then using these components
-as the predictors in a linear regression model that is fit
-using least squares</p>
-<p><strong>The key idea</strong></p>
-<p>Often a small number of principal
-components suffice to explain most of the variability in the data, as
-well as the relationship with the response. In other words, we assume that
-<strong><em>the directions in which X1, . . .,Xp show the most variation are the directions
-that are associated with Y</em></strong></p>
-<p><strong>Example</strong></p>
-<img src="./images/10.png" width="650">
-
+                <p>*175. </p>
+<pre><code>SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT JOIN Address
+ON Person.PersonID = Address.PersonID</code></pre><p>176.</p>
+<pre><code>SELECT (
+  SELECT DISTINCT Salary FROM Employee 
+  ORDER BY Salary DESC
+  LIMIT 1,1
+)as SecondHighestSalary </code></pre><p>notes: </p>
 <ul>
-<li>Performing PCR with an appropriate
-choice of M can result in a substantial improvement over least squares</li>
-<li>PCR does not
-perform as well as the two shrinkage methods<ul>
-<li><strong>Reason</strong>: The data were generated in such a way that many principal
-components are required in order to adequately model the response.
-In contrast, PCR will tend to do well in cases when the first few principal
-components are sufficient to capture most of the variation in the predictors
-as well as the relationship with the response.</li>
+<li>limit y 分句表示: 读取 y 条数据</li>
+<li>limit x, y 分句表示: 跳过 x 条数据，读取 y 条数据</li>
+<li>limit y offset x 分句表示: 跳过 x 条数据，读取 y 条数据</li>
 </ul>
-</li>
-</ul>
-<p><strong>Note</strong>: even though PCR provides a simple way to perform
-regression using M &lt; p predictors, it is not a <em>feature selection</em> method!</p>
-<ul>
-<li>This is because each of the M principal components used in the regression is a linear combination of all p of the original features.</li>
-<li>PCR is more closely related to ridge regression than
-to the lasso. One can even think of ridge regression as a continuous version
-of PCR!</li>
-</ul>
-<p><strong>Cross-validation</strong>: In PCR, the number of principal components, M, is typically chosen by
-cross-validation.</p>
-<img src="./images/11.png" width="650">
-
-<p><strong>Standardisation</strong>: When performing PCR, we generally recommend standardizing each
-predictor, prior to generating the principal components.</p>
-<ul>
-<li>In the
-absence of standardization, the <em>high-variance variables</em> will tend to play a
-larger role in the principal components obtained, and the scale on which
-the variables are measured will ultimately have an effect on the final PCR
-model.</li>
-</ul>
+<p>177.</p>
+<pre><code>CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+DECLARE M INT;
+SET M=N-1;
+  RETURN (
+      SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT M, 1
+  );
+END</code></pre><p>NOTES:
+MUST use declare and set in this case</p>
+<p>178.
+MySQL Solution:</p>
+<pre><code>SELECT S.Score, COUNT(S2.Score) AS Rank FROM Scores S,
+(SELECT DISTINCT Score FROM Scores) S2
+WHERE S.Score&lt;=S2.Score
+GROUP BY S.Id 
+ORDER BY S.Score DESC;</code></pre><p>MS SQL Solution</p>
+<pre><code>SELECT Score, DENSE_RANK() OVER (ORDER BY Score DESC) AS Rank
+FROM Scores</code></pre><p>180.
+Assume the id is consecutive: 1,2,3</p>
+<pre><code>SELECT DISTINCT l1.Num AS ConsecutiveNums
+FROM Logs l1, Logs l2,Logs l3
+WHERE l1.Id + 1 = l2.Id AND l2.Id + 1 = l3.Id
+AND l1.Num = l2.Num AND l2.Num = l3.Num</code></pre><pre><code>select distinct Num as ConsecutiveNums
+from Logs
+where (Id + 1, Num) in (select * from Logs) and (Id + 2, Num) in (select * from Logs)</code></pre><p>181.</p>
+<pre><code>SELECT a.Name AS Employee 
+FROM Employee a
+JOIN Employee b
+ON a.ManagerId = b.Id
+AND a.Salary &gt; b.Salary</code></pre><p>182.</p>
+<pre><code>SELECT Email
+FROM Person
+GROUP BY Email
+Having count(Email) &gt; 1</code></pre><p>183.</p>
+<pre><code>SELECT Customers.Name AS Customers
+FROM Customers 
+WHERE Customers.id NOT IN 
+(SELECT CustomerId FROM Orders)</code></pre><p>184.</p>
+<pre><code>SELECT d.Name AS &#39;Department&#39;, e.Name AS &#39;Employee&#39;,e.Salary FROM Employee e
+JOIN Department d
+ON e.DepartmentId = d.Id
+WHERE
+ (DepartmentId,Salary) IN (
+     SELECT DepartmentId, Max(Salary)
+     FROM Employee
+     GROUP BY DepartmentId
+ )</code></pre><p>185.</p>
+<pre><code>SELECT d.Name AS &#39;Department&#39;, e1.Name AS &#39;Employee&#39;,e1.Salary FROM Employee e1
+JOIN Department d
+ON e1.DepartmentId = d.Id
+WHERE 3 &gt; (
+ SELECT COUNT(DISTINCT e2.Salary)
+ FROM Employee e2
+ WHERE e2.Salary &gt; e1.Salary AND e1.DepartmentId = e2.DepartmentId
+)</code></pre><pre><code>SELECT d.Name AS Department, a. Name as Employee, a. Salary 
+FROM (
+SELECT e.*, DENSE_RANK() OVER (PARTITION BY DepartmentId ORDER BY Salary DESC) AS DeptPayRank 
+FROM Employee e 
+) a 
+JOIN Department d
+ON a. DepartmentId = d. Id 
+WHERE DeptPayRank &lt;=3</code></pre><p>196.</p>
+<pre><code>DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id &gt; p2.Id</code></pre><p>197.</p>
+<pre><code>SELECT w1.Id
+FROM weather w0, weather w1
+WHERE DATEDIFF(w1.recorddate, w0.recorddate) = 1 and w0.temperature &lt; w1.temperature</code></pre><p>262.</p>
+<pre><code>SELECT Request_at as Day,
+       ROUND(COUNT(IF(Status != &#39;completed&#39;, TRUE, NULL)) / COUNT(*), 2) AS &#39;Cancellation Rate&#39;
+FROM Trips
+WHERE (Request_at BETWEEN &#39;2013-10-01&#39; AND &#39;2013-10-03&#39;)
+      AND Client_id NOT IN (SELECT Users_Id FROM Users WHERE Banned = &#39;Yes&#39;)
+GROUP BY Request_at;</code></pre><p>511.</p>
+<pre><code>SELECT player_id,MIN(event_date)AS first_login
+FROM Activity
+GROUP BY player_id</code></pre><p>512.</p>
+<pre><code>select player_id, device_id 
+from activity 
+where (player_id, event_date) in (
+                                select player_id, min(event_date)
+                                from activity 
+                                group by player_id
+                                 ) </code></pre><p>534.</p>
 
             </div>
             <hr />
@@ -615,7 +579,7 @@ model.</li>
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2019/09/23/islr/6.3dimension-reduction-pca/',
+        id: '2020/02/15/mysql/sql-leetcode/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -898,46 +862,52 @@ model.</li>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/09/23/islr/8.2bagging-random-forest-boosting/">
+                <a href="/2020/02/15/mysql/sql-leetcode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ISLR_ch8.2 Bagging,Random_Forest,Boosting">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="SQL_leetcode_database">
                         
-                        <span class="card-title">ISLR_ch8.2 Bagging,Random_Forest,Boosting</span>
+                        <span class="card-title">SQL_leetcode_database</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ISLR_ch8.2 Bagging,Random_Forest,BoostingBaggingBootstrap aggregation, or bagging, is a general-purpose procedure for re
+                            *175. 
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT JOIN Address
+ON Person.Per
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                                    An Introduction to statistical Learning
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning-notes/" target="_blank">
-                        <span class="chip bg-color">Machine Learning notes</span>
+                    <a href="/tags/SQL-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">SQL Learning notes</span>
                     </a>
                     
                 </div>
@@ -951,31 +921,32 @@ model.</li>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/23/islr/9.1maximal-margin-classifier/">
+                <a href="/2020/02/15/mysql/sql-notes-analytics-training/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ISLR_ch9.1 Maximal_Margin_Classifier">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="SQL_notes_Analytics_training">
                         
-                        <span class="card-title">ISLR_ch9.1 Maximal_Margin_Classifier</span>
+                        <span class="card-title">SQL_notes_Analytics_training</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ISLR_ch9.1 Maximal_Margin_ClassifierWhat Is a Hyperplane?In a p-dimensional space, a hyperplane is a flat affine subspac
+                            Learning from https://mode.com/sql-tutorial/
+1. Investigating a Drop in User EngagementGoal: determine what caused the d
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                                    An Introduction to statistical Learning
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
                                 </a>
                             
                             
@@ -985,8 +956,8 @@ model.</li>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning-notes/" target="_blank">
-                        <span class="chip bg-color">Machine Learning notes</span>
+                    <a href="/tags/SQL-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">SQL Learning notes</span>
                     </a>
                     
                 </div>
@@ -1096,13 +1067,6 @@ model.</li>
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">

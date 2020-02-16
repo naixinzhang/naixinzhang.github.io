@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-02-13T06:23:06.454Z</updated>
+  <updated>2020-02-16T07:16:11.692Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SQL_notes_Advanced</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</id>
-    <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:23:06.454Z</updated>
+    <title>SQL_leetcode_database</title>
+    <link href="http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/"/>
+    <id>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</id>
+    <published>2020-02-16T02:26:09.000Z</published>
+    <updated>2020-02-16T07:16:11.692Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,38 @@
       
         
         
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
+          &lt;p&gt;*175. &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT JOIN Address
+ON
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL_notes_Analytics_training</title>
+    <link href="http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/"/>
+    <id>http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/</id>
+    <published>2020-02-15T19:57:09.000Z</published>
+    <updated>2020-02-16T04:24:10.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mode.com/sql-tutorial/&lt;/a&gt;&lt;/p&gt;
+&lt;h1
         
       
     
@@ -73,7 +104,33 @@
     <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/"/>
     <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</id>
     <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:41:08.040Z</updated>
+    <updated>2020-02-13T06:50:17.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL_notes_Advanced</title>
+    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/"/>
+    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</id>
+    <published>2020-02-13T01:25:09.000Z</published>
+    <updated>2020-02-15T19:55:57.295Z</updated>
     
     <summary type="html">
     
@@ -121,6 +178,32 @@
   </entry>
   
   <entry>
+    <title>Coal Terminal Maintenance Analysis</title>
+    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec3/"/>
+    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec3/</id>
+    <published>2020-01-23T18:32:09.000Z</published>
+    <updated>2020-02-08T17:26:52.561Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been hired by a Coal
+        
+      
+    
+    </summary>
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
+    
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Investment opportunities Identify</title>
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec2/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec2/</id>
@@ -160,32 +243,6 @@
         
         
           &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are a Data Scientist
-        
-      
-    
-    </summary>
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
-    
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Coal Terminal Maintenance Analysis</title>
-    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec3/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec3/</id>
-    <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T17:26:52.561Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been hired by a Coal
         
       
     
@@ -481,58 +538,6 @@
     
     
       <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ISLR_ch2.2 Assessing Model Accuracy</title>
-    <link href="http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/"/>
-    <id>http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/</id>
-    <published>2019-09-23T17:32:09.000Z</published>
-    <updated>2020-01-23T19:27:10.418Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;ISLR-ch2-2-Assessing-Model-Accuracy&quot;&gt;&lt;a href=&quot;#ISLR-ch2-2-Assessing-Model-Accuracy&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch2.2 Assessing
-        
-      
-    
-    </summary>
-    
-      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
-    
-    
-      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ISLR_ch3.2 Multiple Linear Regression</title>
-    <link href="http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/"/>
-    <id>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</id>
-    <published>2019-09-23T17:32:09.000Z</published>
-    <updated>2020-01-23T19:26:43.664Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;ISLR-ch3-2-Multiple-Linear-Regression&quot;&gt;&lt;a href=&quot;#ISLR-ch3-2-Multiple-Linear-Regression&quot; class=&quot;headerlink&quot; title=&quot;ISLR_ch3.2
-        
-      
-    
-    </summary>
-    
-      <category term="An Introduction to statistical Learning" scheme="http://naixinzhang.github.io/categories/An-Introduction-to-statistical-Learning/"/>
-    
-    
-      <category term="Machine Learning notes" scheme="http://naixinzhang.github.io/tags/Machine-Learning-notes/"/>
     
   </entry>
   
