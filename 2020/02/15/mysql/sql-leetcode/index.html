@@ -262,7 +262,7 @@ ON Person.Per">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -417,14 +417,14 @@ ON Person.Per">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    543
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    9 Min
                 </div>
                 
                 
@@ -541,7 +541,216 @@ where (player_id, event_date) in (
                                 from activity 
                                 group by player_id
                                  ) </code></pre><p>534.</p>
-
+<pre><code>SELECT
+player_id, event_date, sum(games_played) over(PARTITION BY player_id ORDER BY event_date)
+AS &#39;games_played_so_far&#39;
+FROM activity
+ORDER BY player_id, games_played_so_far;</code></pre><pre><code>SELECT a1.player_id, a1.event_date,
+SUM(a2.games_played) AS games_played_so_far
+FROM activity a1, activity a2
+WHERE a1.player_id = a2.player_id
+AND a1.event_date &gt;=a2.event_date
+GROUP BY a1.player_id, a1.event_date
+ORDER BY a1.player_id, a1.event_date;</code></pre><p>550.</p>
+<pre><code>SELECT ROUND(COUNT(t2.player_id)/COUNT(t1.player_id),2) AS fraction
+FROM (
+    SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id
+) t1
+LEFT JOIN Activity t2
+ON t1.player_id = t2.player_id AND t1.first_login = t2.event_date - 1</code></pre><p>569.</p>
+<pre><code>SELECT MIN(A.Id) AS Id, A.Company, A.Salary
+FROM Employee A, Employee B
+WHERE A.Company = B.Company
+GROUP BY A.Company, A.Salary
+HAVING SUM(CASE WHEN B.Salary &gt;= A.Salary THEN 1 ELSE 0 END) &gt;= COUNT(*)/2
+AND SUM(CASE WHEN B.Salary &lt;= A.Salary THEN 1 ELSE 0 END) &gt;= COUNT(*)/2</code></pre><p>570.</p>
+<pre><code>SELECT Name FROM Employee
+WHERE Id IN 
+(SELECT ManagerId FROM Employee GROUP BY ManagerId HAVING COUNT(ManagerId) &gt;=5)</code></pre><p>571.(HARD)</p>
+<pre><code>SELECT AVG(n1.Number) AS median
+FROM Numbers n1
+JOIN (
+    SELECT n3.Number,
+    ABS(SUM(CASE WHEN n3.Number &gt; n4.Number THEN n4.Frequency ELSE 0 END) - 
+        SUM(CASE WHEN n3.Number &lt; n4.Number THEN n4.Frequency ELSE 0 END))
+    AS Diff
+    FROM Numbers n3, Numbers n4 #为什么inner join不对？
+    GROUP BY n3.Number
+     ) n2
+ON n1.Number =n2.Number
+WHERE n1.Frequency &gt;= n2.Diff</code></pre><p>LOGIC:比它大的数的频数和与比它小的数的频数和的差需要落在中位数的频数里
+NUM, FREQ, DIFF
+0,7,7
+1,1,3
+2,3,7
+3,11</p>
+<p>574.</p>
+<pre><code>SELECT Name FROM Candidate
+WHERE id = (
+SELECT CandidateId FROM Vote 
+GROUP BY CandidateID
+ORDER BY COUNT(id) DESC
+LIMIT 1
+)</code></pre><p>*577.</p>
+<pre><code>SELECT e.name, b.bonus 
+FROM Employee e
+LEFT JOIN Bonus b
+ON e.empId = b.empId
+WHERE b.bonus &lt; 1000 OR b.bonus IS NULL</code></pre><p>578.</p>
+<pre><code>SELECT question_id AS survey_log
+FROM(
+    SELECT question_id,
+    SUM(CASE WHEN action = &#39;answer&#39; THEN 1 ELSE 0 END)
+    /
+    SUM(CASE WHEN action = &#39;show&#39; THEN 1 ELSE 0 END) AS rate
+    FROM survey_log
+    GROUP BY question_id
+    ) tem
+ORDER BY rate DESC 
+LIMIT 1</code></pre><p>579.</p>
+<pre><code>SELECT e1.ID,e1.Month, Sum(e2.Salary) As Salary FROM Employee e1
+JOIN Employee e2
+ON e1.ID = e2.ID and e1.Month &gt;= e2.Month
+WHERE(e1.ID, e1.Month) NOT IN (SELECT Id, MAX(Month) FROM Employee GROUP BY Id)
+      AND e1.Month - e2.Month &lt; 3
+GROUP BY e1.Id, e1.Month
+ORDER BY e1.ID, e1.Month DESC</code></pre><pre><code>SELECT Id, Month, SUM(Salary) OVER(PARTITION BY Id ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS Salary
+FROM 
+(SELECT Id, Month, Salary, MAX(Month) OVER(PARTITION BY Id) AS recent_month
+FROM Employee) sub
+WHERE sub.Month != recent_month
+ORDER BY Id, Month DESC</code></pre><p>reference for windows function: <a href="https://blog.csdn.net/huozhicheng/article/details/5843782" target="_blank" rel="noopener">https://blog.csdn.net/huozhicheng/article/details/5843782</a></p>
+<p>580.</p>
+<pre><code>SELECT d.dept_name, COUNT(student_id) AS student_number FROM
+student s
+RIGHT JOIN department d
+ON d.dept_id = s.dept_id
+GROUP BY d.dept_id
+ORDER BY student_number DESC,d.dept_name</code></pre><p>*584.</p>
+<pre><code>SELECT name FROM customer
+WHERE referee_id != 2 OR referee_id IS NULL</code></pre><p>585.</p>
+<pre><code>SELECT SUM(TIV_2016) AS TIV_2016
+FROM insurance
+WHERE TIV_2015 IN (
+    SELECT TIV_2015 FROM insurance
+    GROUP BY TIV_2015
+    HAVING COUNT(*) &gt; 1
+) AND CONCAT(LAT,CONCAT(,LON)) IN(
+    SELECT CONCATE(LAT,CONCATE(,LON)) FROM insurance
+    GROUP BY LAT,LON
+    HAVING COUNT(*) = 1
+)</code></pre><p>586.</p>
+<pre><code>SELECT customer_number
+FROM orders
+GROUP BY customer_number
+ORDER BY COUNT(*) DESC
+LIMIT 1</code></pre><p>*595</p>
+<pre><code>SELECT
+    name, population, area
+FROM
+    world
+WHERE
+    area &gt; 3000000 OR population &gt; 25000000</code></pre><p>*596</p>
+<pre><code>SELECT class
+FROM courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) &gt;= 5</code></pre><p>597</p>
+<pre><code>SELECT 
+ROUND(
+    IFNULL(
+    (SELECT COUNT(distinct requester_id, accepter_id) FROM request_accepted)
+    /
+    (SELECT COUNT(distinct sender_id, send_to_id) FROM friend_request),
+    0)
+, 2) AS accept_rate</code></pre><p>601</p>
+<pre><code>SELECT DISTINCT S1.*
+FROM stadium S1
+JOIN stadium S2
+JOIN stadium S3
+ON ((S1.id = S2.id - 1 AND S1.id = S3.id -2) # s1,s2,s3 
+OR (S3.id = S1.id - 1 AND S3.id = S2.id -2)  # s3,s1,s2
+OR (S3.id = S2.id - 1 AND S3.id = S1.id -2)) # s3,s2,s1
+WHERE S1.people &gt;= 100
+AND S2.people &gt;= 100
+AND S3.people &gt;= 100
+ORDER BY S1.id;</code></pre><p>Notes:Considering t1, t2 and t3 are identical, we can take one of them to consider what conditions we should add to filter the data and get the final result. Taking t1 for example, it could exist in the beginning of the consecutive 3 days, or the middle, or the last.</p>
+<p>603.</p>
+<pre><code>SELECT DISTINCT a.seat_id
+FROM cinema a
+JOIN cinema b 
+ON 
+ABS(a.seat_id - b.seat_id) = 1
+WHERE a.free = 1 AND b.free = 1
+ORDER BY a.seat_id;</code></pre><p>607</p>
+<pre><code>SELECT
+    s.name
+FROM
+    salesperson s
+WHERE
+    s.sales_id NOT IN 
+        (SELECT
+            o.sales_id
+        FROM
+            orders o
+                LEFT JOIN
+            company c ON o.com_id = c.com_id
+        WHERE
+            c.name = &#39;RED&#39;)</code></pre><p>610</p>
+<pre><code>SELECT 
+    x,
+    y,
+    z,
+    CASE
+        WHEN x + y &gt; z AND x + z &gt; y AND y + z &gt; x THEN &#39;Yes&#39;
+        ELSE &#39;No&#39;
+    END AS &#39;triangle&#39;
+FROM
+    triangle</code></pre><p>613.</p>
+<pre><code>SELECT
+    MIN(ABS(p1.x - p2.x)) AS shortest
+FROM point p1
+JOIN point p2 
+ON p1.x != p2.x</code></pre><p>619</p>
+<pre><code>SELECT IFNULL(
+    (SELECT num
+     FROM my_numbers
+     GROUP BY 1
+     HAVING COUNT(*) = 1
+     ORDER BY num DESC
+     LIMIT 1)
+,NULL) AS num</code></pre><p>620</p>
+<pre><code>select *
+from cinema
+where mod(id, 2) = 1 and description != &#39;boring&#39;
+order by rating DESC</code></pre><p>627</p>
+<pre><code>UPDATE salary
+SET sex = 
+        CASE sex
+        WHEN &#39;m&#39; THEN &#39;f&#39;
+        ELSE &#39;m&#39;
+        END</code></pre><p>1050</p>
+<pre><code>select actor_id, director_id 
+from actordirector 
+group by actor_id, director_id 
+having count(*) &gt;= 3</code></pre><p>*1086</p>
+<pre><code>select
+p.product_name,
+s.year,
+s.price
+from sales s
+join product p
+on s.product_id = p.product_id;</code></pre><p>*1069</p>
+<pre><code>select product_id, sum(quantity) total_quantity from sales group by product_id;</code></pre><p>*1075</p>
+<pre><code>SELECT p.project_id, ROUND(avg(e.experience_years),2) AS average_years
+        FROM Project p
+        JOIN Employee e
+        ON p.employee_id = e.employee_id
+        GROUP BY p.project_id</code></pre><p>*1076</p>
+<pre><code>select project_id
+from Project p
+group by project_id
+having count(*) = 
+(select count(*) c from Project group by project_id order by c desc limit 1)</code></pre>
             </div>
             <hr />
 
@@ -871,7 +1080,7 @@ where (player_id, event_date) in (
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="SQL_leetcode_database">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="SQL_leetcode_database">
                         
                         <span class="card-title">SQL_leetcode_database</span>
                     </div>
@@ -925,7 +1134,7 @@ ON Person.Per
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="SQL_notes_Analytics_training">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="SQL_notes_Analytics_training">
                         
                         <span class="card-title">SQL_notes_Analytics_training</span>
                     </div>
