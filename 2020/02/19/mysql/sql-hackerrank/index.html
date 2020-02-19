@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ISLR_ch3.1 Simple Linear Regression, Naixin&#39;s blog">
+    <meta name="keywords" content="SQL_interview_prep, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="ISLR_ch3.1 Simple Linear RegressionSimple linear regression: approach for predicting a quantitative response Y on the ba">
+    <meta name="description" content="SQL_interview_prep | Naixin&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ISLR_ch3.1 Simple Linear Regression | Naixin&#39;s blog</title>
+    <title>SQL_interview_prep | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ISLR_ch3.1 Simple Linear Regression
+                        SQL_interview_prep
                     </div>
                 </div>
             </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Machine-Learning-notes/" target="_blank">
-                            <span class="chip bg-color">Machine Learning notes</span>
+                        <a href="/tags/SQL-Learning-notes/" target="_blank">
+                            <span class="chip bg-color">SQL Learning notes</span>
                         </a>
                         
                     </div>
@@ -387,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                            An Introduction to statistical Learning
+                        <a href="/categories/SQL/" class="post-category" target="_blank">
+                            SQL
                         </a>
                         
                     </div>
@@ -399,7 +399,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-23
+                    2020-02-19
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -413,14 +413,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    1 Min
                 </div>
                 
                 
@@ -436,213 +436,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ISLR-ch3-1-Simple-Linear-Regression"><a href="#ISLR-ch3-1-Simple-Linear-Regression" class="headerlink" title="ISLR_ch3.1 Simple Linear Regression"></a>ISLR_ch3.1 Simple Linear Regression</h1><p><strong>Simple linear regression</strong>: approach for predicting a quantitative response Y on the basis of a single predictor variable X. </p>
-<p>It assumes that there is approximately a linear
-relationship between X and Y:</p>
-<p>\begin{align}
-Y=\beta_0+\beta_1X
-\end{align}</p>
-<h1 id="Estimating-the-Coefficients"><a href="#Estimating-the-Coefficients" class="headerlink" title="Estimating the Coefficients"></a>Estimating the Coefficients</h1><ul>
-<li>$\hat{y_i} = \hat{β_0} + \hat{β_1}x_i$ be the prediction for Y based on the ith value of X.</li>
-<li><strong>Residual</strong>: $e_i = y_i−\hat{y_i}$ represents the ith residual—this is the difference between
-residual
-the ith observed response value and the ith response value that is predicted
-by our linear model. </li>
-</ul>
-<p><strong>residual sum of squares (RSS)</strong></p>
-<p>\begin{align}
-RSS&amp;=e_1^2+e_2^2+e_3^2+…e_n^2 \<br>RSS&amp;=(y_1−\hat{β_0} - \hat{β_1}x_1)^2+(y_2−\hat{β_0} - \hat{β_1}x_2)^2,…, (y_n−\hat{β_0} - \hat{β_1}x_n)^2
-\end{align}</p>
-<p>The least squares approach chooses $\hat{β_1}$ and $\hat{β_0}$ to minimize the <strong>RSS</strong>:</p>
-<p>\begin{align}
-\hat{\beta_1}&amp;=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2} \<br>\hat{\beta_0}&amp;=\bar{y}-\hat{\beta_1}\bar{x}  \quad \quad (3.4)
-\end{align}</p>
-<p>where $\bar{y}=\sum_{i=1}^ny_i/n$, $\bar{x}=\sum_{i=1}^nx_i/n$ are the <strong>sample means</strong>.</p>
-<blockquote>
-<p><strong>least squares coefficient</strong> estimates for <strong>simple linear
-regression</strong>.</p>
-</blockquote>
-<h1 id="Assessing-the-Accuracy-of-the-Coefficient-Estimates"><a href="#Assessing-the-Accuracy-of-the-Coefficient-Estimates" class="headerlink" title="Assessing the Accuracy of the Coefficient Estimates"></a>Assessing the Accuracy of the Coefficient Estimates</h1><p>Assume that the true relationship between X and Y takes the form $Y = f(X) + \epsilon$ for some unknown function f, where $\epsilon$
-is a mean-zero random error term.</p>
-<p><strong>least squares line</strong>:</p>
-<p>\begin{align}
-\hat{y_i} = \hat{β_0} + \hat{β_1}x_i
-\end{align}</p>
-<p><strong>population regression line</strong>:</p>
-<p>\begin{align}
-Y=\beta_0+\beta_1X+\epsilon
-\end{align}</p>
-<p>The <strong>error term</strong> is a catch-all for what we miss with this simple model: the true relationship is probably not linear, there may be
-other variables that cause variation in Y , and there may be measurement
-error. We typically assume that the error term is independent of X.</p>
-<img src="./images/1.png" width="600">
-
-<h2 id="Population-V-S-Sample"><a href="#Population-V-S-Sample" class="headerlink" title="Population V.S. Sample"></a>Population V.S. Sample</h2><p>The true relationship is generally not known for real data, but the least squares line can always be computed using the coefficient estimates given in (3.4).</p>
-<p><strong>Why there are two different lines describe the
-relationship between the predictor and the response?</strong></p>
-<ul>
-<li><p>The concept of these two lines is a natural extension of the standard statistical
-approach of using information from a sample to estimate characteristics of a
-large population.</p>
-</li>
-<li><p>The <strong>sample mean</strong> $\bar{x}=\sum_{i=1}^nx_i/n$ and the <strong>population mean</strong> $\mu$ are different, but in general the sample
-mean $\bar{x}$ will provide a good estimate of the population mean $\hat{\mu}$.</p>
-</li>
-</ul>
-<p><strong>Unbiased</strong></p>
-<ul>
-<li>If we use the sample mean $\hat{\mu}$ to estimate μ, this estimate is <strong>unbiased</strong>, in the sense that on average, we expect $\hat{\mu}$ to equal μ.</li>
-<li>an unbiased estimator does not systematically
-over- or under-estimate the true parameter.</li>
-</ul>
-<h3 id="Standard-Error"><a href="#Standard-Error" class="headerlink" title="Standard Error"></a>Standard Error</h3><p><strong>How accurate
-is the sample mean $\hat{\mu}$ as an estimate of μ?</strong></p>
-<ul>
-<li><strong>standard error of $\hat{\mu}$(SE($\hat{\mu}$)</strong>): average amount that this
-estimate $\hat{\mu}$ differs from the actual value of μ.
-\begin{align}
-Var(\hat{\mu})=SE(\hat{\mu})^2=\frac{\sigma^2}{n}
-\end{align}
-where σ is the standard deviation of each of the realizations yi of Y provided that the n observations are <strong>uncorrelated</strong>.</li>
-</ul>
-<p><strong>Standard Deviation V.S. Standard Error</strong></p>
-<ul>
-<li><p>The standard deviation (SD) measures the amount of variability, or dispersion, for a subject set of data from the mean</p>
-</li>
-<li><p>The standard error of the mean (SEM) measures how far the sample mean of the data is likely to be from the true population mean. </p>
-</li>
-</ul>
-<img src="./images/2.png" width="300">
-
-<p><strong>How close $\hat{\beta_0}$
-and $\hat{\beta_1}$ are to the true values $\beta_0$ and $\beta_1$?</strong></p>
-<ul>
-<li>\begin{align}
-SE(\hat{\beta_0})^2&amp;=\sigma^2\left[\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}  \right]  \<br>SE(\hat{\beta_1})^2&amp;=\frac{\sigma^2}{\sum_{i=1}^n(x_i-\bar{x})^2} 
-\end{align}
-where $\sigma^2 = Var(\epsilon)$</li>
-<li>For these formulas to be strictly valid, we need to assume
-that the errors $\epsilon_i$ for each observation are uncorrelated with common
-variance σ2. </li>
-</ul>
-<p><strong>Estimate $\sigma^2$</strong></p>
-<ul>
-<li><strong>residual standard error(RSE)</strong>: $\sigma^2$ is not known, but can be estimated from the data. This estimate
-is known as the <strong>residual standard error</strong></li>
-<li>\begin{align}
-RSE=\sqrt{RSS/(n-2)}
-\end{align}</li>
-</ul>
-<p><strong>Confidence Intervals</strong></p>
-<ul>
-<li><strong>A 95%
-confidence
-confidence interval</strong>: is defined as a range of values such that with 95% interval
-probability, the range will contain the true unknown value of the parameter.</li>
-<li>For linear regression, the 95% confidence interval for β1
-approximately takes the form
-\begin{align}
-\hat{\beta_1} \pm 2 \cdot SE(\hat{\beta_1})<br>\end{align}
-(which relies on the assumption that the
-errors are Gaussian. Also, the factor of 2 in front of the $SE(\hat{\beta_1})$ term will vary slightly
-depending on the number of observations n in the linear regression. To be precise, rather
-than the number 2, it should contain the 97.5% quantile of a t-distribution with
-n−2 degrees of freedom.)</li>
-</ul>
-<h3 id="Hypothesis-Tests"><a href="#Hypothesis-Tests" class="headerlink" title="Hypothesis Tests"></a>Hypothesis Tests</h3><p>The most common hypothesis test involves testing the <strong>null test
-hypothesis</strong> of</p>
-<pre><code>H_0: There is no relationship between X and Y or β1=0</code></pre><p>versus the <strong>alternative hypothesis</strong></p>
-<pre><code>H_a : There is some relationship between X and Y or β1≠0</code></pre><p>To test the null hypothesis, we need to determine
-whether $\hat{\beta_1}$, our estimate for $\beta_1$, is sufficiently far from zero that we can
-be confident that $\beta_1$ is non-zero $\Rightarrow$ it depends on SE( $\hat{\beta_1}$)</p>
-<ul>
-<li>If SE( $\hat{\beta_1}$) is
-small, then even relatively small values of $\hat{\beta_1}$ may provide strong evidence
-that $\beta_1 \neq 0$, and hence that there is a relationship between X and Y</li>
-</ul>
-<p><strong>t-statistic</strong></p>
-<p>\begin{align}
-t=\frac{\hat{\beta_1}-0}{SE(\hat{\beta_1})} 
-\end{align}
-which measures the number of standard deviations that $\hat{\beta_1}$ is away from 0.If there really is no relationship between X and Y , then we expect it will have a t-distribution with n−2 degrees of freedom.</p>
-<p><strong>p-value</strong></p>
-<ul>
-<li>The probability of observing any value ≥ t or ≤ -t, assuming β1 = 0.</li>
-</ul>
-<img src="./images/3.png" width="300">
-(Here |t|=2.17, p-value=0.015.The area in red is 0.015 + 0.015 = 0.030, 3%. If we had chosen a significance level of 5%, this would mean that we had achieved statistical significance. We would reject the null hypothesis in favor of the alternative hypothesis.)
-
-
-<ul>
-<li><strong>Interpretation</strong>:a small p-value indicates<ul>
-<li>It is unlikely to observe such a substantial association between the predictor
-and the response due to LUCK, in the absence of any real association
-between the predictor and the response.</li>
-<li>There is an association between the predictor and the
-response. </li>
-<li>We reject the null hypothesis—that is, we declare a relationship
-to exist between X and Y</li>
-</ul>
-</li>
-</ul>
-<h1 id="Assessing-the-Accuracy-of-the-Model"><a href="#Assessing-the-Accuracy-of-the-Model" class="headerlink" title="Assessing the Accuracy of the Model"></a>Assessing the Accuracy of the Model</h1><p>The quality of a linear regression fit is typically assessed
-using two related quantities: <strong>the residual standard error (RSE)</strong> and the <strong>R2</strong> statistic.</p>
-<h2 id="Residual-Standard-Error"><a href="#Residual-Standard-Error" class="headerlink" title="Residual Standard Error"></a>Residual Standard Error</h2><p>The RSE is an estimate of the standard deviation of $\epsilon$: the average amount that the response
-will deviate from the true regression line</p>
-<p>\begin{align}
-RSS&amp;=\sum_{i=1}^n(y_i-\hat{y})^2  \<br>RSE&amp;=\sqrt{\frac{1}{n-2}RSS}=\sqrt{\frac{1}{n-2}\sum_{i=1}^n(y_i-\hat{y})^2}
-\end{align}</p>
-<img src="./images/4.png" width="600">
-
-<p>In the case of the advertising data, we see from the linear regression
-output in Table 3.2 that the RSE is 3.26. In other words, actual sales in
-each market deviate from the true regression line by approximately 3,260
-units, on average. </p>
-<p>The mean value of sales over
-all markets is approximately 14,000 units, and so the percentage error is
-3,260/14,000 = 23%.</p>
-<blockquote>
-<p>The RSE is considered a measure of the <strong>lack of fit</strong> of the model $Y = β_0 + β_1X + \epsilon$ to
-the data.</p>
-</blockquote>
-<h2 id="R2-Statistic"><a href="#R2-Statistic" class="headerlink" title="R2 Statistic"></a>R2 Statistic</h2><p>The RSE is measured in the units of Y , it is not always
-clear what constitutes a good RSE. </p>
-<p>The $R^2$ statistic takes the form of a proportion—the proportion of variance
-explained—and so it always takes on a value between 0 and 1, and is
-independent of the scale of Y .
-\begin{align}
-R2 = (TSS − RSS)/TSS= 1− RSS/TSS
-\end{align}</p>
-<p><strong>TSS(total sum of squares)</strong>: $\sum(y_i-\bar{y})$ - the amount of variability inherent in the response before the
-regression is performed</p>
-<p><strong>RSS</strong>: $\sum_{i=1}^n(y_i-\hat{y})^2$ - the amount of variability
-that is left unexplained after performing the regression</p>
-<p><strong>TSS−RSS</strong>: measures the amount of variability in the response that is explained (or
-removed) by performing the regression, and R2 measures the proportion
-of variability in Y that can be explained using X.</p>
-<p><strong>Interpretation</strong>：</p>
-<ul>
-<li>close to 1 : a large proportion of the variability in the response
-has been explained by the regression. </li>
-<li>close to 0 : the
-regression did not explain much of the variability in the response<ul>
-<li>the linear model is wrong</li>
-<li>the inherent error σ2 is high,
-or both.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Squared-Correlation-V-S-R2-Statistic"><a href="#Squared-Correlation-V-S-R2-Statistic" class="headerlink" title="Squared Correlation V.S. R2 Statistic"></a>Squared Correlation V.S. R2 Statistic</h2><p><strong>Correlation</strong>:</p>
-<p>\begin{align}
-Cor(X,Y)=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^n(y_i-\bar{y})^2}}
-\end{align}</p>
-<p>is also a measure of the linear relationship between X and Y.</p>
-<blockquote>
-<p>In the simple
-linear regression setting, $R^2 = [Cor]^2$. In other words, the squared correlation and the R2 statistic are identical</p>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+                
             </div>
             <hr />
 
@@ -680,7 +474,7 @@ linear regression setting, $R^2 = [Cor]^2$. In other words, the squared correlat
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2019/09/23/islr/3.1simple-linear-regression/',
+        id: '2020/02/19/mysql/sql-hackerrank/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -963,47 +757,48 @@ linear regression setting, $R^2 = [Cor]^2$. In other words, the squared correlat
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/10/23/cs301/cs301-proj5/">
+                <a href="/2020/02/19/mysql/sql-hackerrank/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="CS301_Proj5">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="SQL_interview_prep">
                         
-                        <span class="card-title">CS301_Proj5</span>
+                        <span class="card-title">SQL_interview_prep</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CS301_Proj5OverviewHurricanes often count among the worst natural disasters, both in terms of
-monetary costs and, more i
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CS301Proj/" class="post-category" target="_blank">
-                                    CS301Proj
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CS301-Data-Programming-I/" target="_blank">
-                        <span class="chip bg-color">CS301 Data Programming I</span>
+                    <a href="/tags/SQL-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">SQL Learning notes</span>
                     </a>
                     
                 </div>
@@ -1017,31 +812,35 @@ monetary costs and, more i
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/23/islr/2.2assessing-model-accuracy/">
+                <a href="/2020/02/15/mysql/sql-leetcode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="ISLR_ch2.2 Assessing Model Accuracy">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="SQL_leetcode_database">
                         
-                        <span class="card-title">ISLR_ch2.2 Assessing Model Accuracy</span>
+                        <span class="card-title">SQL_leetcode_database</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ISLR_ch2.2 Assessing Model Accuracyno free lunch in statistics: no one method dominates all others over all possible dat
+                            *175. 
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State
+FROM Person
+LEFT JOIN Address
+ON Person.Per
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
-                                    An Introduction to statistical Learning
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
                                 </a>
                             
                             
@@ -1051,8 +850,8 @@ monetary costs and, more i
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Machine-Learning-notes/" target="_blank">
-                        <span class="chip bg-color">Machine Learning notes</span>
+                    <a href="/tags/SQL-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">SQL Learning notes</span>
                     </a>
                     
                 </div>
@@ -1162,13 +961,6 @@ monetary costs and, more i
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">

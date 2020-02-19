@@ -262,7 +262,7 @@ ON Person.Per">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -417,14 +417,14 @@ ON Person.Per">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    27 Min
                 </div>
                 
                 
@@ -750,7 +750,551 @@ on s.product_id = p.product_id;</code></pre><p>*1069</p>
 from Project p
 group by project_id
 having count(*) = 
-(select count(*) c from Project group by project_id order by c desc limit 1)</code></pre>
+(select count(*) c from Project group by project_id order by c desc limit 1)</code></pre><p>1082</p>
+<pre><code>SELECT seller_id
+FROM Sales
+GROUP BY seller_id
+HAVING SUM(price) = (SELECT SUM(price)
+                     FROM Sales
+                     GROUP BY seller_id
+                     ORDER BY 1 DESC
+                     LIMIT 1 )</code></pre><p>1083</p>
+<pre><code>SELECT s.buyer_id
+FROM Sales s
+JOIN Product p
+ON s.product_id = p.product_id
+GROUP BY s.buyer_id
+HAVING SUM(p.product_name = &#39;S8&#39;) &gt; 0 AND SUM(p.product_name = &#39;iphone&#39;) = 0</code></pre><p>1084</p>
+<pre><code>SELECT product_id, product_name
+FROM product
+WHERE product_id NOT IN
+(SELECT product_id
+FROM sales
+WHERE sale_date NOT BETWEEN &#39;2019-01-01&#39; AND &#39;2019-03-31&#39;);</code></pre><p>1113</p>
+<pre><code>SELECT extra AS report_reason, COUNT(DISTINCT post_id) AS report_count
+FROM Actions
+WHERE action = &#39;report&#39; AND action_date = &#39;2019-07-04&#39;
+GROUP BY extra</code></pre><p>1142</p>
+<pre><code>SELECT IFNULL(ROUND(COUNT(DISTINCT session_id)/COUNT(DISTINCT user_id),2),0.00) AS average_sessions_per_user
+FROM Activity 
+WHERE activity_date &gt;= &#39;2019-06-28&#39; and activity_date &lt;= &#39;2019-07-27&#39;;  </code></pre><p>*1148</p>
+<pre><code>SELECT DISTINCT author_id AS id
+FROM Views
+WHERE author_id = viewer_id
+ORDER BY id</code></pre><p>1173</p>
+<pre><code>SELECT ROUND( (a.immediate / b.total) * 100.0, 2) AS immediate_percentage FROM
+(SELECT COUNT(*) AS immediate FROM delivery WHERE order_date = customer_pref_delivery_date) AS a,
+(SELECT COUNT(*) AS total FROM delivery) AS b</code></pre><pre><code>SELECT ROUND(100*AVG(order_date = customer_pref_delivery_date), 2) AS immediate_percentage
+FROM Delivery;</code></pre><p>1179</p>
+<pre><code>select id, 
+    sum(case when month = &#39;jan&#39; then revenue else null end) as Jan_Revenue,
+    sum(case when month = &#39;feb&#39; then revenue else null end) as Feb_Revenue,
+    sum(case when month = &#39;mar&#39; then revenue else null end) as Mar_Revenue,
+    sum(case when month = &#39;apr&#39; then revenue else null end) as Apr_Revenue,
+    sum(case when month = &#39;may&#39; then revenue else null end) as May_Revenue,
+    sum(case when month = &#39;jun&#39; then revenue else null end) as Jun_Revenue,
+    sum(case when month = &#39;jul&#39; then revenue else null end) as Jul_Revenue,
+    sum(case when month = &#39;aug&#39; then revenue else null end) as Aug_Revenue,
+    sum(case when month = &#39;sep&#39; then revenue else null end) as Sep_Revenue,
+    sum(case when month = &#39;oct&#39; then revenue else null end) as Oct_Revenue,
+    sum(case when month = &#39;nov&#39; then revenue else null end) as Nov_Revenue,
+    sum(case when month = &#39;dec&#39; then revenue else null end) as Dec_Revenue
+from department
+group by id
+order by id</code></pre><p>1211</p>
+<pre><code>SELECT 
+    query_name,
+    ROUND(AVG(rating / position), 2) AS quality,
+    ROUND(AVG(rating &lt; 3) * 100, 2) AS poor_query_percentage 
+FROM 
+    Queries
+GROUP BY 
+    query_name</code></pre><p>1241</p>
+<pre><code>SELECT s.sub_id AS post_id,
+(SELECT COUNT(DISTINCT(s1.sub_id)) FROM Submissions s1 WHERE s1.parent_id = s.sub_id) 
+AS number_of_comments
+FROM Submissions s
+WHERE s.parent_id IS null
+GROUP BY s.sub_id</code></pre><p>1251</p>
+<pre><code>SELECT a.product_id,ROUND(SUM(b.units*a.price)/SUM(b.units),2) as average_price
+FROM Prices as a
+JOIN UnitsSold as b
+ON a.product_id=b.product_id AND (b.purchase_date BETWEEN a.start_date AND a.end_date)
+GROUP BY product_id;</code></pre><p>*1350</p>
+<pre><code>SELECT s.id, s.name
+FROM Students s
+WHERE s.department_id NOT in (
+SELECT d.id FROM Departments d
+)</code></pre><p>1280</p>
+<pre><code>SELECT a.student_id,a.student_name,b.subject_name,COUNT(c.subject_name) as attended_exams
+FROM Students as a
+JOIN Subjects as b
+LEFT JOIN Examinations as c
+ON a.student_id=c.student_id AND b.subject_name=c.subject_name
+GROUP BY a.student_id,b.subject_name;</code></pre><p>1294</p>
+<pre><code>SELECT a.country_name,
+CASE 
+WHEN AVG(weather_state)&lt;=15 THEN &quot;Cold&quot;
+WHEN AVG(weather_State)&gt;=25 THEN &quot;Hot&quot;
+ELSE &quot;Warm&quot;
+END
+AS weather_type 
+FROM Countries AS a
+JOIN Weather AS b
+ON a.country_id = b.country_id
+WHERE MONTH(b.day) = 11
+GROUP BY b.country_id</code></pre><p>1303</p>
+<pre><code>SELECT employee_id,
+COUNT(employee_id) OVER (PARTITION BY team_id) team_size
+FROM EMPLOYEE</code></pre><pre><code>SELECT employee_id, team_size
+FROM Employee AS e
+LEFT JOIN (
+      SELECT team_id, COUNT(DISTINCT employee_id) AS team_size
+      FROM Employee
+      GROUP BY team_id
+) AS teams
+ON e.team_id = teams.team_id</code></pre><p>1322</p>
+<pre><code>SELECT ad_id, 
+IFNULL(ROUND(SUM(CASE WHEN ACTION = &#39;Clicked&#39; THEN 1 ELSE 0 END) / SUM(CASE WHEN ACTION = &#39;Clicked&#39; OR ACTION = &#39;Viewed&#39; THEN 1 ELSE 0 END) * 100, 2), 0) AS ctr
+FROM Ads
+GROUP BY ad_id
+ORDER BY ctr DESC, ad_id</code></pre><p>1327</p>
+<pre><code>SELECT p.product_name,SUM(o.unit) AS unit
+FROM Products p
+JOIN Orders o
+ON p.product_id = o.product_id
+WHERE LEFT(order_date, 7) = &#39;2020-02&#39;
+GROUP BY p.product_id
+HAVING sum(o.unit) &gt;= 100
+ORDER BY unit DESC</code></pre><p>1270</p>
+<pre><code>SELECT a.employee_id as EMPLOYEE_ID FROM Employees as a # those whose boss is 1
+WHERE a.employee_id!=1 AND a.manager_id=1
+UNION
+SELECT b.employee_id FROM Employees as b #those whose boss&#39; boss is 1
+WHERE b.manager_id IN
+(
+    SELECT a.employee_id FROM Employees as a
+    WHERE a.employee_id!=1 AND a.manager_id=1    
+)
+UNION
+SELECT c.employee_id FROM Employees as c #those whose boss&#39; boss&#39; boss is 1
+WHERE c.manager_id IN
+(
+    SELECT b.employee_id FROM Employees as b
+    WHERE b.manager_id IN
+    (
+        SELECT a.employee_id FROM Employees as a
+        WHERE a.employee_id!=1 AND a.manager_id=1    
+    )
+)
+ORDER BY EMPLOYEE_ID;</code></pre><pre><code>select employee_id from employees
+where manager_id in
+(select employee_id from employees where manager_id in
+(select employee_id from employees where manager_id = 1))
+and employee_id !=1;</code></pre><p>1308</p>
+<pre><code>SELECT gender, day, 
+       SUM(score_points) OVER(PARTITION BY gender ORDER BY day) AS total
+FROM Scores</code></pre><pre><code>SELECT s1.gender, s1.day, SUM(s2.score_points) AS total
+FROM Scores AS s1,
+     Scores AS s2
+WHERE s1.gender = s2.gender AND s2.day &lt;= s1.day
+GROUP BY s1.gender, s1.day
+ORDER BY s1.gender, s1.day</code></pre><p>1285 <strong><em>**</em></strong></p>
+<pre><code>SELECT min(log_id) as start_id, max(log_id) as end_id
+FROM
+(SELECT log_id, ROW_NUMBER() OVER(ORDER BY log_id) as num
+FROM Logs) a
+GROUP BY log_id - num</code></pre><p>NOTES:
+1 1
+2 2
+3 3 
+7 4
+8 5
+10 6
+the difference of (log_id - num) will change whenever a log_id is skipped. The rows with same difference (log_id - num), should be a continuous series. Then we just need to find the min, and max for that series as start/ end id. It’s easier to understand if you draft it out with column log_in &amp; row_number.</p>
+<p>1077</p>
+<pre><code>SELECT p.project_id, e.employee_id
+from project as p
+join employee as e on e.employee_id = p.employee_id
+where (p.project_id, e.experience_years) in
+(SELECT p.project_id, max(e.experience_years)
+from project as p
+join employee as e on e.employee_id = p.employee_id
+group by project_id)</code></pre><p>1126</p>
+<pre><code>select 
+business_id
+from events as a
+join
+    (
+    select event_type, avg(occurences) as av
+    from events
+    group by event_type
+    ) as b
+on a.event_type = b.event_type
+where a.occurences &gt; b.av
+group by business_id
+having count(*)&gt;1;</code></pre><p>1204</p>
+<pre><code>SELECT q1.person_name
+FROM Queue q1 
+JOIN Queue q2 
+ON q1.turn &gt;= q2.turn
+GROUP BY q1.turn
+HAVING SUM(q2.weight) &lt;= 1000
+ORDER BY SUM(q2.weight) DESC
+LIMIT 1</code></pre><p>1321.Same problem as 1204</p>
+<pre><code>SELECT a.visited_on AS visited_on, SUM(b.day_sum) AS amount,
+       ROUND(AVG(b.day_sum), 2) AS average_amount
+FROM
+  (SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on ) a,
+  (SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on ) b
+WHERE DATEDIFF(a.visited_on, b.visited_on) BETWEEN 0 AND 6
+GROUP BY a.visited_on
+HAVING COUNT(b.visited_on) = 7</code></pre><p>1045</p>
+<pre><code>SELECT customer_id
+FROM customer c
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key)=(SELECT COUNT(DISTINCT product_key) FROM product)</code></pre><p>1193</p>
+<pre><code>SELECT LEFT(trans_date, 7) AS month, country,
+    COUNT(1) AS trans_count,
+    SUM(CASE WHEN state = &#39;approved&#39; then 1 else 0 end) as approved_count,
+    sum(amount) as trans_total_amount, 
+    sum(case when state = &#39;approved&#39; then amount else 0 end) as approved_total_amount
+from Transactions
+group by country, left(trans_date, 7)</code></pre><p>608</p>
+<pre><code># Write your MySQL query statement below
+SELECT
+    id, &#39;Root&#39; AS Type
+FROM
+    tree
+WHERE
+    p_id IS NULL
+
+UNION
+
+SELECT
+    id, &#39;Leaf&#39; AS Type
+FROM
+    tree
+WHERE
+    id NOT IN (SELECT DISTINCT
+            p_id
+        FROM
+            tree
+        WHERE
+            p_id IS NOT NULL)
+    AND p_id IS NOT NULL
+
+UNION
+
+SELECT
+    id, &#39;Inner&#39; AS Type
+FROM
+    tree
+WHERE
+    id IN (SELECT DISTINCT
+            p_id
+        FROM
+            tree
+        WHERE
+            p_id IS NOT NULL)
+        AND p_id IS NOT NULL
+ORDER BY id;</code></pre><p>1164</p>
+<pre><code>select distinct product_id, 10 as price
+from Products
+group by product_id
+having (min(change_date) &gt; &quot;2019-08-16&quot;)
+
+union
+
+select p2.product_id, new_price
+from Products p2
+where (p2.product_id, p2.change_date) in
+
+(
+select product_id, max(change_date) as recent_date
+from Products
+where change_date &lt;= &quot;2019-08-16&quot;
+group by product_id
+)</code></pre><p>626</p>
+<pre><code>#For students with odd id, the new id is (id+1) after switch unless it is the last seat. And for students #with even id, the new id is (id-1). In order to know how many seats in total, we can use a subquery:
+SELECT
+    (CASE
+        WHEN MOD(id, 2) != 0 AND counts != id THEN id + 1
+        WHEN MOD(id, 2) != 0 AND counts = id THEN id
+        ELSE id - 1
+    END) AS id,
+    student
+FROM
+    seat,
+    (SELECT
+        COUNT(*) AS counts
+    FROM
+        seat) AS seat_counts
+ORDER BY id ASC;</code></pre><p>1158</p>
+<pre><code>SELECT user_id AS buyer_id, join_date, COALESCE(COUNT(o.order_id),0) AS orders_in_2019
+FROM Users u
+LEFT JOIN Orders o ON u.user_id = o.buyer_id AND YEAR(order_date)=&#39;2019&#39;
+GROUP BY user_id
+ORDER BY user_id</code></pre><p>612</p>
+<pre><code># Write your MySQL query statement below
+SELECT
+    ROUND(SQRT(MIN((POW(p1.x - p2.x, 2) + POW(p1.y - p2.y, 2)))), 2) AS shortest
+FROM
+    point_2d p1
+        JOIN
+    point_2d p2 ON p1.x != p2.x OR p1.y != p2.y</code></pre><p>1174</p>
+<pre><code># Write your MySQL query statement below
+SELECT
+    ROUND(100*SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1
+    ELSE 0 END)/ COUNT(distinct customer_id) ,2) AS immediate_percentage
+FROM
+    Delivery
+WHERE
+    (customer_id, order_date)
+IN
+(SELECT
+    customer_id, min(order_date) as min_date
+FROM
+    Delivery
+GROUP BY
+    customer_id
+)</code></pre><p>112</p>
+<p>1112</p>
+<pre><code>SELECT student_id, MIN(course_id) AS course_id, grade
+FROM Enrollments
+WHERE (student_id, grade) IN
+(SELECT student_id, MAX(grade)
+FROM Enrollments
+GROUP BY student_id)
+GROUP BY student_id
+ORDER BY student_id</code></pre><p>1264</p>
+<pre><code>SELECT DISTINCT page_id AS recommended_page
+FROM Likes
+WHERE user_id IN (
+    SELECT user2_id AS friend_id FROM Friendship WHERE user1_id = 1
+    UNION
+    SELECT user1_id AS friend_id FROM Friendship WHERE user2_id = 1) 
+    AND
+    page_id NOT IN (
+      SELECT page_id FROM Likes WHERE user_id = 1
+    )</code></pre><p>1070</p>
+<pre><code>SELECT product_id, year AS first_year, quantity, price
+FROM Sales
+WHERE (product_id, year) IN (
+SELECT product_id, MIN(year) as year
+FROM Sales
+GROUP BY product_id) ;</code></pre><p>*1149</p>
+<pre><code>SELECT DISTINCT viewer_id AS id
+FROM Views
+GROUP BY viewer_id, view_date
+HAVING COUNT(DISTINCT article_id) &gt; 1</code></pre><p>1107</p>
+<pre><code>select login_date, count(user_id) as user_count
+from
+(select user_id, min(activity_date) as login_date
+from Traffic
+where activity = &#39;login&#39;
+group by user_id) t
+where datediff(&#39;2019-06-30&#39;, login_date) &lt;= 90
+group by login_date</code></pre><p>1205</p>
+<pre><code>SELECT month, country, SUM(CASE WHEN state = &quot;approved&quot; THEN 1 ELSE 0 END) AS approved_count, SUM(CASE WHEN state = &quot;approved&quot; THEN amount ELSE 0 END) AS approved_amount, SUM(CASE WHEN state = &quot;back&quot; THEN 1 ELSE 0 END) AS chargeback_count, SUM(CASE WHEN state = &quot;back&quot; THEN amount ELSE 0 END) AS chargeback_amount
+FROM
+(
+    SELECT LEFT(chargebacks.trans_date, 7) AS month, country, &quot;back&quot; AS state, amount
+    FROM chargebacks
+    JOIN transactions ON chargebacks.trans_id = transactions.id
+    UNION ALL
+    SELECT LEFT(trans_date, 7) AS month, country, state, amount
+    FROM transactions
+    WHERE state = &quot;approved&quot;
+) s
+GROUP BY month, country</code></pre><p>1098</p>
+<pre><code>select b.book_id, b.name
+from books b 
+left join orders o
+on b.book_id = o.book_id and dispatch_date between &#39;2018-06-23&#39; and &#39;2019-06-23&#39;
+where datediff(&#39;2019-06-23&#39;, available_from) &gt; 30
+group by b.book_id, b.name
+having ifnull(sum(quantity),0) &lt;10;</code></pre><p>1132</p>
+<pre><code>SELECT ROUND(AVG(cnt), 2) AS average_daily_percent FROM
+(
+    SELECT (COUNT(DISTINCT r.post_id)/ COUNT(DISTINCT a.post_id))*100  AS cnt
+FROM Actions a
+LEFT JOIN Removals r
+ON a.post_id = r.post_id
+WHERE extra=&#39;spam&#39; and action = &#39;report&#39;
+GROUP BY action_date)tmp</code></pre><p>614</p>
+<pre><code>SELECT f1.follower as follower, COUNT(DISTINCT f2.follower) as num
+FROM follow f1 join follow f2
+on f1.follower=f2.followee
+GROUP BY f2.followee</code></pre><p>1225<em>**</em></p>
+<pre><code></code></pre><p>615</p>
+<pre><code>select department_salary.pay_month, department_id,
+case
+  when department_avg&gt;company_avg then &#39;higher&#39;
+  when department_avg&lt;company_avg then &#39;lower&#39;
+  else &#39;same&#39;
+end as comparison
+from
+(
+  select department_id, avg(amount) as department_avg, date_format(pay_date, &#39;%Y-%m&#39;) as pay_month
+  from salary join employee on salary.employee_id = employee.employee_id
+  group by department_id, pay_month
+) as department_salary
+join
+(
+  select avg(amount) as company_avg,  date_format(pay_date, &#39;%Y-%m&#39;) as pay_month from salary group by date_format(pay_date, &#39;%Y-%m&#39;)
+) as company_salary
+on department_salary.pay_month = company_salary.pay_month</code></pre><p>618<em>*</em></p>
+<p>#Using “session variables” </p>
+<pre><code>SELECT 
+    America, Asia, Europe
+FROM
+    (SELECT @as:=0, @am:=0, @eu:=0) t,
+    (SELECT 
+        @as:=@as + 1 AS asid, name AS Asia
+    FROM
+        student
+    WHERE
+        continent = &#39;Asia&#39;
+    ORDER BY Asia) AS t1
+        RIGHT JOIN
+    (SELECT 
+        @am:=@am + 1 AS amid, name AS America
+    FROM
+        student
+    WHERE
+        continent = &#39;America&#39;
+    ORDER BY America) AS t2 ON asid = amid
+        LEFT JOIN
+    (SELECT 
+        @eu:=@eu + 1 AS euid, name AS Europe
+    FROM
+        student
+    WHERE
+        continent = &#39;Europe&#39;
+    ORDER BY Europe) AS t3 ON amid = euid
+
+1097</code></pre><h1 id="Write-your-MySQL-query-statement-below"><a href="#Write-your-MySQL-query-statement-below" class="headerlink" title="Write your MySQL query statement below"></a>Write your MySQL query statement below</h1><p>select distinct install_dt,count(install_dt) as installs,round(ifnull(count(day1),0)/count(install_dt),2) as Day1_retention
+from
+    (select a1.player_id,a1.install_dt, a2.event_date as day1
+     from
+         (select player_id,min(event_date) as install_dt
+         from activity
+         group by player_id) as a1
+    left join activity a2
+    on a1.player_id=a2.player_id and a1.install_dt=a2.event_date-1) as a3
+group by install_dt</p>
+<pre><code>
+1127</code></pre><p>Let’s start with a simple preprocess:</p>
+<p>SELECT
+  spend_date,
+  user_id,
+  SUM(CASE platform WHEN ‘mobile’ THEN amount ELSE 0 END) mobile_amount,
+  SUM(CASE platform WHEN ‘desktop’ THEN amount ELSE 0 END) desktop_amount
+FROM Spending
+GROUP BY spend_date, user_id
+For each user in each day, we fetch its mobile_amount and desktop_amount respectively and output them into a single row. In this form, we can see a user belongs to which platform very clearly:</p>
+<p>spend_date    user_id    mobile_amount    desktop_amount    -&gt;(platform)
+2019-07-01    1    100    100    -&gt; (both)
+2019-07-01    2    100    0    -&gt; (mobile)
+2019-07-01    3    0    100    -&gt; (desktop)
+2019-07-02    2    100    0    -&gt; (mobile)
+2019-07-02    3    0    100    -&gt;(desktop)
+Based on the above table, we use the following SQL to bind users to their platforms and calculate the amounts spent:</p>
+<p>SELECT
+    spend_date,
+    user_id,
+    IF(mobile_amount &gt; 0, IF(desktop_amount &gt; 0, ‘both’, ‘mobile’), ‘desktop’) platform,
+    (mobile_amount + desktop_amount) amount
+FROM (
+    …
+) o
+Result table:</p>
+<p>spend_date    user_id    platform    amount
+2019-07-01    1    both    200
+2019-07-01    2    mobile    100
+2019-07-01    3    desktop    100
+2019-07-02    2    mobile    100
+2019-07-02    3    desktop    100
+We don’t wanna miss any record which has ZERO total_amount and total_users. So we need to get all combinations of spend_date and platform:</p>
+<p>SELECT DISTINCT(spend_date), ‘desktop’ platform FROM Spending
+UNION
+SELECT DISTINCT(spend_date), ‘mobile’ platform FROM Spending
+UNION
+SELECT DISTINCT(spend_date), ‘both’ platform FROM Spending
+The output:</p>
+<p>spend_date    platform
+2019-07-01    desktop
+2019-07-01    mobile
+2019-07-01    both
+2019-07-02    desktop
+2019-07-02    mobile
+2019-07-02    both
+After joinning this table to the previous one, we have our final answer:</p>
+<p>SELECT 
+    p.spend_date,
+    p.platform,
+    IFNULL(SUM(amount), 0) total_amount,
+    COUNT(user_id) total_users
+FROM 
+(
+    SELECT DISTINCT(spend_date), ‘desktop’ platform FROM Spending
+    UNION
+    SELECT DISTINCT(spend_date), ‘mobile’ platform FROM Spending
+    UNION
+    SELECT DISTINCT(spend_date), ‘both’ platform FROM Spending
+) p 
+LEFT JOIN (
+    SELECT
+        spend_date,
+        user_id,
+        IF(mobile_amount &gt; 0, IF(desktop_amount &gt; 0, ‘both’, ‘mobile’), ‘desktop’) platform,
+        (mobile_amount + desktop_amount) amount
+    FROM (
+        SELECT
+          spend_date,
+          user_id,
+          SUM(CASE platform WHEN ‘mobile’ THEN amount ELSE 0 END) mobile_amount,
+          SUM(CASE platform WHEN ‘desktop’ THEN amount ELSE 0 END) desktop_amount
+        FROM Spending
+        GROUP BY spend_date, user_id
+    ) o
+) t
+ON p.platform=t.platform AND p.spend_date=t.spend_date
+GROUP BY spend_date, platform</p>
+<pre><code>
+1159</code></pre><p>SELECT user_id as seller_id, 
+if(i.item_brand = u.favorite_brand, “yes”, “no”) as 2nd_item_fav_brand
+from Users u left join 
+    (SELECT o1.seller_id, o1.item_id, o1.order_date
+    FROM Orders o1 JOIN Orders o2
+    ON o1.seller_id = o2.seller_id AND o1.order_date &gt; o2.order_date
+    GROUP BY o1.seller_id, o1.order_date
+    HAVING count(o1.order_id) = 1) t
+ON u.user_id = t.seller_id
+LEFT JOIN Items i
+ON t.item_id = i.item_id
+ORDER BY u.user_id;</p>
+<pre><code>1194</code></pre><p>select group_id as GROUP_ID, min(player_id) as PLAYER_ID
+from Players,
+    (select player, sum(score) as score from
+        (select first_player as player, first_score as score from Matches
+        union all
+        select second_player, second_score from Matches) s
+    group by player) PlayerScores
+where Players.player_id = PlayerScores.player and (group_id, score) in
+    (select group_id, max(score)
+    from Players,
+        (select player, sum(score) as score from
+            (select first_player as player, first_score as score from Matches
+            union all
+            select second_player, second_score from Matches) s
+        group by player) PlayerScores
+    where Players.player_id = PlayerScores.player
+    group by group_id)
+group by group_id
+```</p>
+
             </div>
             <hr />
 
@@ -1071,34 +1615,29 @@ having count(*) =
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/mysql/sql-leetcode/">
+                <a href="/2020/02/19/mysql/sql-hackerrank/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="SQL_leetcode_database">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="SQL_interview_prep">
                         
-                        <span class="card-title">SQL_leetcode_database</span>
+                        <span class="card-title">SQL_interview_prep</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            *175. 
-SELECT Person.FirstName, Person.LastName, Address.City, Address.State
-FROM Person
-LEFT JOIN Address
-ON Person.Per
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1111,7 +1650,6 @@ ON Person.Per
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1134,7 +1672,7 @@ ON Person.Per
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="SQL_notes_Analytics_training">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="SQL_notes_Analytics_training">
                         
                         <span class="card-title">SQL_notes_Analytics_training</span>
                     </div>

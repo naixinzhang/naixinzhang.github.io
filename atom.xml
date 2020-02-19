@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-02-17T06:36:11.628Z</updated>
+  <updated>2020-02-19T23:25:12.306Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SQL_interview_prep</title>
+    <link href="http://naixinzhang.github.io/2020/02/19/mysql/sql-hackerrank/"/>
+    <id>http://naixinzhang.github.io/2020/02/19/mysql/sql-hackerrank/</id>
+    <published>2020-02-19T23:26:09.000Z</published>
+    <updated>2020-02-19T23:25:12.306Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL_leetcode_database</title>
     <link href="http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/"/>
     <id>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</id>
     <published>2020-02-16T02:26:09.000Z</published>
-    <updated>2020-02-17T06:36:11.628Z</updated>
+    <updated>2020-02-19T23:19:10.118Z</updated>
     
     <summary type="html">
     
@@ -74,6 +92,32 @@ ON
   </entry>
   
   <entry>
+    <title>SQL_notes_intermediate</title>
+    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/"/>
+    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</id>
+    <published>2020-02-13T01:25:09.000Z</published>
+    <updated>2020-02-13T06:45:24.898Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL_notes_Advanced</title>
     <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/"/>
     <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</id>
@@ -105,32 +149,6 @@ ON
     <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</id>
     <published>2020-02-13T01:25:09.000Z</published>
     <updated>2020-02-13T06:50:17.484Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
-    
-    
-      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL_notes_intermediate</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</id>
-    <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:45:24.898Z</updated>
     
     <summary type="html">
     
@@ -256,32 +274,6 @@ ON
   </entry>
   
   <entry>
-    <title>populations developing across countries of the world</title>
-    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec5/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</id>
-    <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T17:52:28.441Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are hired by the World
-        
-      
-    
-    </summary>
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
-    
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Regional profit analysis</title>
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
@@ -295,6 +287,32 @@ ON
         
         
           &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been approached by a
+        
+      
+    
+    </summary>
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
+    
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>populations developing across countries of the world</title>
+    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec5/"/>
+    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</id>
+    <published>2020-01-23T18:32:09.000Z</published>
+    <updated>2020-02-08T17:52:28.441Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are hired by the World
         
       
     
@@ -503,32 +521,6 @@ ON
         
         
           &lt;h1 id=&quot;CS301-Proj6&quot;&gt;&lt;a href=&quot;#CS301-Proj6&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj6&quot;&gt;&lt;/a&gt;CS301_Proj6&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
-    
-    
-      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS301_Proj5</title>
-    <link href="http://naixinzhang.github.io/2019/10/23/cs301/cs301-proj5/"/>
-    <id>http://naixinzhang.github.io/2019/10/23/cs301/cs301-proj5/</id>
-    <published>2019-10-23T17:32:09.000Z</published>
-    <updated>2020-01-23T17:38:37.749Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CS301-Proj5&quot;&gt;&lt;a href=&quot;#CS301-Proj5&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj5&quot;&gt;&lt;/a&gt;CS301_Proj5&lt;/h1&gt;&lt;h2 id=&quot;Overview&quot;&gt;&lt;a
         
       
     
