@@ -1,0 +1,1295 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ISLR_ch3.3 Potential Problems, Naixin&#39;s blog">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="360-site-verification" content>
+    <meta name="description" content="ISLR_ch3.3 Potential ProblemsQualitative PredictorsPredictors with Only Two LevelsSuppose that we wish to investigate di">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ISLR_ch3.3 Potential Problems | Naixin&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Naixin's blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>Home</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>Learning notes</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>Courses</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Naixin's blog</div>
+        <div class="logo-desc">
+            
+            You never lose, you either win or learn.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Learning notes
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Courses
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/naixinzhang" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/naixinzhang" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        ISLR_ch3.3 Potential Problems
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/Machine-Learning-notes/" target="_blank">
+                            <span class="chip bg-color">Machine Learning notes</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
+                            An Introduction to statistical Learning
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-09-23
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Naixin Zhang
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    1.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    10 Min
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="ISLR-ch3-3-Potential-Problems"><a href="#ISLR-ch3-3-Potential-Problems" class="headerlink" title="ISLR_ch3.3 Potential Problems"></a>ISLR_ch3.3 Potential Problems</h1><h1 id="Qualitative-Predictors"><a href="#Qualitative-Predictors" class="headerlink" title="Qualitative Predictors"></a>Qualitative Predictors</h1><h2 id="Predictors-with-Only-Two-Levels"><a href="#Predictors-with-Only-Two-Levels" class="headerlink" title="Predictors with Only Two Levels"></a>Predictors with Only Two Levels</h2><p>Suppose that we wish to investigate differences in credit card balance between
+males and females, ignoring the other variables for the moment. If a
+qualitative predictor (also known as a <strong>factor</strong>) only has two <strong>levels</strong>, or possible values, then incorporating it into a regression model is very simple. We simply create an indicator or <strong>dummy variable</strong> that takes on two possible numerical values.</p>
+<img src="./images/8.png" width="300">
+and use this variable as a predictor in the regression equation. This results
+in the model
+
+<img src="./images/9.png" width="600">
+
+<p>Now β0 can be interpreted as the average credit card balance among males,
+β0 + β1 as the average credit card balance among females </p>
+<h2 id="Qualitative-Predictors-with-More-than-Two-Levels"><a href="#Qualitative-Predictors-with-More-than-Two-Levels" class="headerlink" title="Qualitative Predictors with More than Two Levels"></a>Qualitative Predictors with More than Two Levels</h2><p>When a qualitative predictor has more than two levels, we can create
+additional dummy variables. For example, for the ethnicity variable we
+create two dummy variables. The first could be</p>
+<img src="./images/10.png" width="300">
+and the second could be
+<img src="./images/11.png" width="300">
+
+<p>Then both of these variables can be used in the regression equation, in
+order to obtain the model</p>
+<img src="./images/12.png" width="600">
+
+<p><strong>Baseline</strong></p>
+<ul>
+<li>There will always be <strong>one fewer</strong> dummy variable
+than the number of levels. The level with no dummy variable—African
+American in this example—is known as the baseline.</li>
+</ul>
+<img src="./images/13.png" width="600">
+
+<p>The p-values associated with the coefficient estimates for
+the two dummy variables are very large, suggesting no statistical evidence
+of a real difference in credit card balance between the ethnicities</p>
+<blockquote>
+<p>The coefficients and their p-values do depend on the choice of dummy
+variable coding</p>
+</blockquote>
+<p>Rather than rely on the individual coefficients, we can use
+an <strong>F-test</strong> to test H0 : β1 = β2 = 0; this does not depend on the coding.</p>
+<p>This F-test has a p-value of 0.96, indicating that we cannot reject the null
+hypothesis that there is no relationship between balance and ethnicity. </p>
+<h1 id="Extensions-of-the-Linear-Model"><a href="#Extensions-of-the-Linear-Model" class="headerlink" title="Extensions of the Linear Model"></a>Extensions of the Linear Model</h1><p>Two
+of the most important assumptions state that the relationship between the
+predictors and response are <strong>additive</strong> and <strong>linear</strong>. </p>
+<ul>
+<li><strong>Additive</strong>: the effect of changes in a predictor $X_j$ on the response $Y$ is
+independent of the values of the other predictors</li>
+<li><strong>Linear</strong>: the change in the response $Y$ due to a one-unit change in $X_j$ is
+constant, regardless of the value of $X_j$</li>
+</ul>
+<h2 id="Removing-the-Additive-Assumption"><a href="#Removing-the-Additive-Assumption" class="headerlink" title="Removing the Additive Assumption"></a>Removing the Additive Assumption</h2><p>Consider the standard linear regression model with two variables,
+\begin{align}
+Y = β_0 + β_1X_1 + β_2X_2 + \epsilon
+\end{align}</p>
+<p>One way of extending this model
+to allow for interaction effects is to include a third predictor, called an
+<strong>interaction term</strong>:</p>
+<p>\begin{align}
+Y = β_0 + β_1X_1 + β_2X_2 +  β_3X_1X_2 + \epsilon 
+\end{align}</p>
+<p><strong>How does inclusion of this interaction term relax the additive assumption?</strong></p>
+<p>The model above could be written as:
+\begin{align}
+Y &amp;= β_0 + (β_1+β_3X_2)X_1 + β_2X_2 + \epsilon  \<br>&amp;= β_0 + \tilde{β}_1X_1 + β_2X_2 + \epsilon
+\end{align}</p>
+<p>Since $\tilde{β}_1$ changes with $X_2$, the effect of $X_1$ on $Y$ is
+no longer constant: adjusting $X_2$ will change the impact of $X_1$ on $Y$.</p>
+<img src="./images/14.png" width="600">
+
+<ul>
+<li>Sometimes the case that an interaction term has a very small p-value, but
+the associated main effects (in this case, TV and radio) do not. </li>
+<li>The <strong>hierarchical
+principle</strong> states that if we include an interaction in a model, we
+should also include the <strong>main effects</strong>, even if the p-values associated with 
+their coefficients are not significant. (If the interaction between
+X1 and X2 seems important, we should include both X1 and
+X2 in the model even if their coefficient estimates have large p-values)</li>
+</ul>
+<p><strong>Concept of
+interactions applies on qualitative variables</strong>
+<img src="./images/15.png" width="600"></p>
+<p>Adding an interaction variable, model now becomes:
+<img src="./images/17.png" width="600">
+<img src="./images/16.png" width="600"></p>
+<h2 id="Non-linear-Relationships"><a href="#Non-linear-Relationships" class="headerlink" title="Non-linear Relationships"></a>Non-linear Relationships</h2><p>Extending the linear model
+to accommodate non-linear relationships is known as <strong>polynomial regression</strong>,
+since we have included <strong>polynomial functions</strong> of the predictors in the
+regression model </p>
+<h1 id="Potential-Problems"><a href="#Potential-Problems" class="headerlink" title="Potential Problems"></a>Potential Problems</h1><h2 id="Non-linearity-of-the-Data"><a href="#Non-linearity-of-the-Data" class="headerlink" title="Non-linearity of the Data"></a>Non-linearity of the Data</h2><p><strong>Assumption</strong>: The linear regression model assumes that there is a straight-line relationship
+between the predictors and the response.</p>
+<p><strong>Residual plots</strong>: graphical tool for identifying non-linearity</p>
+<ul>
+<li>Given a simple linear regression model, we can plot the residuals,$e_i = y_i-\hat{y_i}$ versus the predictor $x_i$, or $\hat{y_i}$ when there are  multiple predictors</li>
+</ul>
+<img src="./images/18.png" width="600">
+
+<ul>
+<li>Ideally, the residual plot will show no discernible pattern.</li>
+<li>If the residual plot indicates non-linear associations in the
+data, then a simple approach is to use <strong>non-linear transformations</strong> of the
+predictors, such as $\log{X},\sqrt{X}, X^2$, in the regression model. </li>
+</ul>
+<h2 id="Correlation-of-Error-Terms"><a href="#Correlation-of-Error-Terms" class="headerlink" title="Correlation of Error Terms"></a>Correlation of Error Terms</h2><p><strong>Assumption</strong>: The error
+terms, $\epsilon_1,\epsilon_2,…,\epsilon_n$, are uncorrelated.</p>
+<ul>
+<li>If the errors are uncorrelated, then the fact that i is positive provides
+little or no information about the sign of i+1.</li>
+<li>If the error terms are correlated, we may have an
+unwarranted sense of confidence in our model.<ul>
+<li><strong>estimated standard errors</strong> will underestimate the true standard errors.</li>
+<li><strong>confidence and prediction intervals</strong> will be narrower than they should be. For
+example, a 95% confidence interval may in reality have a much lower probability
+than 0.95 of containing the true value of the parameter. </li>
+<li><strong>p-values</strong> will be lower than they should be</li>
+<li>Lead to erroneously conclude that a parameter is statistically significant. </li>
+</ul>
+</li>
+</ul>
+<p><strong>Why might correlations among the error terms occur?</strong></p>
+<ul>
+<li>Such correlations
+frequently occur in the context of <strong>time series</strong> data</li>
+<li>In many cases, observations that are obtained at adjacent time points will
+have <strong>positively correlated errors</strong>. </li>
+<li>Plot the residuals from our model as a function of time to identify this correlation. <ul>
+<li><strong>Tracking</strong>: If the error terms are positively correlated, then
+we may see <strong>tracking</strong> in the residuals—that is, adjacent residuals may have similar values.<img src="./images/19.png" width="600">
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Non-constant-Variance-of-Error-Terms"><a href="#Non-constant-Variance-of-Error-Terms" class="headerlink" title="Non-constant Variance of Error Terms"></a>Non-constant Variance of Error Terms</h2><p><strong>Assumption</strong>: the error terms have a constant variance, $Var(\epsilon_i) = σ^2$.</p>
+<ul>
+<li>The standard errors,
+confidence intervals, and hypothesis tests associated with the linear model
+rely upon this assumption.</li>
+</ul>
+<p>The variances of the error terms are non-constant. </p>
+<ul>
+<li>For instance, the variances of the error terms may increase with the value of the response. </li>
+<li>One can identify non-constant variances in
+the errors, or <strong>heteroscedasticity</strong>异方差性,from the presence of a funnel shape in residual plot.</li>
+<li><strong>Solution</strong>: transform the response Y using a concave function such as $\log{Y}$ or $\sqrt{Y}$ . Such
+a transformation results in a greater amount of shrinkage of the larger responses,
+leading to a reduction in <strong>heteroscedasticity</strong>.</li>
+</ul>
+<img src="./images/20.png" width="600">
+
+<h2 id="Outliers"><a href="#Outliers" class="headerlink" title="Outliers"></a>Outliers</h2><p><strong>Outlier</strong>: is a point for which $y_i$ is far from the value predicted by the model. Outliers can arise for a variety of reasons, such as incorrect recording of an observation during data collection.</p>
+<p><strong>Problems of Outlier</strong>:</p>
+<ul>
+<li>Effect on the least squares fit,</li>
+<li>Effect on interpretation of the fit<ul>
+<li>For instance, in this example, the RSE is 1.09 when the
+outlier is included in the regression, but it is only 0.77 when the outlier
+is removed.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Residual Plots</strong> can be used to identify outliers</p>
+<img src="./images/21.png" width="600">
+
+<ul>
+<li>Difficult to decide how large a residual
+needs to be</li>
+</ul>
+<p><strong>Studentized residuals</strong>: computed by dividing each residual $e_i$ by its estimated standard error.</p>
+<ul>
+<li>Observations whose studentized residuals are greater than 3 in abso- residual
+lute value are possible outliers.</li>
+</ul>
+<h2 id="High-Leverage-Points"><a href="#High-Leverage-Points" class="headerlink" title="High Leverage Points"></a>High Leverage Points</h2><p><strong>High Leverage</strong>:Observations with high leverage have an unusual value for xi</p>
+<ul>
+<li>removing the high leverage observation has a much more substantial impact on the least squares line
+than removing the outlier.<img src="./images/23.png" width="600">
+
+</li>
+</ul>
+<p><strong>Leverage Statistic</strong>: quantify an observation’s leverage</p>
+<p>For a simple linear regression</p>
+<p>\begin{align}
+h_i=\frac{1}{n}+\frac{(x_i-\bar{x})^2}{\sum_{i^{‘}=1}^n (x_{i^{‘}}-\bar{x})^2}
+\end{align}</p>
+<ul>
+<li>$h_i$ increases with the distance of $x_i$ from $\bar{x}$.</li>
+<li>$h_i$ is always between 1/n and 1, and the <strong>average leverage</strong> for all the observations is
+always equal to $(p+1)/n$. </li>
+<li><strong>High leverage</strong>: a leverage statistic that greatly exceeds $(p+1)/n$, high leverage.</li>
+</ul>
+<img src="./images/22.png" width="600">
+
+<p>The right-hand panel of Figure 3.13 provides a plot of the studentized
+residuals versus $h_i$ for the data in the left-hand panel of Figure 3.13. Observation
+41 stands out as having a very high leverage statistic as well as a
+high studentized residual. In other words, it is an outlier as well as a high
+leverage observation.</p>
+<h2 id="Collinearity"><a href="#Collinearity" class="headerlink" title="Collinearity"></a>Collinearity</h2><p>Collinearity: situation in which two or more predictor variables are closely related to one another.</p>
+<p><strong>Problems of Collinearity</strong></p>
+<ul>
+<li>Difficult to separate out the individual
+effects of collinear variables on the response</li>
+<li>Uncertainty in the
+coefficient estimates.</li>
+<li>Causes the standard error for $\hat{β_j}$ to grow<ul>
+<li>Recall that the
+t-statistic for each predictor is calculated by dividing $\hat{β_j}$ by its standard
+error. Consequently, collinearity results in a decline in the t-statistic. As a
+result, in the presence of collinearity, we may fail to reject H0 : βj = 0. This
+means that the <strong>power</strong> of the hypothesis test—the probability of correctly
+detecting a non-zero coefficient—is reduced by collinearity.</li>
+</ul>
+</li>
+</ul>
+<img src="./images/24.png" width="600">
+
+<p><strong>Detection of Collinearity</strong></p>
+<ul>
+<li><p><strong>Correlation matrix</strong>
+of the predictors.</p>
+<ul>
+<li>An element of this matrix that is large in absolute value
+indicates a pair of highly correlated variables.</li>
+<li><strong>Situation Multicollinearity</strong>: it is possible for collinearity
+to exist between three or more variables even if no pair of variables
+has a particularly high correlation</li>
+</ul>
+</li>
+<li><p><strong>Variance Inflation Factor (VIF)</strong></p>
+<ul>
+<li>The ratio of the variance of $\hat{β_j}$ when fitting the full model divided by the
+variance of $\hat{β_j}$ if fit on its own. The smallest possible value for VIF is 1,
+which indicates the complete absence of collinearity.</li>
+<li>A VIF value that exceeds 5 or 10 indicates a problematic amount of collinearity. </li>
+</ul>
+<p>The VIF for each variable,
+\begin{align}
+VIF(\hat{β_j})=\frac{1}{1-R^2_{X_j|X_{-j}}}
+\end{align}
+where $R^2_{X_j|X_{-j}}$ is the $R^2$ from a regression of $X_j$ onto all of the other
+predictors. If $R^2_{X_j|X_{-j}}$ is close to one, then collinearity is present, and so
+the VIF will be large.</p>
+</li>
+</ul>
+<p><strong>Solution of Collinearity</strong></p>
+<ul>
+<li>Drop one of the problematic variables from the regression.</li>
+<li>Combine the collinear variables together into a single predicto<ul>
+<li>E.g.: take the average of standardized versions of limit and
+rating in order to create a new variable that measures credit worthiness</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c090019fe3f06f8ef15d',
+        clientSecret: '9f220a5e71efc340544fce7ae397f63151db8747',
+        repo: 'naixinzhang.github.io',
+        owner: 'naixinzhang',
+        admin: "naixinzhang",
+        id: '2019/09/23/ml/islr-notes/3.3potential-problems/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/09/23/ml/islr-notes/3.5comparison-of-linear-regression-with-k-nearest-neighbors/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ISLR_ch3.5 Comparison_of_Linear_Regression_with_K-Nearest_Neighbors">
+                        
+                        <span class="card-title">ISLR_ch3.5 Comparison_of_Linear_Regression_with_K-Nearest_Neighbors</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ISLR_ch3.5 Comparison_of_Linear_Regression_with_K-Nearest_NeighborsParametric v.s. Non-parametricLinear regression is an
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
+                                    An Introduction to statistical Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Machine-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">Machine Learning notes</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/23/ml/islr-notes/4.3logistic-regression/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="ISLR_ch4.3 Logistic_Regression">
+                        
+                        <span class="card-title">ISLR_ch4.3 Logistic_Regression</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ISLR_ch4.3 Logistic_RegressionWhy Not Linear Regression?Linear regression is not appropriate in the case of a
+qualitativ
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/An-Introduction-to-statistical-Learning/" class="post-category" target="_blank">
+                                    An Introduction to statistical Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Machine-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">Machine Learning notes</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+    <footer class="page-footer bg-color center-align">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020 NaixinZhang. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-02-19T23:25:12.306Z</updated>
+  <updated>2020-03-22T18:01:12.054Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -17,9 +17,117 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hackerrank(medium and hard)</title>
+    <link href="http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/"/>
+    <id>http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/</id>
+    <published>2020-03-22T22:26:09.000Z</published>
+    <updated>2020-03-22T18:01:12.054Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;em&gt;15 Days of Learning SQL&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT SUBMISSION_DATE,
+(SELECT COUNT(DISTINCT HACKER_ID)  
+ FROM SUBMISSIONS S2  
+
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://naixinzhang.github.io/2020/03/06/stat/stat-interview-prep-copy/"/>
+    <id>http://naixinzhang.github.io/2020/03/06/stat/stat-interview-prep-copy/</id>
+    <published>2020-03-06T19:34:56.928Z</published>
+    <updated>2020-03-06T19:36:28.696Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Freddie&quot;&gt;&lt;a href=&quot;#Freddie&quot; class=&quot;headerlink&quot; title=&quot;Freddie&quot;&gt;&lt;/a&gt;Freddie&lt;/h1&gt;&lt;p&gt;This is a computer program that simulates a Data
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AB_test_prep</title>
+    <link href="http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/"/>
+    <id>http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/</id>
+    <published>2020-02-24T23:26:09.000Z</published>
+    <updated>2020-02-25T06:45:56.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What is A/B testing?
+A/B testing (sometimes called split testing) is basically statistical hypothesis testing applied to web
+        
+      
+    
+    </summary>
+    
+      <category term="A/B TEST" scheme="http://naixinzhang.github.io/categories/A-B-TEST/"/>
+    
+    
+      <category term="A/B TEST" scheme="http://naixinzhang.github.io/tags/A-B-TEST/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML_interview_prep</title>
+    <link href="http://naixinzhang.github.io/2020/02/19/ml/ml-intterveiw-prep/"/>
+    <id>http://naixinzhang.github.io/2020/02/19/ml/ml-intterveiw-prep/</id>
+    <published>2020-02-19T23:26:09.000Z</published>
+    <updated>2020-02-19T23:40:14.225Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;What is overfitting?  / Please briefly describe what is bias vs. variance.&lt;/li&gt;
+&lt;li&gt;How do you overcome overfitting? Please list
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SQL_interview_prep</title>
-    <link href="http://naixinzhang.github.io/2020/02/19/mysql/sql-hackerrank/"/>
-    <id>http://naixinzhang.github.io/2020/02/19/mysql/sql-hackerrank/</id>
+    <link href="http://naixinzhang.github.io/2020/02/19/mysql/sql-intterveiw-prep/"/>
+    <id>http://naixinzhang.github.io/2020/02/19/mysql/sql-intterveiw-prep/</id>
     <published>2020-02-19T23:26:09.000Z</published>
     <updated>2020-02-19T23:25:12.306Z</updated>
     
@@ -31,6 +139,60 @@
     
     
       <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Product_interview_prep</title>
+    <link href="http://naixinzhang.github.io/2020/02/19/product/product-prep/"/>
+    <id>http://naixinzhang.github.io/2020/02/19/product/product-prep/</id>
+    <published>2020-02-19T23:26:09.000Z</published>
+    <updated>2020-02-25T16:47:06.981Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Diagnostic problem: 这类问题通常是发现某个kpi某天突然下降了，该咋办？这类问题就是考察你能不能把一个business问题一步一步的break
+        
+      
+    
+    </summary>
+    
+      <category term="Product sense" scheme="http://naixinzhang.github.io/categories/Product-sense/"/>
+    
+    
+      <category term="Product sense notes" scheme="http://naixinzhang.github.io/tags/Product-sense-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>statistics_interview_prep</title>
+    <link href="http://naixinzhang.github.io/2020/02/19/stat/stat-interview-prep/"/>
+    <id>http://naixinzhang.github.io/2020/02/19/stat/stat-interview-prep/</id>
+    <published>2020-02-19T23:26:09.000Z</published>
+    <updated>2020-02-25T19:28:34.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;P-Value
+The p-value is the probability of obtaining at least as extreme results given that the null hypothesis is true. In
+        
+      
+    
+    </summary>
+    
+      <category term="statistic knowlege review" scheme="http://naixinzhang.github.io/categories/statistic-knowlege-review/"/>
+    
+    
+      <category term="statistic knowlege review" scheme="http://naixinzhang.github.io/tags/statistic-knowlege-review/"/>
     
   </entry>
   
@@ -65,38 +227,11 @@ ON
   </entry>
   
   <entry>
-    <title>SQL_notes_Analytics_training</title>
-    <link href="http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/"/>
-    <id>http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/</id>
-    <published>2020-02-15T19:57:09.000Z</published>
-    <updated>2020-02-16T04:24:10.684Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mode.com/sql-tutorial/&lt;/a&gt;&lt;/p&gt;
-&lt;h1
-        
-      
-    
-    </summary>
-    
-      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
-    
-    
-      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL_notes_intermediate</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</id>
+    <title>SQL_notes_Basic</title>
+    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/"/>
+    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</id>
     <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:45:24.898Z</updated>
+    <updated>2020-02-13T06:50:17.484Z</updated>
     
     <summary type="html">
     
@@ -144,11 +279,11 @@ ON
   </entry>
   
   <entry>
-    <title>SQL_notes_Basic</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</id>
+    <title>SQL_notes_intermediate</title>
+    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/"/>
+    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</id>
     <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:50:17.484Z</updated>
+    <updated>2020-02-13T06:45:24.898Z</updated>
     
     <summary type="html">
     
@@ -274,32 +409,6 @@ ON
   </entry>
   
   <entry>
-    <title>Regional profit analysis</title>
-    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
-    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
-    <published>2020-01-23T18:32:09.000Z</published>
-    <updated>2020-02-08T18:11:31.489Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been approached by a
-        
-      
-    
-    </summary>
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
-    
-    
-      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
-    
-  </entry>
-  
-  <entry>
     <title>populations developing across countries of the world</title>
     <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec5/"/>
     <id>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</id>
@@ -313,6 +422,32 @@ ON
         
         
           &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You are hired by the World
+        
+      
+    
+    </summary>
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/categories/Tableau/"/>
+    
+    
+      <category term="Tableau" scheme="http://naixinzhang.github.io/tags/Tableau/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Regional profit analysis</title>
+    <link href="http://naixinzhang.github.io/2020/01/23/tableau/sec6/"/>
+    <id>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</id>
+    <published>2020-01-23T18:32:09.000Z</published>
+    <updated>2020-02-08T18:11:31.489Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been approached by a
         
       
     
@@ -391,136 +526,6 @@ ON
         
         
           &lt;h1 id=&quot;CS301-Proj10&quot;&gt;&lt;a href=&quot;#CS301-Proj10&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj10&quot;&gt;&lt;/a&gt;CS301_Proj10&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
-    
-    
-      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS301_Proj9</title>
-    <link href="http://naixinzhang.github.io/2019/11/30/cs301/cs301-proj9/"/>
-    <id>http://naixinzhang.github.io/2019/11/30/cs301/cs301-proj9/</id>
-    <published>2019-11-30T18:32:09.000Z</published>
-    <updated>2020-01-23T17:34:28.934Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CS301-Proj9&quot;&gt;&lt;a href=&quot;#CS301-Proj9&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj9&quot;&gt;&lt;/a&gt;CS301_Proj9&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
-    
-    
-      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS301_Proj8</title>
-    <link href="http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/"/>
-    <id>http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/</id>
-    <published>2019-11-23T18:32:09.000Z</published>
-    <updated>2020-01-24T00:24:52.423Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CS301-Proj8&quot;&gt;&lt;a href=&quot;#CS301-Proj8&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj8&quot;&gt;&lt;/a&gt;CS301_Proj8&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
-    
-    
-      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Free Trail Screen</title>
-    <link href="http://naixinzhang.github.io/2019/11/22/abtest/free-trial-screener/"/>
-    <id>http://naixinzhang.github.io/2019/11/22/abtest/free-trial-screener/</id>
-    <published>2019-11-23T03:06:09.000Z</published>
-    <updated>2020-01-17T03:08:16.199Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;📘-Experiment-design&quot;&gt;&lt;a href=&quot;#📘-Experiment-design&quot; class=&quot;headerlink&quot; title=&quot;📘  Experiment design&quot;&gt;&lt;/a&gt;📘  Experiment
-        
-      
-    
-    </summary>
-    
-      <category term="A_B Test" scheme="http://naixinzhang.github.io/categories/A-B-Test/"/>
-    
-    
-      <category term="A_B Test" scheme="http://naixinzhang.github.io/tags/A-B-Test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS301_Proj7</title>
-    <link href="http://naixinzhang.github.io/2019/11/14/cs301/cs301-proj7/"/>
-    <id>http://naixinzhang.github.io/2019/11/14/cs301/cs301-proj7/</id>
-    <published>2019-11-14T18:32:09.000Z</published>
-    <updated>2020-01-23T17:31:38.355Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CS301-Proj7&quot;&gt;&lt;a href=&quot;#CS301-Proj7&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj7&quot;&gt;&lt;/a&gt;CS301_Proj7&lt;/h1&gt;&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
-    
-    
-      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS301_Proj6</title>
-    <link href="http://naixinzhang.github.io/2019/10/31/cs301/cs301-proj6/"/>
-    <id>http://naixinzhang.github.io/2019/10/31/cs301/cs301-proj6/</id>
-    <published>2019-10-31T17:32:09.000Z</published>
-    <updated>2020-01-23T17:30:49.231Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CS301-Proj6&quot;&gt;&lt;a href=&quot;#CS301-Proj6&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj6&quot;&gt;&lt;/a&gt;CS301_Proj6&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
         
       
     

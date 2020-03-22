@@ -2,7 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/02/19/mysql/sql-hackerrank/</loc>
+    <loc>http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/</loc>
+    
+    <lastmod>2020-03-22T18:01:12.054Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/03/06/stat/stat-interview-prep-copy/</loc>
+    
+    <lastmod>2020-03-06T19:36:28.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/19/stat/stat-interview-prep/</loc>
+    
+    <lastmod>2020-02-25T19:28:34.649Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/19/product/product-prep/</loc>
+    
+    <lastmod>2020-02-25T16:47:06.981Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/</loc>
+    
+    <lastmod>2020-02-25T06:45:56.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/19/ml/ml-intterveiw-prep/</loc>
+    
+    <lastmod>2020-02-19T23:40:14.225Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/19/mysql/sql-intterveiw-prep/</loc>
     
     <lastmod>2020-02-19T23:25:12.306Z</lastmod>
     
@@ -12,13 +54,6 @@
     <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
     
     <lastmod>2020-02-19T23:19:10.118Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-notes-analytics-training/</loc>
-    
-    <lastmod>2020-02-16T04:24:10.684Z</lastmod>
     
   </url>
   
@@ -135,126 +170,126 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/9.1maximal-margin-classifier/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/9.1maximal-margin-classifier/</loc>
     
     <lastmod>2020-01-24T00:24:06.464Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/8.2bagging-random-forest-boosting/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/8.2bagging-random-forest-boosting/</loc>
     
     <lastmod>2020-01-24T00:23:54.500Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/8.1the-basics-of-decision-trees/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/8.1the-basics-of-decision-trees/</loc>
     
     <lastmod>2020-01-24T00:23:45.073Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/6.4considerations-in-high-dimensions/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.4considerations-in-high-dimensions/</loc>
     
     <lastmod>2020-01-24T00:23:33.549Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/6.3dimension-reduction-pca/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.3dimension-reduction-pca/</loc>
     
     <lastmod>2020-01-24T00:23:22.278Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/6.2shrinkage-methods/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.2shrinkage-methods/</loc>
     
     <lastmod>2020-01-24T00:23:13.001Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/6.1subset-selection/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.1subset-selection/</loc>
     
     <lastmod>2020-01-24T00:23:03.552Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/6.0intro-model-selection/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.0intro-model-selection/</loc>
     
     <lastmod>2020-01-24T00:22:54.002Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/5.2the-bootstrap/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.2the-bootstrap/</loc>
     
     <lastmod>2020-01-24T00:22:43.152Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/5.1cross-validation/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.1cross-validation/</loc>
     
     <lastmod>2020-01-24T00:22:32.183Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/4.5comparison-of-classification-methods/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.5comparison-of-classification-methods/</loc>
     
     <lastmod>2020-01-24T00:22:20.263Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/4.4linear-discriminant-analysis/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.4linear-discriminant-analysis/</loc>
     
     <lastmod>2020-01-24T00:22:09.471Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/4.3logistic-regression/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.3logistic-regression/</loc>
     
     <lastmod>2020-01-24T00:21:58.750Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</loc>
     
     <lastmod>2020-01-24T00:21:48.360Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.3potential-problems/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.3potential-problems/</loc>
     
     <lastmod>2020-01-24T00:20:36.450Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/2.2assessing-model-accuracy/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/2.2assessing-model-accuracy/</loc>
     
     <lastmod>2020-01-23T19:27:10.418Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.1simple-linear-regression/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.1simple-linear-regression/</loc>
     
     <lastmod>2020-01-23T19:26:56.102Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/islr/3.2multiple-linear-regression/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.2multiple-linear-regression/</loc>
     
     <lastmod>2020-01-23T19:26:43.664Z</lastmod>
     
@@ -345,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/categories/index.html</loc>
+    <loc>http://naixinzhang.github.io/archives/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/archives/index.html</loc>
+    <loc>http://naixinzhang.github.io/categories/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
     
