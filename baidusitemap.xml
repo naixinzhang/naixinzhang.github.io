@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://naixinzhang.github.io/2020/09/02/mysql/sql-leetcode2/</loc>
+    <lastmod>2020-09-11</lastmod>
+  </url>  <url>
     <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
-    <lastmod>2020-03-22</lastmod>
+    <lastmod>2020-09-11</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2020/04/24/product/lean-analystics/</loc>
+    <lastmod>2020-09-09</lastmod>
+  </url>  <url>
+    <loc>http://naixinzhang.github.io/2020/09/09/mysql/mian-jing-zheng-li/</loc>
+    <lastmod>2020-09-09</lastmod>
   </url>  <url>
     <loc>http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/</loc>
     <lastmod>2020-03-22</lastmod>

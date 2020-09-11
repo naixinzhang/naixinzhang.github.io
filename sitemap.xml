@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naixinzhang.github.io/2020/09/02/mysql/sql-leetcode2/</loc>
+    
+    <lastmod>2020-09-11T01:21:50.946Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
     
-    <lastmod>2020-03-22T18:08:01.282Z</lastmod>
+    <lastmod>2020-09-11T01:19:39.413Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/about/index.html</loc>
+    
+    <lastmod>2020-09-11T01:03:43.997Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/404.html</loc>
+    
+    <lastmod>2020-09-11T00:52:29.339Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/04/24/product/lean-analystics/</loc>
+    
+    <lastmod>2020-09-09T06:06:34.763Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/09/09/mysql/mian-jing-zheng-li/</loc>
+    
+    <lastmod>2020-09-09T05:49:29.615Z</lastmod>
     
   </url>
   
@@ -331,13 +366,6 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/about/index.html</loc>
-    
-    <lastmod>2020-01-15T03:46:37.617Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://naixinzhang.github.io/friends/index.html</loc>
     
     <lastmod>2020-01-14T05:11:59.324Z</lastmod>
@@ -369,13 +397,6 @@
     <loc>http://naixinzhang.github.io/tags/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/404.html</loc>
-    
-    <lastmod>2019-09-26T05:00:15.035Z</lastmod>
     
   </url>
   
