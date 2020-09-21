@@ -2,6 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naixinzhang.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-09-21T04:30:38.076Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/friends/index.html</loc>
+    
+    <lastmod>2020-09-21T04:30:37.914Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-09-21T04:30:37.648Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/about/index.html</loc>
+    
+    <lastmod>2020-09-21T04:30:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/archives/index.html</loc>
+    
+    <lastmod>2020-09-21T04:30:37.488Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/23/take-home-challenge/7-spanish-translation-ab-test/spanish-translation-ab-test/</loc>
+    
+    <lastmod>2020-09-21T04:30:37.019Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/31/take-home-challenge/6-price-test/price-test/</loc>
+    
+    <lastmod>2020-09-21T04:30:36.871Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/take-home-challenge/2-employee-rentention/employee-rentention/</loc>
+    
+    <lastmod>2020-09-21T04:30:36.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/22/take-home-challenge/1-conversion-rate/conversion-rate/</loc>
+    
+    <lastmod>2020-09-21T04:30:36.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/01/24/take-home-challenge/3-identifyfraduluent/identifyfraduluent/</loc>
+    
+    <lastmod>2020-09-21T04:30:36.340Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2018/02/01/take-home-challenge/5-market-email/market-email/</loc>
+    
+    <lastmod>2020-09-21T04:30:36.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/10/23/cs301/cs301-proj5/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.520Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/11/30/cs301/cs301-proj9/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.481Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/cs301/cs301-proj3/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.460Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/11/14/cs301/cs301-proj7/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.444Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/10/31/cs301/cs301-proj6/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.426Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/12/15/cs301/cs301-proj10/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.407Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naixinzhang.github.io/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/</loc>
     
     <lastmod>2020-09-21T04:30:35.378Z</lastmod>
@@ -23,366 +149,240 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
-    
-    <lastmod>2020-09-11T01:19:39.413Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/about/index.html</loc>
-    
-    <lastmod>2020-09-11T01:03:43.997Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/404.html</loc>
-    
-    <lastmod>2020-09-11T00:52:29.339Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/04/24/product/lean-analystics/</loc>
-    
-    <lastmod>2020-09-09T06:06:34.763Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/</loc>
     
-    <lastmod>2020-03-22T18:01:12.054Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.322Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/03/06/stat/stat-interview-prep-copy/</loc>
+    <loc>http://naixinzhang.github.io/2020/02/15/mysql/sql-leetcode/</loc>
     
-    <lastmod>2020-03-06T19:36:28.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/19/stat/stat-interview-prep/</loc>
-    
-    <lastmod>2020-02-25T19:28:34.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/</loc>
-    
-    <lastmod>2020-02-25T06:45:56.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/02/01/take-home-challenge/5-market-email/market-email/</loc>
-    
-    <lastmod>2020-02-08T18:50:20.815Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/31/take-home-challenge/6-price-test/price-test/</loc>
-    
-    <lastmod>2020-02-08T18:49:30.591Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/24/take-home-challenge/3-identifyfraduluent/identifyfraduluent/</loc>
-    
-    <lastmod>2020-02-08T18:46:12.715Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/24/take-home-challenge/2-employee-rentention/employee-rentention/</loc>
-    
-    <lastmod>2020-02-08T18:45:24.816Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/23/take-home-challenge/7-spanish-translation-ab-test/spanish-translation-ab-test/</loc>
-    
-    <lastmod>2020-02-08T18:44:52.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2018/01/22/take-home-challenge/1-conversion-rate/conversion-rate/</loc>
-    
-    <lastmod>2020-02-08T18:43:58.483Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec2/</loc>
-    
-    <lastmod>2020-02-08T18:21:06.443Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec4/</loc>
-    
-    <lastmod>2020-02-08T18:17:52.939Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</loc>
-    
-    <lastmod>2020-02-08T18:11:31.489Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</loc>
-    
-    <lastmod>2020-02-08T17:52:28.441Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec3/</loc>
-    
-    <lastmod>2020-02-08T17:26:52.561Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/</loc>
-    
-    <lastmod>2020-01-24T00:24:52.423Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/9.1maximal-margin-classifier/</loc>
-    
-    <lastmod>2020-01-24T00:24:06.464Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.276Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/8.2bagging-random-forest-boosting/</loc>
     
-    <lastmod>2020-01-24T00:23:54.500Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.246Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/8.1the-basics-of-decision-trees/</loc>
     
-    <lastmod>2020-01-24T00:23:45.073Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.4considerations-in-high-dimensions/</loc>
-    
-    <lastmod>2020-01-24T00:23:33.549Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.3dimension-reduction-pca/</loc>
-    
-    <lastmod>2020-01-24T00:23:22.278Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.2shrinkage-methods/</loc>
-    
-    <lastmod>2020-01-24T00:23:13.001Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.1subset-selection/</loc>
-    
-    <lastmod>2020-01-24T00:23:03.552Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.0intro-model-selection/</loc>
-    
-    <lastmod>2020-01-24T00:22:54.002Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.2the-bootstrap/</loc>
-    
-    <lastmod>2020-01-24T00:22:43.152Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.1cross-validation/</loc>
-    
-    <lastmod>2020-01-24T00:22:32.183Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.5comparison-of-classification-methods/</loc>
-    
-    <lastmod>2020-01-24T00:22:20.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.4linear-discriminant-analysis/</loc>
-    
-    <lastmod>2020-01-24T00:22:09.471Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.229Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.3logistic-regression/</loc>
     
-    <lastmod>2020-01-24T00:21:58.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</loc>
-    
-    <lastmod>2020-01-24T00:21:48.360Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.3potential-problems/</loc>
-    
-    <lastmod>2020-01-24T00:20:36.450Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/2.2assessing-model-accuracy/</loc>
-    
-    <lastmod>2020-01-23T19:27:10.418Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.1simple-linear-regression/</loc>
-    
-    <lastmod>2020-01-23T19:26:56.102Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.208Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.2multiple-linear-regression/</loc>
     
-    <lastmod>2020-01-23T19:26:43.664Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.190Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/10/23/cs301/cs301-proj5/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.4linear-discriminant-analysis/</loc>
     
-    <lastmod>2020-01-23T17:38:37.749Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/12/15/cs301/cs301-proj10/</loc>
-    
-    <lastmod>2020-01-23T17:35:09.374Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.172Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/11/30/cs301/cs301-proj9/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.0intro-model-selection/</loc>
     
-    <lastmod>2020-01-23T17:34:28.934Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2019/11/14/cs301/cs301-proj7/</loc>
-    
-    <lastmod>2020-01-23T17:31:38.355Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.153Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/10/31/cs301/cs301-proj6/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.1cross-validation/</loc>
     
-    <lastmod>2020-01-23T17:30:49.231Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.134Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2019/09/23/cs301/cs301-proj3/</loc>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/9.1maximal-margin-classifier/</loc>
     
-    <lastmod>2020-01-23T16:09:21.512Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.116Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/2.2assessing-model-accuracy/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.094Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.5comparison-of-linear-regression-with-k-nearest-neighbors/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.1simple-linear-regression/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.060Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.4considerations-in-high-dimensions/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.1subset-selection/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.021Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/4.5comparison-of-classification-methods/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.004Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/5.2the-bootstrap/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.3dimension-reduction-pca/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/6.2shrinkage-methods/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.955Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2019/09/23/ml/islr-notes/3.3potential-problems/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/02/19/stat/stat-interview-prep/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/03/06/stat/stat-interview-prep-copy/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.893Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/09/09/product/lean-analystics/</loc>
+    
+    <lastmod>2020-09-21T04:30:34.869Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2020/01/02/excel/demo/</loc>
     
-    <lastmod>2020-01-17T04:50:06.327Z</lastmod>
+    <lastmod>2020-09-21T04:30:34.612Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/12/22/abtest/ab-test-summary/</loc>
     
-    <lastmod>2020-01-17T03:17:33.001Z</lastmod>
+    <lastmod>2020-09-21T04:30:34.064Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/2019/11/22/abtest/free-trial-screener/</loc>
     
-    <lastmod>2020-01-17T03:08:16.199Z</lastmod>
+    <lastmod>2020-09-21T04:30:34.043Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/friends/index.html</loc>
+    <loc>http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/</loc>
     
-    <lastmod>2020-01-14T05:11:59.324Z</lastmod>
+    <lastmod>2020-09-21T04:30:33.977Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec4/</loc>
+    
+    <lastmod>2020-09-21T04:30:32.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec5/</loc>
+    
+    <lastmod>2020-09-21T04:30:32.791Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec6/</loc>
+    
+    <lastmod>2020-09-21T04:30:32.760Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec2/</loc>
+    
+    <lastmod>2020-09-21T04:30:32.740Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/01/23/tableau/sec3/</loc>
+    
+    <lastmod>2020-09-21T04:30:32.717Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://naixinzhang.github.io/contact/index.html</loc>
     
-    <lastmod>2020-01-13T11:26:40.485Z</lastmod>
+    <lastmod>2020-09-21T04:30:32.670Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/categories/index.html</loc>
+    <loc>http://naixinzhang.github.io/404.html</loc>
     
-    <lastmod>2019-09-26T05:00:15.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-09-26T05:00:15.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/archives/index.html</loc>
-    
-    <lastmod>2019-09-26T05:00:15.051Z</lastmod>
+    <lastmod>2020-09-21T04:30:32.633Z</lastmod>
     
   </url>
   
