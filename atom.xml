@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naixinzhang.github.io/"/>
-  <updated>2020-09-09T05:49:29.615Z</updated>
+  <updated>2020-09-21T04:30:35.378Z</updated>
   <id>http://naixinzhang.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title></title>
-    <link href="http://naixinzhang.github.io/2020/09/09/mysql/mian-jing-zheng-li/"/>
-    <id>http://naixinzhang.github.io/2020/09/09/mysql/mian-jing-zheng-li/</id>
-    <published>2020-09-09T05:18:08.750Z</published>
-    <updated>2020-09-09T05:49:29.615Z</updated>
+    <link href="http://naixinzhang.github.io/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/"/>
+    <id>http://naixinzhang.github.io/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/</id>
+    <published>2020-09-17T01:49:30.000Z</published>
+    <updated>2020-09-21T04:30:35.378Z</updated>
     
     <summary type="html">
     
@@ -39,11 +39,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://naixinzhang.github.io/2020/09/02/mysql/sql-leetcode2/"/>
-    <id>http://naixinzhang.github.io/2020/09/02/mysql/sql-leetcode2/</id>
-    <published>2020-09-02T17:06:48.309Z</published>
-    <updated>2020-09-11T01:21:50.946Z</updated>
+    <title>SQL_notes_Mode</title>
+    <link href="http://naixinzhang.github.io/2020/09/15/mysql/sql-notes-mode/"/>
+    <id>http://naixinzhang.github.io/2020/09/15/mysql/sql-notes-mode/</id>
+    <published>2020-09-16T00:25:09.000Z</published>
+    <updated>2020-09-21T04:30:35.339Z</updated>
     
     <summary type="html">
     
@@ -51,19 +51,45 @@
       
         
         
-          &lt;hr&gt;
-&lt;p&gt;title: 2.0_leetcode_database_practice
-date: 2020-09-01 20:26:09
-top: false
-cover: false
-password:
-toc: true
-mathjax:
+          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mode.com/sql-tutorial/&lt;/a&gt;&lt;/p&gt;
+&lt;h1
         
       
     
     </summary>
     
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.0_leetcode_database_practice</title>
+    <link href="http://naixinzhang.github.io/2020/09/10/mysql/sql-leetcode2-by-tag/"/>
+    <id>http://naixinzhang.github.io/2020/09/10/mysql/sql-leetcode2-by-tag/</id>
+    <published>2020-09-11T01:26:09.000Z</published>
+    <updated>2020-09-21T04:30:35.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;EASY-tag&quot;&gt;&lt;a href=&quot;#EASY-tag&quot; class=&quot;headerlink&quot; title=&quot;EASY tag:&quot;&gt;&lt;/a&gt;EASY tag:&lt;/h1&gt;&lt;p&gt;176.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT IFNULL(
+   
+        
+      
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
     
   </entry>
   
@@ -222,84 +248,6 @@ The p-value is the probability of obtaining at least as extreme results given th
 FROM Person
 LEFT JOIN Address
 ON
-        
-      
-    
-    </summary>
-    
-      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
-    
-    
-      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL_notes_Basic</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</id>
-    <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:50:17.484Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
-    
-    
-      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL_notes_intermediate</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</id>
-    <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-13T06:45:24.898Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="SQL" scheme="http://naixinzhang.github.io/categories/SQL/"/>
-    
-    
-      <category term="SQL Learning notes" scheme="http://naixinzhang.github.io/tags/SQL-Learning-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL_notes_Advanced</title>
-    <link href="http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/"/>
-    <id>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</id>
-    <published>2020-02-13T01:25:09.000Z</published>
-    <updated>2020-02-15T19:55:57.295Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Learning from &lt;a href=&quot;https://mode.com/sql-tutorial/&quot; target=&quot;_blank&quot;
         
       
     
@@ -543,6 +491,58 @@ ON
     
     
       <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS301_Proj8</title>
+    <link href="http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/"/>
+    <id>http://naixinzhang.github.io/2019/11/23/cs301/cs301-proj8/</id>
+    <published>2019-11-23T18:32:09.000Z</published>
+    <updated>2020-01-24T00:24:52.423Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CS301-Proj8&quot;&gt;&lt;a href=&quot;#CS301-Proj8&quot; class=&quot;headerlink&quot; title=&quot;CS301_Proj8&quot;&gt;&lt;/a&gt;CS301_Proj8&lt;/h1&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="CS301Proj" scheme="http://naixinzhang.github.io/categories/CS301Proj/"/>
+    
+    
+      <category term="CS301 Data Programming I" scheme="http://naixinzhang.github.io/tags/CS301-Data-Programming-I/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Free Trail Screen</title>
+    <link href="http://naixinzhang.github.io/2019/11/22/abtest/free-trial-screener/"/>
+    <id>http://naixinzhang.github.io/2019/11/22/abtest/free-trial-screener/</id>
+    <published>2019-11-23T03:06:09.000Z</published>
+    <updated>2020-01-17T03:08:16.199Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;📘-Experiment-design&quot;&gt;&lt;a href=&quot;#📘-Experiment-design&quot; class=&quot;headerlink&quot; title=&quot;📘  Experiment design&quot;&gt;&lt;/a&gt;📘  Experiment
+        
+      
+    
+    </summary>
+    
+      <category term="A_B Test" scheme="http://naixinzhang.github.io/categories/A-B-Test/"/>
+    
+    
+      <category term="A_B Test" scheme="http://naixinzhang.github.io/tags/A-B-Test/"/>
     
   </entry>
   

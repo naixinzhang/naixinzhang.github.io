@@ -4,23 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SQL_notes_Advanced, Naixin&#39;s blog">
+    <meta name="keywords" content="SQL_notes_Mode, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
     <meta name="description" content="Learning from https://mode.com/sql-tutorial/
-1.Data Type
+Basic1.SELECT * FROM table
 
-
-
-Imported as
-Stored as
-With these rules
-
-
-
-String
-VARCHAR(102">
+rename column names: 
+SELECT west AS &amp;quot;West">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +20,7 @@ VARCHAR(102">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SQL_notes_Advanced | Naixin&#39;s blog</title>
+    <title>SQL_notes_Mode | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +262,13 @@ VARCHAR(102">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SQL_notes_Advanced
+                        SQL_notes_Mode
                     </div>
                 </div>
             </div>
@@ -411,7 +403,7 @@ VARCHAR(102">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-09-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -425,14 +417,14 @@ VARCHAR(102">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    10 Min
+                    18 Min
                 </div>
                 
                 
@@ -449,7 +441,230 @@ VARCHAR(102">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Learning from <a href="https://mode.com/sql-tutorial/" target="_blank" rel="noopener">https://mode.com/sql-tutorial/</a></p>
-<p><strong>1.Data Type</strong></p>
+<h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><p><strong>1.SELECT * FROM table</strong></p>
+<ul>
+<li><p>rename column names: </p>
+<pre><code>SELECT west AS &quot;West Region&quot; FROM tutorial.us_housing_units</code></pre></li>
+</ul>
+<p><strong>2.LIMIT</strong></p>
+<p><strong>3.WHERE</strong>   </p>
+<ul>
+<li><p>Equal to    =</p>
+</li>
+<li><p>Not equal to    &lt;&gt; or !=</p>
+</li>
+<li><p>Greater than    &gt;</p>
+</li>
+<li><p>Less than    &lt;</p>
+</li>
+<li><p>Greater than or equal to    &gt;=</p>
+</li>
+<li><p>Less than or equal to    &lt;=</p>
+</li>
+<li><p>Arithmetic in SQL :
+ You can perform arithmetic in SQL using the same operators you would in Excel: +, -, *, /.</p>
+<pre><code> SELECT west + south AS south_plus_west 
+ FROM tutorial.us_housing_units</code></pre><p> <strong>4.SQL Logical operators</strong></p>
+</li>
+<li><p><strong>LIKE</strong> allows you to match similar values, instead of exact values.
+EX: include rows for which “group” starts with “Snoop” :</p>
+<pre><code>SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE &quot;group&quot; LIKE &#39;Snoop%&#39;</code></pre><p>(In general, putting double quotes around a word or phrase will indicate that you are referring to that    column name)
+<strong><em>like is case_sensitive,ILIKE is not case sensitive.</em></strong>
+You can also use _ (a single underscore) to substitute for an individual character:</p>
+</li>
+</ul>
+<pre><code>SELECT *
+tutorial.billboard_top_100_year_end
+WHERE artist ILIKE &#39;dr_ke&#39;</code></pre><ul>
+<li><p><strong>IN</strong> allows you to specify a list of values you’d like to include.
+EX:</p>
+<pre><code>SELECT *
+tutorial.billboard_top_100_year_end
+WHERE year_rank IN (1, 2, 3)</code></pre><p>  (non-numerical values, but they need to go inside single quotes. )</p>
+<pre><code>SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE artist IN (&#39;Taylor Swift&#39;, &#39;Usher&#39;, &#39;Ludacris&#39;)</code></pre></li>
+<li><p><strong>BETWEEN</strong> allows you to select only rows within a certain range.</p>
+</li>
+<li><p><strong>IS NULL</strong> allows you to select rows that contain no data in a given column.</p>
+<pre><code>  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+WHERE artist IS NULL</code></pre></li>
+</ul>
+<pre><code>(WHERE artist = NULL will not work��you can&#39;t perform arithmetic on null values.)</code></pre><ul>
+<li><p><strong>AND</strong> allows you to select only rows that satisfy two conditions.
+You can use SQL’s AND operator with additional AND statements or any other comparison operator, as many times as you want.</p>
+<pre><code>SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2012 AND year_rank &lt;= 10 AND &quot;group&quot; ILIKE &#39;%feat%&#39;</code></pre></li>
+<li><p><strong>OR</strong> allows you to select rows that satisfy either of two conditions.</p>
+</li>
+<li><p><strong>NOT</strong> allows you to select rows that do not match a certain condition.</p>
+<p>  NOT is commonly used with LIKE.</p>
+<pre><code>    SELECT *
+    FROM tutorial.billboard_top_100_year_end
+    WHERE year = 2013
+    AND &quot;group&quot; NOT ILIKE &#39;%macklemore%&#39;</code></pre></li>
+</ul>
+<p>?      NOT is also frequently used to identify non-null rows</p>
+<pre><code> SELECT *
+ FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013 AND artist IS NOT NULL</code></pre><ol start="5">
+<li><p><strong>ORDER BY DESC</strong></p>
+<p>You can also order by multiple columns. This is particularly useful if your data falls into categories and you’d like to organize rows by date, for example, but keep all of the results within a given category together.</p>
+</li>
+</ol>
+<pre><code>SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year_rank &lt;= 3
+ORDER BY year DESC, year_rank</code></pre><p>  you can make your life a little easier by substituting numbers for column names in the ORDER BY clause. The numbers will correspond to the order in which you list columns in the SELECT clause. </p>
+<pre><code>SELECT *
+tutorial.billboard_top_100_year_end
+WHERE year_rank &lt;= 3
+ORDER BY 2, 1 DESC</code></pre><p><strong>6.Using comments</strong>
+    You can use– (two dashes) to comment out everything to the right of them on a given line:</p>
+<pre><code>SELECT *  --This comment won&#39;t affect the way the code runs
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2013</code></pre><p>   You can also leave comments across multiple lines using /<em> to begin the comment and </em>/ to close it:      </p>
+<pre><code>/* Here&#39;s a comment so long and descriptive that
+it could only fit on multiple lines. Fortunately,
+it, too, will not affect how this code runs. */
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2013</code></pre><h1 id="Intermediate"><a href="#Intermediate" class="headerlink" title="Intermediate"></a>Intermediate</h1><p>1.<strong>Aggregate functions</strong></p>
+<ul>
+<li><p>COUNT counts how many rows are in a particular column.</p>
+<ul>
+<li><p>Typing COUNT(1) has the same effect as COUNT(*). Which one you use is a matter of personal preference.</p>
+</li>
+<li><p>Counting individual columns
+Count of all of rows in which the high column is not null:</p>
+</li>
+</ul>
+<pre><code>  SELECT COUNT(high)
+  FROM tutorial.aapl_historical_stock_prie</code></pre></li>
+<li><p>SUM adds together all the values in a particular column.
+you can only use SUM on columns containing numerical values.
+You don’t need to worry as much about the presence of nulls with SUM as you would with COUNT, as SUM treats nulls as 0.</p>
+</li>
+<li><p>MIN and MAX return the lowest and highest values in a particular column, respectively.
+They’re similar to COUNT in that they can be used on non-numerical columns. Depending on the column type, MIN will return the lowest number, earliest date, or non-numerical value as close alphabetically to “A” as possible.</p>
+</li>
+<li><p>AVG calculates the average of a group of selected values.
+First, it can only be used on numerical columns. Second, it ignores nulls completely.</p>
+</li>
+</ul>
+<p><strong>2.GROUP BY</strong>
+You can group by multiple columns. The order of column names in your GROUP BY clause doesn’t matter����the results will be the same regardless. If you want to control how the aggregations are grouped together, use ORDER BY.</p>
+<p><strong>3.HAVING</strong>
+  Having is the “clean” way to filter a query that has been aggregated,The WHERE clause won’t work for filtering on aggregate columns</p>
+<pre><code>SELECT year,
+       month,
+       MAX(high) AS month_high
+FROM tutorial.aapl_historical_stock_price
+GROUP BY year, month
+HAVING MAX(high) &gt; 400
+ORDER BY year, month</code></pre><p><strong>4.DISTINCT</strong></p>
+<p>  Only the unique values in a particular column
+  If you include two (or more) columns in a SELECT DISTINCT clause, your results will contain all of the unique pairs of those two columns:</p>
+<pre><code>SELECT DISTINCT year, month
+FROM tutorial.aapl_historical_stock_price</code></pre><p>DISTINCT goes inside the aggregate function rather than at the beginning of the SELECT clause:</p>
+<pre><code>SELECT COUNT(DISTINCT month) AS unique_months
+FROM tutorial.aapl_historical_stock_price</code></pre><p><strong>5.CASE</strong>
+  Every CASE statement must end with the END statement. The ELSE statement is optional:</p>
+<pre><code>CASE WHEN...THEN
+END</code></pre><pre><code>  SELECT player_name,
+         year,
+         CASE WHEN year = &#39;SR&#39; THEN &#39;yes&#39;
+         ELSE NULL END AS is_a_senior
+  FROM benn.college_football_players</code></pre><pre><code>SELECT player_name,
+         weight,
+         CASE WHEN weight &gt; 250 THEN &#39;over 250&#39;
+              WHEN weight &gt; 200 THEN &#39;201-250&#39;
+              WHEN weight &gt; 175 THEN &#39;176-200&#39;
+              ELSE &#39;175 or under&#39; END AS weight_group
+  FROM benn.college_football_players</code></pre><p><strong>6.Joins</strong></p>
+<pre><code> SELECT teams.conference AS conference,
+         AVG(players.weight) AS average_weight
+  FROM benn.college_football_players players
+  JOIN benn.college_football_teams teams
+  ON teams.school_name = players.school_name
+  GROUP BY teams.conference
+  ORDER BY AVG(players.weight) DESC</code></pre><ul>
+<li><p>inner join
+Inner joins eliminate rows from both tables that do not satisfy the join condition set forth in the ON statement. In mathematical terms, an inner join is the intersection of the two tables.
+rename column names:</p>
+</li>
+<li><p>outer join</p>
+<ul>
+<li>LEFT JOIN returns only unmatched rows from the left table.</li>
+<li>RIGHT JOIN returns only unmatched rows from the right table.</li>
+<li>FULL OUTER JOIN returns unmatched rows from both tables.</li>
+</ul>
+</li>
+</ul>
+<p>   Filtering in the ON clause: filter one or both of the tables before joining them</p>
+<pre><code>   SELECT companies.permalink AS companies_permalink,
+       companies.name AS companies_name,
+       acquisitions.company_permalink AS acquisitions_permalink,
+       acquisitions.acquired_at AS acquired_date
+   FROM tutorial.crunchbase_companies companies
+   LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
+   ON companies.permalink = acquisitions.company_permalink
+   AND acquisitions.company_permalink != &#39;/company/1000memories&#39;
+   ORDER BY 1</code></pre><p>   Filtering in the WHERE clause:(Join  then filter)</p>
+<pre><code>   SELECT companies.permalink AS companies_permalink,
+       companies.name AS companies_name,
+       acquisitions.company_permalink AS acquisitions_permalink,
+       acquisitions.acquired_at AS acquired_date
+   FROM tutorial.crunchbase_companies companies
+   LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
+   ON companies.permalink = acquisitions.company_permalink
+   WHERE acquisitions.company_permalink != &#39;/company/1000memories&#39;
+   OR acquisitions.company_permalink IS NULL
+   ORDER BY 1</code></pre><ul>
+<li><p>Joining on multiple keys
+why? The first has to do with accuracy.</p>
+<pre><code> The second reason has to do with performance. SQL uses &quot;indexes&quot; (essentially pre-defined joins) to speed up queries</code></pre></li>
+<li><p>Self join 
+Sometimes it can be useful to join a table to itself. Let����s say you wanted to identify companies that received an investment from Great Britain following an investment from Japan.</p>
+</li>
+</ul>
+<pre><code>SELECT DISTINCT japan_investments.company_name,
+       japan_investments.company_permalink
+  FROM tutorial.crunchbase_investments_part1 japan_investments
+  JOIN tutorial.crunchbase_investments_part1 gb_investments
+    ON japan_investments.company_name = gb_investments.company_name
+   AND gb_investments.investor_country_code = &#39;GBR&#39;
+   AND gb_investments.funded_at &gt; japan_investments.funded_at
+ WHERE japan_investments.investor_country_code = &#39;JPN&#39;
+ ORDER BY 1</code></pre><ol start="7">
+<li><p><strong>UNION</strong>
+SQL joins allow you to combine two datasets side-by-side, but UNION allows you to stack one dataset on top of the other
+SQL has strict rules for appending data:</p>
+<ul>
+<li>Both tables must have the same number of columns</li>
+<li>The columns must have the same data types in the same order as the first table
+column names don’t necessarily have to be the same</li>
+</ul>
+</li>
+</ol>
+<p>tips:
+1.If you must use spaces in naming, you will need to use double quotes:
+  SELECT COUNT(date) AS “Count Of Date”
+  FROM tutorial.aapl_historical_stock_price
+2.Query clause order:</p>
+<ul>
+<li>SELECT</li>
+<li>FROM</li>
+<li>WHERE</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>ORDER BY</li>
+</ul>
+<h1 id="ADVANCED"><a href="#ADVANCED" class="headerlink" title="ADVANCED"></a>ADVANCED</h1><p>Data Type**</p>
 <table>
 <thead>
 <tr>
@@ -479,7 +694,7 @@ VARCHAR(102">
 <td>Only TRUE or FALSE values.</td>
 </tr>
 </tbody></table>
-<p>Changing a column’s data type：</p>
+<p>Changing a column’s data type��</p>
 <p>two types: <code>CAST(column_name AS integer)</code> and <code>column_name::integer</code> </p>
 <p><strong>2.Data Format</strong></p>
 <pre><code>SELECT companies.permalink,
@@ -497,7 +712,12 @@ VARCHAR(102">
        FROM tutorial.crunchbase_companies_clean_date companies WHERE founded_at_clean IS NOT NULL</code></pre><pre><code>SELECT companies.permalink,       
 companies.founded_at_clean,       
 NOW() - companies.founded_at_clean::timestamp AS founded_time_ago  
-FROM tutorial.crunchbase_companies_clean_date companies WHERE founded_at_clean IS NOT NULL</code></pre><p><strong>3.Data Wrangling with SQL</strong></p>
+FROM tutorial.crunchbase_companies_clean_date companies WHERE founded_at_clean IS NOT NULL</code></pre><pre><code>SELECT
+    DATE_FORMAT(wk,&#39;%Y%m%d&#39;),
+    wk,
+    song
+ FROM totp
+ WHERE singer=&#39;Madness&#39;</code></pre><p><strong>3.Data Wrangling with SQL</strong></p>
 <p><strong>4.Using SQL String Functions to Clean data</strong></p>
 <p><strong>LEFT, RIGHT, LENGTH</strong></p>
 <p><code>LEFT(string, number of characters)</code></p>
@@ -517,7 +737,7 @@ FROM tutorial.sf_crime_incidents_2014_01</code></pre><p><strong>POSITION</strong
 <pre><code>SELECT incidnt_num,       
        descript,       
        POSITION(&#39;A&#39; IN descript) AS a_position  
-FROM tutorial.sf_crime_incidents_2014_01</code></pre><p>You can also use the <code>STRPOS</code> function to achieve the same results—just replace <code>IN</code> with a comma and switch the order of the string and substring:</p>
+FROM tutorial.sf_crime_incidents_2014_01</code></pre><p>You can also use the <code>STRPOS</code> function to achieve the same results?just replace <code>IN</code> with a comma and switch the order of the string and substring:</p>
 <pre><code>SELECT incidnt_num,       
        descript,       
        STRPOS(descript, &#39;A&#39;) AS a_position  
@@ -605,7 +825,7 @@ displays the number of a given row. It starts are 1 and numbers the rows accordi
  WHERE start_time &lt; &#39;2012-01-08&#39;</code></pre><ul>
 <li>RANK() and DENSE_RANK()
 RANK() would give the identical rows a rank of 2, then skip ranks 3 and 4, so the next result would be 5
-DENSE_RANK() would still give all the identical rows a rank of 2, but the following row would be 3—no ranks would be skipped.</li>
+DENSE_RANK() would still give all the identical rows a rank of 2, but the following row would be 3?no ranks would be skipped.</li>
 </ul>
 <pre><code>SELECT start_terminal,
        duration_seconds,
@@ -633,7 +853,7 @@ NTILE(<em># of buckets</em>) identify what percentile a given row falls into. In
  ORDER BY start_terminal, duration_seconds</code></pre><ul>
 <li>LAG and LEAD</li>
 </ul>
-<p>It can often be useful to compare rows to preceding or following rows, especially if you’ve got the data in an order that makes sense. You can use LAG or LEAD to create columns that pull values from other rows—all you need to do is enter which column to pull from and how many rows away you’d like to do the pull. LAG pulls from previous rows and LEAD pulls from following rows:</p>
+<p>It can often be useful to compare rows to preceding or following rows, especially if you’ve got the data in an order that makes sense. You can use LAG or LEAD to create columns that pull values from other rows?all you need to do is enter which column to pull from and how many rows away you’d like to do the pull. LAG pulls from previous rows and LEAD pulls from following rows:</p>
 <pre><code>SELECT start_terminal,
        duration_seconds,
        LAG(duration_seconds, 1) OVER
@@ -707,30 +927,10 @@ WINDOW ntile_window AS
          GROUP BY 1,2
        ) sub
  GROUP BY 1
- ORDER BY 2 DESC</code></pre><pre><code>SELECT years.*,
-       earthquakes.magnitude,
-       CASE year
-         WHEN 2000 THEN year_2000
-         WHEN 2001 THEN year_2001
-         WHEN 2002 THEN year_2002
-         WHEN 2003 THEN year_2003
-         WHEN 2004 THEN year_2004
-         WHEN 2005 THEN year_2005
-         WHEN 2006 THEN year_2006
-         WHEN 2007 THEN year_2007
-         WHEN 2008 THEN year_2008
-         WHEN 2009 THEN year_2009
-         WHEN 2010 THEN year_2010
-         WHEN 2011 THEN year_2011
-         WHEN 2012 THEN year_2012
-         ELSE NULL END
-         AS number_of_earthquakes
-  FROM tutorial.worldwide_earthquakes earthquakes
- CROSS JOIN (
-       SELECT year
-         FROM (VALUES (2000),(2001),(2002),(2003),(2004),(2005),(2006),
-                      (2007),(2008),(2009),(2010),(2011),(2012)) v(year)
-       ) years</code></pre>
+ ORDER BY 2 DESC</code></pre><h1 id="Table-Manipulation"><a href="#Table-Manipulation" class="headerlink" title="Table Manipulation"></a>Table Manipulation</h1><pre><code>INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES (&#39;Cardinal&#39;, &#39;Tom B. Erichsen&#39;, &#39;Skagen 21&#39;, &#39;Stavanger&#39;, &#39;4006&#39;, &#39;Norway&#39;);</code></pre><pre><code>UPDATE Customers
+SET ContactName = &#39;Alfred Schmidt&#39;, City= &#39;Frankfurt&#39;
+WHERE CustomerID = 1;</code></pre><pre><code>DELETE FROM Customers WHERE CustomerName=&#39;Alfreds Futterkiste&#39;;</code></pre>
             </div>
             <hr />
 
@@ -768,7 +968,7 @@ WINDOW ntile_window AS
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2020/02/12/mysql/sql-notes-advanced/',
+        id: '2020/09/15/mysql/sql-notes-mode/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1055,30 +1255,68 @@ WINDOW ntile_window AS
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/12/mysql/sql-notes-intermedite/">
+                <a href="/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SQL_notes_intermediate">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">SQL_notes_intermediate</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Learning from https://mode.com/sql-tutorial/
-
-Aggregate functions
-
-
-COUNT counts how many rows are in a particular colum
+                            https://www.1point3acres.com/bbs/interview/amazon-data-science-478865.html
+亚麻BIE physical retail seatle
+1)一个manuafacture
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-16
                         </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/10/mysql/sql-leetcode2-by-tag/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="2.0_leetcode_database_practice">
+                        
+                        <span class="card-title">2.0_leetcode_database_practice</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            EASY tag:176.
+SELECT IFNULL(
+    (SELECT ...
+    LIMIT 1 OFFSET 1,NULL
+) AS SecondHighestSalary
+
+
+SELECT MAX(salary) AS 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1096,55 +1334,6 @@ COUNT counts how many rows are in a particular colum
                     
                     <a href="/tags/SQL-Learning-notes/" target="_blank">
                         <span class="chip bg-color">SQL Learning notes</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/01/23/tableau/sec2/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Investment opportunities Identify">
-                        
-                        <span class="card-title">Investment opportunities Identify</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            IntroductionYou have been approached by a Venture Capital Fund. The board of Directors are currently review 1000 interes
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Tableau/" class="post-category" target="_blank">
-                                    Tableau
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Tableau/" target="_blank">
-                        <span class="chip bg-color">Tableau</span>
                     </a>
                     
                 </div>
@@ -1257,7 +1446,7 @@ COUNT counts how many rows are in a particular colum
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
+        <div class="copy-right">
             &copy; 2020 NaixinZhang. All Rights Reserved.
         </div>
     </div>

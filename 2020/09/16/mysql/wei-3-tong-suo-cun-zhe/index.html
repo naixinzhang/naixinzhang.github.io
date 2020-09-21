@@ -260,7 +260,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -388,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-09
+                    2020-09-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -402,7 +402,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    298
+                    332
                 </div>
                 
 
@@ -429,11 +429,10 @@
 亚麻BIE physical retail seatle
 1)一个manuafacture 有三种product 求每天三种产品里最早生产的三个产品
 product_name, product_date, type</p>
-<p>SELECT <em> FROM
-(SELECT </em>, ROW_NUMBER() OVER(PARTITION BY Type ORDER BY product_date ASC) AS num
+<pre><code>SELECT * FROM
+(SELECT *, ROW_NUMBER() OVER(PARTITION BY Type ORDER BY product_date ASC) AS num
 FROM Orders)
-WHERE num &lt;=3</p>
-<p>TOP N ROWS:</p>
+WHERE num &lt;=3</code></pre><p>TOP N ROWS:</p>
 <p>WITH
 orders_ranked as (
    SELECT-baidu 1point3acres
@@ -455,13 +454,12 @@ total 1B row数据，两种情况：</p>
 </ol>
 <p>group by比较快。例子，一摞纸，要是rank的话要一张一张看数字。group by 就直接归类。</p>
 <p>3)day-to-day production change: d-o-d% = (current_day_amt - Previous_day_amt)/(current_day_amt) 这里用到window function and lag()</p>
-<p>SELECT ROUND((current_day_amt - Previous_day_amt)/(current_day_amt) ,2) 
+<pre><code>SELECT ROUND((current_day_amt - Previous_day_amt)/(current_day_amt) ,2) 
 FROM(
 SELECT current_day_amt, LAG(current_day_amt,1) OVER (ORDER BY DAY) as previous_day_amt
 FROM (
 SELECT COUNT(PRODUCT_NAME) OVER(PARTITION BY product_date) AS current_day_amt, *
-FROM..) a) b</p>
-<p><em>Calculate Revenue:         100</em>(m1-m0)/m0</p>
+FROM..) a) b</code></pre><p><em>Calculate Revenue:         100</em>(m1-m0)/m0</p>
 <p>WITH
 monthly_revenue as (
    SELECT
@@ -480,6 +478,10 @@ SELECT </em>,
 round(100.0*(revenue-prev_month_revenue)/prev_month_revenue,1) as revenue_growth
 FROM prev_month_revenue
 ORDER BY 2,11.duplicate data</p>
+<p>FB DS:</p>
+<p>What is the default order of ORDER BY? Ascending
+How do you combine the result-set of two statement? UNION &amp; UNION ALL, depends on requirement
+What is the value of 1+ null? null</p>
 
             </div>
             <hr />
@@ -518,7 +520,7 @@ ORDER BY 2,11.duplicate data</p>
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2020/09/09/mysql/mian-jing-zheng-li/',
+        id: '2020/09/16/mysql/wei-3-tong-suo-cun-zhe/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -806,11 +808,11 @@ ORDER BY 2,11.duplicate data</p>
                 <i class="fa fa-dot-circle-o"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2020/09/09/mysql/mian-jing-zheng-li/">
+                <a href="/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
                         <span class="card-title"></span>
                     </div>
@@ -825,7 +827,7 @@ ORDER BY 2,11.duplicate data</p>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-16
                             </span>
                         <span class="publish-author">
                             
@@ -843,36 +845,48 @@ ORDER BY 2,11.duplicate data</p>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/02/mysql/sql-leetcode2/">
+                <a href="/2020/09/15/mysql/sql-notes-mode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="SQL_notes_Mode">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">SQL_notes_Mode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-title: 2.0_leetcode_database_practice
-date: 2020-09-01 20:26:09
-top: false
-cover: false
-password:
-toc: true
-mathjax: fa
+                            Learning from https://mode.com/sql-tutorial/
+Basic1.SELECT * FROM table
+
+rename column names: 
+SELECT west AS &quot;West
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-15
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/SQL/" class="post-category" target="_blank">
+                                    SQL
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SQL-Learning-notes/" target="_blank">
+                        <span class="chip bg-color">SQL Learning notes</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -983,7 +997,7 @@ mathjax: fa
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
+        <div class="copy-right">
             &copy; 2020 NaixinZhang. All Rights Reserved.
         </div>
     </div>

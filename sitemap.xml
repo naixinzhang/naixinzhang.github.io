@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/09/02/mysql/sql-leetcode2/</loc>
+    <loc>http://naixinzhang.github.io/2020/09/16/mysql/wei-3-tong-suo-cun-zhe/</loc>
     
-    <lastmod>2020-09-11T01:21:50.946Z</lastmod>
+    <lastmod>2020-09-21T04:30:35.378Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/09/10/mysql/sql-leetcode2-by-tag/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.359Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/2020/09/15/mysql/sql-notes-mode/</loc>
+    
+    <lastmod>2020-09-21T04:30:35.339Z</lastmod>
     
   </url>
   
@@ -37,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/2020/09/09/mysql/mian-jing-zheng-li/</loc>
-    
-    <lastmod>2020-09-09T05:49:29.615Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://naixinzhang.github.io/2020/03/22/mysql/sql-hackerrank/</loc>
     
     <lastmod>2020-03-22T18:01:12.054Z</lastmod>
@@ -68,27 +75,6 @@
     <loc>http://naixinzhang.github.io/2020/02/24/abtest/ab-test-interveiw-prep/</loc>
     
     <lastmod>2020-02-25T06:45:56.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-advanced/</loc>
-    
-    <lastmod>2020-02-15T19:55:57.295Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-basic/</loc>
-    
-    <lastmod>2020-02-13T06:50:17.484Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naixinzhang.github.io/2020/02/12/mysql/sql-notes-intermedite/</loc>
-    
-    <lastmod>2020-02-13T06:45:24.898Z</lastmod>
     
   </url>
   
@@ -380,13 +366,6 @@
   </url>
   
   <url>
-    <loc>http://naixinzhang.github.io/archives/index.html</loc>
-    
-    <lastmod>2019-09-26T05:00:15.051Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://naixinzhang.github.io/categories/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
@@ -395,6 +374,13 @@
   
   <url>
     <loc>http://naixinzhang.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-09-26T05:00:15.051Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://naixinzhang.github.io/archives/index.html</loc>
     
     <lastmod>2019-09-26T05:00:15.051Z</lastmod>
     

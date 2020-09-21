@@ -4,16 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SQL_notes_intermediate, Naixin&#39;s blog">
+    <meta name="keywords" content="2.0_leetcode_database_practice, Naixin&#39;s blog">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="Learning from https://mode.com/sql-tutorial/
+    <meta name="description" content="EASY tag:176.
+SELECT IFNULL(
+    (SELECT ...
+    LIMIT 1 OFFSET 1,NULL
+) AS SecondHighestSalary
 
-Aggregate functions
 
-
-COUNT counts how many rows are in a particular colum">
+SELECT MAX(salary) AS ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@ COUNT counts how many rows are in a particular colum">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SQL_notes_intermediate | Naixin&#39;s blog</title>
+    <title>2.0_leetcode_database_practice | Naixin&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,7 +271,7 @@ COUNT counts how many rows are in a particular colum">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SQL_notes_intermediate
+                        2.0_leetcode_database_practice
                     </div>
                 </div>
             </div>
@@ -404,7 +406,7 @@ COUNT counts how many rows are in a particular colum">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-09-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -418,14 +420,14 @@ COUNT counts how many rows are in a particular colum">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    912
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    16 Min
                 </div>
                 
                 
@@ -441,150 +443,526 @@ COUNT counts how many rows are in a particular colum">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Learning from <a href="https://mode.com/sql-tutorial/" target="_blank" rel="noopener">https://mode.com/sql-tutorial/</a></p>
-<ol>
-<li><strong>Aggregate functions</strong></li>
-</ol>
-<ul>
-<li><p>COUNT counts how many rows are in a particular column.</p>
-<ul>
-<li><p>Typing COUNT(1) has the same effect as COUNT(*). Which one you use is a matter of personal preference.</p>
-</li>
-<li><p>Counting individual columns
-Count of all of rows in which the high column is not null:</p>
-</li>
-</ul>
-<pre><code>  SELECT COUNT(high)
-  FROM tutorial.aapl_historical_stock_prie</code></pre></li>
-<li><p>SUM adds together all the values in a particular column.
-you can only use SUM on columns containing numerical values.
-You don’t need to worry as much about the presence of nulls with SUM as you would with COUNT, as SUM treats nulls as 0.</p>
-</li>
-<li><p>MIN and MAX return the lowest and highest values in a particular column, respectively.
-They’re similar to COUNT in that they can be used on non-numerical columns. Depending on the column type, MIN will return the lowest number, earliest date, or non-numerical value as close alphabetically to “A” as possible.</p>
-</li>
-<li><p>AVG calculates the average of a group of selected values.
-First, it can only be used on numerical columns. Second, it ignores nulls completely.</p>
-</li>
-</ul>
-<p><strong>2.GROUP BY</strong>
-  You can group by multiple columns.The order of column names in your GROUP BY clause doesn’t matter��the results will be the same regardless. If you want to control how the aggregations are grouped together, use ORDER BY.</p>
-<p><strong>3.HAVING</strong>
-  Having is the “clean” way to filter a query that has been aggregated,The WHERE clause won’t work for filtering on aggregate columns</p>
-<pre><code>SELECT year,
-       month,
-       MAX(high) AS month_high
-FROM tutorial.aapl_historical_stock_price
-GROUP BY year, month
-HAVING MAX(high) &gt; 400
-ORDER BY year, month</code></pre><p><strong>4.DISTINCT</strong></p>
-<p>  Only the unique values in a particular column
-  If you include two (or more) columns in a SELECT DISTINCT clause, your results will contain all of the unique pairs of those two columns:</p>
-<pre><code>SELECT DISTINCT year, month
-FROM tutorial.aapl_historical_stock_price</code></pre><p>DISTINCT goes inside the aggregate function rather than at the beginning of the SELECT clause:</p>
-<pre><code>SELECT COUNT(DISTINCT month) AS unique_months
-FROM tutorial.aapl_historical_stock_price</code></pre><p><strong>5.CASE</strong>
-  Every CASE statement must end with the END statement. The ELSE statement is optional:</p>
-<pre><code>CASE WHEN...THEN
-END</code></pre><pre><code>  SELECT player_name,
-         year,
-         CASE WHEN year = &#39;SR&#39; THEN &#39;yes&#39;
-         ELSE NULL END AS is_a_senior
-  FROM benn.college_football_players</code></pre><pre><code>SELECT player_name,
-         weight,
-         CASE WHEN weight &gt; 250 THEN &#39;over 250&#39;
-              WHEN weight &gt; 200 THEN &#39;201-250&#39;
-              WHEN weight &gt; 175 THEN &#39;176-200&#39;
-              ELSE &#39;175 or under&#39; END AS weight_group
-  FROM benn.college_football_players</code></pre><p><strong>6.Joins</strong></p>
-<pre><code> SELECT teams.conference AS conference,
-         AVG(players.weight) AS average_weight
-  FROM benn.college_football_players players
-  JOIN benn.college_football_teams teams
-  ON teams.school_name = players.school_name
-  GROUP BY teams.conference
-  ORDER BY AVG(players.weight) DESC</code></pre><ul>
-<li><p>inner join
-Inner joins eliminate rows from both tables that do not satisfy the join condition set forth in the ON statement. In mathematical terms, an inner join is the intersection of the two tables.
-rename column names:</p>
-<pre><code>SELECT players.school_name AS players_school_name,
-    teams.school_name AS teams_school_name
- FROM benn.college_football_players players
-JOIN benn.college_football_teams teams
- ON teams.school_name = players.school_name</code></pre></li>
-</ul>
-<ul>
-<li><p>outer join</p>
-<ul>
-<li><p>LEFT JOIN returns only unmatched rows from the left table.</p>
-</li>
-<li><p>RIGHT JOIN returns only unmatched rows from the right table.</p>
-</li>
-<li><p>FULL OUTER JOIN returns unmatched rows from both tables.</p>
-<p>Normally, filtering is processed in the WHERE clause once the two tables have already been joined. It’s possible, though that you might want to filter one or both of the tables before joining them. For example, you only want to create matches between the tables under certain circumstances.</p>
-</li>
-</ul>
-<p>Filtering in the ON clause: filter one or both of the tables before joining them</p>
-<pre><code>SELECT companies.permalink AS companies_permalink,
-    companies.name AS companies_name,
-    acquisitions.company_permalink AS acquisitions_permalink,
-    acquisitions.acquired_at AS acquired_date
-FROM tutorial.crunchbase_companies companies
-LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
-ON companies.permalink = acquisitions.company_permalink
-AND acquisitions.company_permalink != &#39;/company/1000memories&#39;
-ORDER BY 1</code></pre><p>Filtering in the WHERE clause:</p>
-<pre><code>SELECT companies.permalink AS companies_permalink,
-    companies.name AS companies_name,
-    acquisitions.company_permalink AS acquisitions_permalink,
-    acquisitions.acquired_at AS acquired_date
-FROM tutorial.crunchbase_companies companies
-LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
-ON companies.permalink = acquisitions.company_permalink
-WHERE acquisitions.company_permalink != &#39;/company/1000memories&#39;
-OR acquisitions.company_permalink IS NULL
-ORDER BY 1</code></pre></li>
-</ul>
-<ul>
-<li><p>Joining on multiple keys
- why? The first has to do with accuracy.</p>
-<pre><code>  The second reason has to do with performance. SQL uses &quot;indexes&quot; (essentially pre-defined joins) to speed up queries</code></pre></li>
-<li><p>Self join 
-Sometimes it can be useful to join a table to itself. Let��s say you wanted to identify companies that received an investment from Great Britain following an investment from Japan.</p>
-</li>
-</ul>
-<pre><code>SELECT DISTINCT japan_investments.company_name,
-       japan_investments.company_permalink
-  FROM tutorial.crunchbase_investments_part1 japan_investments
-  JOIN tutorial.crunchbase_investments_part1 gb_investments
-    ON japan_investments.company_name = gb_investments.company_name
-   AND gb_investments.investor_country_code = &#39;GBR&#39;
-   AND gb_investments.funded_at &gt; japan_investments.funded_at
- WHERE japan_investments.investor_country_code = &#39;JPN&#39;
- ORDER BY 1</code></pre><ol start="7">
-<li><strong>UNION</strong>
- SQL joins allow you to combine two datasets side-by-side, but UNION allows you to stack one dataset on top of the other
- SQL has strict rules for appending data:<ul>
-<li>Both tables must have the same number of columns</li>
-<li>The columns must have the same data types in the same order as the first table
-column names don’t necessarily have to be the same</li>
-</ul>
-</li>
-</ol>
-<p>tips:
-1.If you must use spaces in naming, you will need to use double quotes:
-  SELECT COUNT(date) AS “Count Of Date”
-  FROM tutorial.aapl_historical_stock_price
-2.Query clause order:</p>
-<ul>
-<li>SELECT</li>
-<li>FROM</li>
-<li>WHERE</li>
-<li>GROUP BY</li>
-<li>HAVING</li>
-<li>ORDER BY</li>
-</ul>
+                <h1 id="EASY-tag"><a href="#EASY-tag" class="headerlink" title="EASY tag:"></a>EASY tag:</h1><p>176.</p>
+<pre><code>SELECT IFNULL(
+    (SELECT ...
+    LIMIT 1 OFFSET 1,NULL
+) AS SecondHighestSalary
 
+
+SELECT MAX(salary) AS ..
+FROM
+WHERE Salary &lt; (SELECT Max(Salary) FROM Employee)
+</code></pre><p>181.</p>
+<pre><code>SELECT a.Name FROM Employee a
+JOIN Employee b
+ON a.Id = b.ManagerId AND a.Salary &gt; b.Salary</code></pre><p>Tips: self-join classical questions</p>
+<p>182.</p>
+<pre><code>Having count()&gt;1</code></pre><p>196.delete duplicate</p>
+<pre><code>
+DELETE p1 FROM Person p1, Person p2
+WHERE p1.Email= p2.Email and p1.ID &gt; P2.ID;
+</code></pre><p>620.</p>
+<pre><code>mod(id,2)=1</code></pre><p>627.</p>
+<pre><code>UPDATE salary
+SET
+    sex = CASE sex
+          WHEN &#39;m&#39; THEN &#39;f&#39;
+          ELSE &#39;m&#39;
+          END;</code></pre><p>1173.</p>
+<pre><code>SELECT ROUND(100*SUM(ORDER DATE = DELIVERY DATE)/COUNT(*),2)</code></pre><ol start="1179">
+<li>reformat</li>
+</ol>
+<pre><code>SELECT id, SUM(if (month = &#39;Jan&#39;, revenue, null)) AS Jan_Revenue</code></pre><p>1251.</p>
+<pre><code>select 
+        p.product_id ,
+        ROUND((SUM(u.units*p.price)/SUM(units)),2) average_price 
+
+from Prices p 
+JOIN UnitsSold u 
+ON 
+        p.product_id = u.product_id 
+        AND u.purchase_date between p.start_date and p.end_date 
+group by p.product_id</code></pre><p>1303.</p>
+<pre><code>SELECT 
+    employee_id, 
+    team_size
+FROM
+    Employee a
+JOIN
+    (SELECT team_id, COUNT(*) AS team_size FROM Employee GROUP BY team_id) b
+ON a.team_id = b.team_id; </code></pre><p>1322.</p>
+<pre><code>select ad_id, 
+ifnull(round(sum(case when action = &#39;Clicked&#39; then 1 else 0 end) / sum(case when action = &#39;Clicked&#39; or action = &#39;Viewed&#39; then 1 else 0 end) * 100, 2), 0) as ctr
+from Ads
+group by ad_id
+order by ctr desc, ad_id asc</code></pre><p>1484</p>
+<pre><code>select sell_date, count(distinct product) as num_sold , 
+group_concat(DISTINCT product ORDER BY product ASC separator &#39;,&#39;) as products               
+from activities  
+group by sell_date
+order by sell_date</code></pre><p>Tips:
+The GROUP_CONCAT() function in MySQL is used to concatenate data from multiple rows into one field. This is an aggregate (GROUP BY) function which returns a String value, if the group contains at least one non-NULL value. Otherwise, it returns NULL.</p>
+<p>1453.Create a session bar chart</p>
+<pre><code>(select &#39;[0-5&gt;&#39; as bin, sum(case when duration/60 &lt; 5 then 1 else 0 end) as total from sessions)
+union
+(select &#39;[5-10&gt;&#39; as bin, sum(case when ((duration/60 &gt;= 5) and (duration/60 &lt; 10)) then 1 else 0 end) as total from sessions)
+union
+(select &#39;[10-15&gt;&#39; as bin, sum(case when ((duration/60 &gt;= 10) and (duration/60 &lt; 15)) then 1 else 0 end) as total from sessions)
+union
+(select &#39;15 or more&#39; as bin, sum(case when duration/60 &gt;= 15 then 1 else 0 end) as total from sessions)</code></pre><p>1543.</p>
+<pre><code>SELECT TRIM(lower(product_name)) AS product_name, DATE_FORMAT(sale_date,&#39;%Y-%m&#39;) AS sale_date,count(*)AS total
+FROM Sales
+GROUP BY 1,2
+ORDER BY 1,2</code></pre><p>TIPS: </p>
+<ul>
+<li>The TRIM() removes the space character</li>
+<li>LTRIM() removes leading spaces from a string.</li>
+<li>RTRIM() removes trailing spaces from a string:</li>
+<li>DATE_FORMAT</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>%D</th>
+<th>Day of the month as a numeric value, followed by suffix (1st, 2nd, 3rd, …)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>Day of the month as a numeric value (01 to 31)</td>
+</tr>
+<tr>
+<td>—-</td>
+<td>—————————————-</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>Month name in full (January to December)</td>
+</tr>
+<tr>
+<td>—-</td>
+<td>—————————————-</td>
+</tr>
+</tbody></table>
+<p>1565.</p>
+<pre><code>SELECT DATE_FORMAT(order_date, &#39;%Y-%m&#39;) AS month,count(DISTINCT order_id) AS order_count,count(DISTINCT customer_id) AS customer_count
+FROM Orders
+WHERE invoice &gt; 20
+GROUP BY 1
+ORDER BY 1</code></pre><p>TIPS:
+LEFT(order_date, 7) month</p>
+<h1 id="Medium-tag"><a href="#Medium-tag" class="headerlink" title="Medium tag"></a>Medium tag</h1><p>177.</p>
+<pre><code>CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  DECLARE p INT;
+  SET p = N - 1;
+  RETURN (
+      SELECT DISTINCT Salary
+      FROM Employee
+      ORDER BY Salary DESC
+      LIMIT 1 OFFSET p
+  );
+END</code></pre><p>178.</p>
+<pre><code>select 
+score,
+dense_rank() over(order by score desc) as rank
+from scores</code></pre><p>Row_number()
+RANK()
+Dense_rank()</p>
+<p>184.</p>
+<pre><code>SELECT
+    Department.name AS &#39;Department&#39;,
+    Employee.name AS &#39;Employee&#39;,
+    Salary
+FROM
+    Employee
+JOIN
+    Department 
+ON Employee.DepartmentId = Department.Id
+WHERE
+    (Employee.DepartmentId , Salary) IN
+    (   SELECT
+            DepartmentId, MAX(Salary)
+        FROM
+            Employee
+        GROUP BY DepartmentId
+    )</code></pre><p>Tips:</p>
+<p>since there might be more than one people in each department has the same salary, it is safe to just select the department id and max salary firstly.</p>
+<p>534.</p>
+<pre><code>SELECT  player_id, event_date, SUM(games_played) over(PARTITION BY player_id order_by event_date ASC) AS games_played_so_far 
+FROM Activity
+Order by player_id;</code></pre><p>550.</p>
+<pre><code>SELECT ROUND(COUNT(t2.player_id)/COUNT(t1.player_id),2) AS fraction
+FROM
+(SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id) t1 
+LEFT JOIN Activity t2
+ON t1.player_id = t2.player_id AND t1.first_login = t2.event_date - 1</code></pre><p>578.</p>
+<pre><code>SELECT question_id
+FROM survey_log 
+GROUP BY qustion_id
+ORDER BY COUNT(answer_id)/COUNT(IF(action = &#39;SHOW&#39;,1,NULL)) DESC
+LIMIT 1</code></pre><p>580.</p>
+<pre><code>SELECT
+    SUM(insurance.TIV_2016) AS TIV_2016
+FROM
+    insurance
+WHERE
+    insurance.TIV_2015 IN
+    (
+      SELECT
+        TIV_2015
+      FROM
+        insurance
+      GROUP BY TIV_2015
+      HAVING COUNT(*) &gt; 1
+    )
+    AND CONCAT(LAT, LON) IN
+    (
+      SELECT
+        CONCAT(LAT, LON)
+      FROM
+        insurance
+      GROUP BY LAT , LON
+      HAVING COUNT(*) = 1
+    )</code></pre><p>608.</p>
+<pre><code>SELECT
+    id AS Id,
+    CASE
+        WHEN tree.P_id IS NULL
+          THEN &#39;Root&#39;
+        WHEN tree.id IN (SELECT atree.p_id FROM tree atree)
+          THEN &#39;Inner&#39;
+        ELSE &#39;Leaf&#39;
+    END AS Type
+FROM
+    tree
+ORDER BY `Id`
+;</code></pre><p>612.</p>
+<pre><code>SELECT
+    ROUND(SQRT(MIN((POW(p1.x - p2.x, 2) + POW(p1.y - p2.y, 2)))),2) AS shortest
+FROM
+    point_2d p1
+        JOIN
+    point_2d p2 ON p1.x != p2.x OR p1.y != p2.y</code></pre><p>626.</p>
+<pre><code>SELECT
+(CASE WHEN MOD(id,2) != 0 AND counts != id THEN id+1
+          MOD(id,2) != 0 AND counts == id THEN id
+          ELSE id - 1
+END) AS id, student
+FROM seat,(SELECT COUNT(*) as counts FROM seat) AS seat_counts
+ORDER BY id ASC</code></pre><p>1077.</p>
+<pre><code>SELECT t.project_id, t.employee_id
+FROM (
+    SELECT p1.project_id, p1.employee_id, 
+        DENSE_RANK() OVER (PARTITION BY p1.project_id ORDER BY e1.experience_years DESC) AS r
+    FROM Project p1 JOIN Employee e1 ON p1.employee_id = e1.employee_id
+) AS t
+WHERE t.r = 1</code></pre><p>1098.</p>
+<pre><code>SELECT b.book_id, b.name 
+FROM Books b
+LEFT JOIN Orders o
+ON b.book_id = o.book_id AND DATEDIFF(&#39;2019-06-23&#39;,available_from) &gt; 30
+GROUP BY b.book_id, b.name
+HAVING IFNULL(SUM(quantity),0)&lt; 10</code></pre><p>1107.</p>
+<pre><code>SELECT login_date, count(user_id) as user_count
+FROM(
+    SELECT user_id, MIN(activity_date) AS login_date
+    FROM Traffic
+    WHERE activity = &#39;login&#39;
+    GROUP BY user_id
+    ) t
+WHERE datediff(&#39;2019-6-30&#39;, login_date) &lt;= 90
+GROUP BY login_date</code></pre><p>1112.</p>
+<pre><code>SELECT student_id, MIN(course_id) AS course_id,grade FROM enrollments
+WHERE(student_id, grade) IN(
+SELECT student_id, MAX(grade) as ma FROM Enrollments GROUP BY student_id
+) 
+GROUP BY student_id, grade
+ORDER BY student_id</code></pre><p>1126.</p>
+<pre><code>SELECT business_id FROM
+(SELECT *, AVG(OCCURENCES) OVER (PARTITION BY event_type) AS e_AVG FROM events)a 
+WHERE OCCURENCES &gt; e_avg
+GROUP BY business_id
+HAVING COUNT(event_type) &gt; 1</code></pre><p>1132.</p>
+<pre><code>select round(avg(num_remove / num_spam) * 100, 2) as average_daily_percent
+from
+(
+    select action_date, 
+           count(distinct a.post_id) as num_spam,
+           count(distinct case when remove_date is not null then a.post_id 
+                               else null 
+                          end) as num_remove
+    from Actions a left join Removals r
+    on a.post_id = r.post_id
+    where extra = &#39;spam&#39;
+    group by action_date
+) t</code></pre><p>1164.</p>
+<pre><code>SELECT distinct a.product_id,ifnull(temp.new_price,10) as price 
+FROM products as a
+LEFT JOIN
+(SELECT * 
+FROM products 
+WHERE (product_id, change_date) in (select product_id,max(change_date) from products where change_date&lt;=&quot;2019-08-16&quot; group by product_id)) as temp
+on a.product_id = temp.product_id;</code></pre><p>1174.</p>
+<pre><code>SELECT
+    ROUND(100*SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1
+    ELSE 0 END)/ COUNT(distinct customer_id) ,2) AS immediate_percentage
+FROM
+    Delivery
+WHERE
+    (customer_id, order_date)
+IN
+(SELECT
+    customer_id, min(order_date) as min_date
+FROM
+    Delivery
+GROUP BY
+    customer_id
+);</code></pre><p>1204.</p>
+<pre><code>select q1.person_name
+from queue as q1 
+join
+(select turn, sum(weight) over (order by turn) as cumu_sum
+ from queue) as temp1
+on q1.turn = temp1.turn
+where temp1.cumu_sum &lt;= 1000
+order by temp1.cumu_sum desc
+limit 1;</code></pre><p>tips:  RUNNING TOTAL</p>
+<p>1205.</p>
+<pre><code>SELECT month, country, 
+    SUM(CASE WHEN state = &quot;approved&quot; THEN 1 ELSE 0 END) AS approved_count, 
+    SUM(CASE WHEN state = &quot;approved&quot; THEN amount ELSE 0 END) AS approved_amount, 
+    SUM(CASE WHEN state = &quot;back&quot; THEN 1 ELSE 0 END) AS chargeback_count,
+    SUM(CASE WHEN state = &quot;back&quot; THEN amount ELSE 0 END) AS chargeback_amount
+FROM
+(
+    SELECT LEFT(chargebacks.trans_date, 7) AS month,
+        country, 
+        &quot;back&quot; AS state, amount
+    FROM chargebacks
+    JOIN transactions ON chargebacks.trans_id = transactions.id
+    UNION ALL
+    SELECT LEFT(trans_date, 7) AS month, country, state, amount
+    FROM transactions
+    WHERE state = &quot;approved&quot;
+) s
+GROUP BY month, country</code></pre><p>The <code>UNION</code> command combines the result set of two or more SELECT statements (only distinct values)</p>
+<p>The <code>UNION ALL</code> command combines the result set of two or more SELECT statements (allows duplicate values).</p>
+<p>1212.</p>
+<pre><code>SELECT team_id, team_name,
+SUM(
+    CASE WHEN team_id = host_team AND host_goals &gt; guest_goals THEN 3
+         WHEN team_id = guest_team AND guest_goals &gt; host_goals THEN 3
+         WHEN host_goals = guest_goals THEN 1
+         ELSE 0
+    END          
+) AS &quot;num_points&quot;
+FROM Teams t
+LEFT JOIN Matches m ON t.team_id = m.host_team OR t.team_id = m.guest_team
+GROUP BY team_id, team_name
+ORDER BY num_points DESC, team_id</code></pre><p>Key point: LEFT JOIN Matches m ON t.team_id = m.host_team OR t.team_id = m.guest_team</p>
+<p>1264.</p>
+<pre><code>SELECT DISTINCT page_id AS recommended_page
+FROM (
+SELECT CASE WHEN user1_id = 1 THEN user2_id
+            WHEN user2_id = 1 THEN user1_id 
+      END AS user_id
+FROM Friendship) a
+JOIN Likes l
+ON a.user_id = l.user_id
+WHERE page_id NOT IN (SELECT page_id FROM Likes WHERE user_id = 1)</code></pre><p>1270.</p>
+<pre><code>SELECT e1.employee_id
+FROM Employees e1
+JOIN Employees e2
+ON e1.manager_id = e2.employee_id
+JOIN Employees e3
+ON e2.manager_id = e3.employee_id
+WHERE e3.manager_id = 1 AND e1.employee_id != 1</code></pre><p>1285.</p>
+<pre><code>SELECT MIN(log_id)AS start_id, MAX(log_id) AS end_id
+FROM 
+(SELECT log_id, ROW_NUMBER() OVER(Order by log_id) as num
+FROM  LOGs)a
+GROUP BY log_id - num</code></pre><pre><code>TIPS:
+log_id, num, difference
+1, 1, 0
+2, 2, 0
+3, 3, 0
+7, 4, 3
+8, 5, 3
+10, 6, 4</code></pre><p>1321.</p>
+<pre><code>SELECT a.visited_on as visted_on, SUM(b.day_sum) AS amount, ROUND(b.day_sum,2) AS average_amount 
+FROM (SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on) a,
+(SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on)b
+WHERE DATEDIFF(a.visited_on, b.visited_on) BETWEEN 0 AND 6
+GROUP BY a.visited_on
+HAVING COUNT(b.visited_on) = 7</code></pre><p>TIPS : moving average and  sum every 7 days</p>
+<p>1364.</p>
+<pre><code>select
+    i.invoice_id,
+    c.customer_name,
+    i.price,
+    count(con.user_id) as contacts_cnt,
+    count(c2.email) as trusted_contacts_cnt
+from invoices i
+join customers c on c.customer_id = i.user_id
+left join contacts con on con.user_id = c.customer_id
+left join customers c2 on c2.email = con.contact_email
+group by i.invoice_id, c.customer_name, i.price
+order by i.invoice_id</code></pre><p>1398.</p>
+<pre><code>SELECT customer_id,customer_name FROM Customers
+WHERE customer_id IN (
+SELECT customer_id
+FROM Orders 
+GROUP BY customer_id
+HAVING SUM(product_name = &#39;A&#39;) &gt; 0 AND SUM(product_name = &#39;B&#39;) &gt; 0 AND SUM(product_name = &#39;C&#39;) = 0)
+ORDER BY 1</code></pre><p>1440.</p>
+<pre><code>SELECT e.left_operand, e.operator, e.right_operand,
+    (
+        CASE
+            WHEN e.operator = &#39;&lt;&#39; AND v1.value &lt; v2.value THEN &#39;true&#39;
+            WHEN e.operator = &#39;=&#39; AND v1.value = v2.value THEN &#39;true&#39;
+            WHEN e.operator = &#39;&gt;&#39; AND v1.value &gt; v2.value THEN &#39;true&#39;
+            ELSE &#39;false&#39;
+        END
+    ) AS value
+FROM Expressions e
+JOIN Variables v1 ON e.left_operand = v1.name
+JOIN Variables v2 ON e.right_operand = v2.name</code></pre><p>1445.</p>
+<pre><code>SELECT *
+FROM Accounts
+WHERE id IN
+    (SELECT DISTINCT t1.id 
+     FROM Logins t1 INNER JOIN Logins t2 on t1.id = t2.id AND DATEDIFF(t1.login_date, t2.login_date) BETWEEN 1 AND 4
+     GROUP BY t1.id, t1.login_date
+     HAVING COUNT(DISTINCT(t2.login_date)) = 4)
+ORDER BY id</code></pre><p>Tips: 5 consecutive days</p>
+<p>1459.</p>
+<pre><code>SELECT  pt1.id as P1, pt2.id as P2,
+        ABS(pt2.x_value - pt1.x_value)*ABS(pt2.y_value-pt1.y_value) as AREA
+FROM Points pt1 JOIN Points pt2 
+ON pt1.id&lt;pt2.id
+AND pt1.x_value!=pt2.x_value 
+AND pt2.y_value!=pt1.y_value
+ORDER BY AREA DESC, p1 ASC, p2 ASC;</code></pre><p>1468.</p>
+<pre><code>SELECT s.company_id, s.employee_id, s.employee_name,
+ROUND(
+        case when x.max_sal between 1000 and 10000 then salary * 0.76
+        when x.max_sal &gt; 10000 then salary * 0.51 else salary end, 0) AS salary
+
+FROM salaries s 
+JOIN
+(SELECT company_id, MAX(salary) max_sal FROM salaries GROUP BY company_id) x
+ON s.company_id = x.company_id;</code></pre><p>TIP:</p>
+<p>max()  group by  only gives you one row</p>
+<p>1501.</p>
+<pre><code>SELECT Country.name AS country
+FROM Person JOIN Calls ON Calls.caller_id = Person.id OR Calls.callee_id = Person.id
+JOIN Country ON Country.country_code = LEFT(Person.phone_number, 3)
+GROUP BY Country.name
+HAVING AVG(duration) &gt; (SELECT AVG(duration) FROM Calls)</code></pre><p>1532.</p>
+<pre><code>SELECT customer_name, customer_id, order_id, order_date
+FROM 
+ (
+   SELECT name AS customer_name, Customers.customer_id, order_id, order_date, 
+     (row_number() over (partition by Customers.customer_id order by order_date DESC)) AS rownum
+   FROM Customers
+   INNER JOIN Orders ON Customers.customer_id = Orders.customer_id
+   ORDER BY customer_name, Customers.customer_id, order_date DESC
+) latest_orders
+WHERE rownum &lt;= 3</code></pre><p>1555.</p>
+<pre><code>SELECT user_id,user_name,
+IFNULL(SUM(CASE WHEN a.user_id=b.paid_by THEN -amount ELSE amount END),0)+a.credit as credit,
+CASE WHEN IFNULL(SUM(CASE WHEN a.user_id=b.paid_by THEN -amount ELSE amount END),0)&gt;=-a.credit THEN &quot;No&quot; ELSE &quot;Yes&quot; END as credit_limit_breached
+FROM Users as a
+LEFT JOIN Transactions as b
+ON a.user_id=b.paid_by OR a.user_id=b.paid_to
+GROUP BY a.user_id;</code></pre><h1 id="HARD-tag"><a href="#HARD-tag" class="headerlink" title="HARD tag"></a>HARD tag</h1><p>185.</p>
+<pre><code>select 
+    Department, Employee, Salary
+
+from
+(
+select
+    D.name as Department, E.name as Employee, E.salary as Salary,
+    dense_rank() over (partition by DepartmentId order by salary desc) as salary_rank
+from
+    employee E join Department D on E.departmentid = D.id
+) as new_table
+
+where
+    new_table.salary_rank &lt;= 3</code></pre><p>262.</p>
+<pre><code>SELECT Request_at as Day, 
+        ROUND ((SUM(        
+        CASE WHEN Status = &#39;cancelled_by_driver&#39; 
+                    OR Status = &#39;cancelled_by_client&#39; 
+                THEN 1 
+                ELSE 0 
+        END)
+        / COUNT(Request_at)) ,2) as &quot;Cancellation Rate&quot;                               
+FROM Trips trp
+WHERE Request_at BETWEEN &#39;2013-10-01&#39; AND &#39;2013-10-03&#39; 
+      AND trp.Client_Id IN (SELECT Users_Id FROM Users WHERE Banned = &#39;No&#39;)
+      AND trp.Driver_Id IN (SELECT Users_Id FROM Users WHERE Banned = &#39;No&#39;)
+GROUP BY Request_at</code></pre><p>569.(got medium by partition)</p>
+<pre><code>SELECT Id, Company, Salary
+FROM (
+SELECT *, ROW_NUMBER() OVER(PARTITION BY COMPANY ORDER BY Salary ASC, Id ASC) AS RN_ASC,
+ROW_NUMBER() OVER(PARTITION BY COMPANY ORDER BY Salary DESC, Id DESC) AS RN_DESC
+FROM Employee) AS temp
+WHERE RN_ASC BETWEEN RN_DESC - 1 AND RN_DESC + 1
+ORDER BY Company, Salary;
+</code></pre><p>579.</p>
+<pre><code>Select Id , Month , 
+sum(Salary) over(Partition by Id order by month Rows 2 preceding) AS Salary
+FROM Employee
+where concat(Id, Month) not in 
+(select concat(Id, max(Month))
+  from Employee 
+  group by Id)
+order by Id, Month desc</code></pre><p>Rows 2 preceding:将当前行和它前面的两行划为一个窗口，因此sum函数就作 用在这三行上面</p>
+<p>601.</p>
+<pre><code>SELECT s1.id, s1.visit_date, s1.people
+FROM(
+    SELECT 
+    s.id, 
+    s.visit_date, 
+    s.people, 
+    lead(people) OVER (ORDER BY id ASC) as next1,
+    lead(people,2) OVER (ORDER BY id ASC ) as next2,
+    lag(people) OVER (ORDER BY id ASC) as prev1,
+    lag(people,2) OVER (ORDER BY id ASC ) as prev2
+    FROM stadium as s
+    ) AS s1    
+WHERE (people&gt;=100 and 
+       ((next1&gt;=100 and next2&gt;=100)
+        or (prev1&gt;=100 and prev2&gt;=100)
+        or (prev1&gt;=100 and next1&gt;=100) -- &lt;-this one is missing
+       ));</code></pre><p>615.</p>
+<pre><code>select department_salary.pay_month, department_id,
+case
+  when department_avg&gt;company_avg then &#39;higher&#39;
+  when department_avg&lt;company_avg then &#39;lower&#39;
+  else &#39;same&#39;
+end as comparison
+from
+(
+  select department_id, avg(amount) as department_avg, date_format(pay_date, &#39;%Y-%m&#39;) as pay_month
+  from salary join employee on salary.employee_id = employee.employee_id
+  group by department_id, pay_month
+) as department_salary
+join
+(
+  select avg(amount) as company_avg,  date_format(pay_date, &#39;%Y-%m&#39;) as pay_month from salary group by date_format(pay_date, &#39;%Y-%m&#39;)
+) as company_salary
+on department_salary.pay_month = company_salary.pay_month
+;</code></pre><p>618.</p>
+<pre><code>SELECT
+        MAX(CASE WHEN continent = &#39;America&#39; THEN name END )AS America,
+        MAX(CASE WHEN continent = &#39;Asia&#39; THEN name END )AS Asia,
+        MAX(CASE WHEN continent = &#39;Europe&#39; THEN name END )AS Europe  
+FROM (SELECT *, ROW_NUMBER()OVER(PARTITION BY continent ORDER BY name) AS row_id FROM student) AS t
+GROUP BY row_id</code></pre>
             </div>
             <hr />
 
@@ -622,7 +1000,7 @@ column names don’t necessarily have to be the same</li>
         repo: 'naixinzhang.github.io',
         owner: 'naixinzhang',
         admin: "naixinzhang",
-        id: '2020/02/12/mysql/sql-notes-intermedite/',
+        id: '2020/09/10/mysql/sql-leetcode2-by-tag/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -909,28 +1287,28 @@ column names don’t necessarily have to be the same</li>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/12/mysql/sql-notes-basic/">
+                <a href="/2020/09/15/mysql/sql-notes-mode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="SQL_notes_Basic">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="SQL_notes_Mode">
                         
-                        <span class="card-title">SQL_notes_Basic</span>
+                        <span class="card-title">SQL_notes_Mode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             Learning from https://mode.com/sql-tutorial/
-1.SELECT * FROM table
+Basic1.SELECT * FROM table
 
 rename column names: 
-SELECT west AS &quot;West Regi
+SELECT west AS &quot;West
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-15
                         </span>
                         <span class="publish-author">
                             
@@ -962,56 +1340,38 @@ SELECT west AS &quot;West Regi
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/12/mysql/sql-notes-advanced/">
+                <a href="/2020/04/24/product/lean-analystics/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="SQL_notes_Advanced">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">SQL_notes_Advanced</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Learning from https://mode.com/sql-tutorial/
-1.Data Type
+                            title: Lean Analytics
+date: 2020-09-9 11:26:09
+top: false
+cover: false
+password:
+toc: true
+mathjax: false
+tags: 
 
-
-
-Imported as
-Stored as
-With these rules
-
-
-
-String
-VARCHAR(102
+Produc
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/SQL/" class="post-category" target="_blank">
-                                    SQL
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/SQL-Learning-notes/" target="_blank">
-                        <span class="chip bg-color">SQL Learning notes</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1122,7 +1482,7 @@ VARCHAR(102
 
     <footer class="page-footer bg-color center-align">
     <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
+        <div class="copy-right">
             &copy; 2020 NaixinZhang. All Rights Reserved.
         </div>
     </div>
